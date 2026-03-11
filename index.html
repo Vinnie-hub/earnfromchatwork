@@ -1,0 +1,6150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=5.0"
+    />
+    <title>Mulastar – Get Paid to Chat With Lonely Foreigners</title>
+    <meta
+      name="description"
+      content="Earn $3–$15/hr chatting with lonely people from UK, USA, Canada, Qatar & more. 5 ways to earn. Join 15,000+ earners. Daily M-Pesa payouts."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://res.cloudinary.com/dovhxt8ye/image/upload/v1771489654/favicon_it80ef.png"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --ink: #0b0d17;
+        --ink2: #1a1d2e;
+        --ink3: #374151;
+        --muted: #6b7280;
+        --faint: #9ca3af;
+        --border: #e4e8f0;
+        --border2: #cdd3df;
+        --bg: #f6f8ff;
+        --bg2: #eef1fb;
+        --white: #fff;
+        --blue: #1d4ed8;
+        --blue2: #2563eb;
+        --blue3: #3b82f6;
+        --blue-soft: #eff6ff;
+        --blue-border: #bfdbfe;
+        --em: #059669;
+        --em2: #10b981;
+        --em-soft: #ecfdf5;
+        --red: #dc2626;
+        --font-head: "Playfair Display", Georgia, serif;
+        --font-body: "DM Sans", system-ui, sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+        --nav-h: 68px;
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+        --sh-sm: 0 1px 4px rgba(0, 0, 0, 0.07);
+        --sh: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --sh-md: 0 10px 36px rgba(0, 0, 0, 0.1);
+        --sh-lg: 0 20px 56px rgba(0, 0, 0, 0.12);
+        --sh-xl: 0 32px 80px rgba(0, 0, 0, 0.18);
+        --sh-b: 0 8px 28px rgba(29, 78, 216, 0.3);
+      }
+      html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+        scroll-padding-top: 76px;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        font-family: var(--font-body);
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--blue);
+        border-radius: 2px;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+      }
+
+      /* PROGRESS */
+      #prog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--blue), var(--blue2));
+        z-index: 9999;
+      }
+
+      /* LOADING */
+      .loading-ovl {
+        position: fixed;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.97);
+        z-index: 99999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .loading-ovl.show {
+        display: flex;
+      }
+      .loading-spin {
+        width: 44px;
+        height: 44px;
+        border: 3px solid rgba(29, 78, 216, 0.15);
+        border-top-color: var(--blue);
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+      }
+      .loading-txt {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+      }
+
+      /* NAV */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        height: var(--nav-h);
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(24px);
+        border-bottom: 1px solid var(--border);
+        transition: all 0.25s var(--ease);
+      }
+      .nav.scrolled {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        flex-shrink: 0;
+      }
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: var(--sh-b);
+      }
+      .logo-mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .logo-name {
+        font-family: var(--font-head);
+        font-size: 1.25rem;
+        font-weight: 900;
+        color: var(--ink);
+        letter-spacing: 0.01em;
+      }
+      .logo-name em {
+        color: var(--blue2);
+        font-style: normal;
+      }
+      .nav-links {
+        display: none;
+      }
+      @media (min-width: 960px) {
+        .nav-links {
+          display: flex;
+          align-items: center;
+          gap: 0.15rem;
+        }
+        .nav-links a {
+          color: var(--muted);
+          font-size: 0.82rem;
+          font-weight: 600;
+          padding: 0.4rem 0.875rem;
+          border-radius: 99px;
+          transition: all 0.2s;
+          letter-spacing: 0.005em;
+        }
+        .nav-links a:hover {
+          color: var(--blue2);
+          background: var(--blue-soft);
+        }
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        flex-shrink: 0;
+      }
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        padding: 0.5rem 1.2rem;
+        border-radius: 99px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        border: none;
+        color: #fff;
+        transition: all 0.2s;
+        white-space: nowrap;
+        box-shadow: var(--sh-b);
+        background: linear-gradient(
+          135deg,
+          #1d4ed8,
+          #2563eb,
+          #60a5fa,
+          #2563eb,
+          #1d4ed8
+        );
+        background-size: 300% auto;
+        animation: nav-shimmer 6s linear infinite;
+      }
+      .nav-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 28px rgba(37, 99, 235, 0.45);
+      }
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 0.5rem;
+        background: none;
+        border: none;
+      }
+      @media (min-width: 960px) {
+        .hamburger {
+          display: none;
+        }
+      }
+      .hamburger span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: var(--ink3);
+        border-radius: 2px;
+        transition: all 0.28s var(--ease);
+        transform-origin: center;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+      .mobile-nav {
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 1.5rem 2rem;
+        gap: 0.2rem;
+        transform: translateX(100%);
+        transition: transform 0.32s var(--ease);
+        border-top: 1px solid var(--border);
+        overflow-y: auto;
+      }
+      .mobile-nav.open {
+        transform: translateX(0);
+      }
+      @media (min-width: 960px) {
+        .mobile-nav {
+          display: none !important;
+        }
+      }
+      .mobile-nav a {
+        color: var(--ink2);
+        font-size: 0.95rem;
+        font-weight: 600;
+        padding: 0.8rem 1rem;
+        border-radius: 10px;
+        transition: all 0.2s;
+        display: block;
+      }
+      .mobile-nav a:hover {
+        color: var(--blue2);
+        background: var(--blue-soft);
+      }
+      .mobile-nav-div {
+        height: 1px;
+        background: var(--border);
+        margin: 0.5rem 0;
+      }
+      .mobile-nav-cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        color: #fff;
+        margin-top: auto;
+        box-shadow: var(--sh-b);
+        transition: all 0.2s var(--spring);
+      }
+      .mobile-nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(37, 99, 235, 0.45);
+      }
+
+      /* LAYOUT */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+      @media (min-width: 768px) {
+        .container {
+          padding: 0 2.5rem;
+        }
+      }
+
+      /* BUTTONS */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.75rem;
+        border-radius: 99px;
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: 0.9rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        white-space: nowrap;
+      }
+      .btn-blue {
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        color: #fff;
+        box-shadow: var(--sh-b);
+      }
+      .btn-blue:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 32px rgba(37, 99, 235, 0.45);
+      }
+      .btn-dark {
+        background: #0f172a;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .btn-dark:hover {
+        background: #1e293b;
+        transform: translateY(-2px);
+      }
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1.5px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+      }
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.35);
+      }
+      .btn-green {
+        background: linear-gradient(135deg, #065f46, var(--em));
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(5, 150, 105, 0.3);
+      }
+      .btn-green:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 28px rgba(5, 150, 105, 0.4);
+      }
+      .btn-lg {
+        padding: 0.9rem 2.2rem;
+        font-size: 1rem;
+      }
+      .btn-xl {
+        padding: 1rem 2.4rem;
+        font-size: 1.05rem;
+        border-radius: 14px;
+      }
+      .btn-pulse {
+        animation: btn-pulse-ring 2.5s infinite;
+      }
+
+      /* SECTION TITLES */
+      .section {
+        padding: 5.5rem 0;
+      }
+      @media (max-width: 640px) {
+        .section {
+          padding: 3.5rem 0;
+        }
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--blue2);
+        font-weight: 500;
+        margin-bottom: 0.875rem;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 16px;
+        height: 2px;
+        background: var(--blue2);
+        border-radius: 1px;
+      }
+      .sec-title {
+        font-family: var(--font-head);
+        font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        color: var(--ink);
+        margin-bottom: 1.1rem;
+      }
+      .sec-title em {
+        background: linear-gradient(135deg, #3b82f6, #06b6d4, #34d399);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-style: italic;
+      }
+      .sec-sub {
+        font-size: 1rem;
+        color: var(--muted);
+        max-width: 540px;
+        line-height: 1.9;
+        font-weight: 400;
+      }
+      .shead {
+        margin-bottom: 3.5rem;
+      }
+      .shead.center {
+        text-align: center;
+      }
+      .shead.center .sec-sub {
+        margin: 0 auto;
+      }
+
+      /* ANIMATIONS */
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes slideRight {
+        from {
+          opacity: 0;
+          transform: translateX(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.2;
+        }
+      }
+      @keyframes ticker {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      @keyframes bubbleIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      @keyframes typing {
+        0%,
+        60%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.4;
+        }
+        30% {
+          transform: translateY(-5px);
+          opacity: 1;
+        }
+      }
+      @keyframes spIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes meshMove {
+        0% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(40px, 30px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+      @keyframes nav-shimmer {
+        0% {
+          background-position: -200% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
+      @keyframes btn-pulse-ring {
+        0% {
+          box-shadow:
+            0 8px 28px rgba(37, 99, 235, 0.3),
+            0 0 0 0 rgba(37, 99, 235, 0.5);
+        }
+        70% {
+          box-shadow:
+            0 8px 28px rgba(37, 99, 235, 0.3),
+            0 0 0 14px rgba(37, 99, 235, 0);
+        }
+        100% {
+          box-shadow:
+            0 8px 28px rgba(37, 99, 235, 0.3),
+            0 0 0 0 rgba(37, 99, 235, 0);
+        }
+      }
+      @keyframes wa-ring {
+        0% {
+          box-shadow:
+            0 6px 20px rgba(37, 211, 102, 0.4),
+            0 0 0 0 rgba(37, 211, 102, 0.35);
+        }
+        70% {
+          box-shadow:
+            0 6px 20px rgba(37, 211, 102, 0.4),
+            0 0 0 16px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow:
+            0 6px 20px rgba(37, 211, 102, 0.4),
+            0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        33% {
+          transform: translate(12px, -16px) rotate(5deg);
+        }
+        66% {
+          transform: translate(-8px, -8px) rotate(-3deg);
+        }
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.65s var(--ease),
+          transform 0.65s var(--ease);
+      }
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .blink-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--em2);
+        animation: blink 2s infinite;
+        box-shadow: 0 0 6px var(--em2);
+        flex-shrink: 0;
+      }
+
+      /* TICKER — sits directly below nav, zero gap */
+      .ticker-bar {
+        background: var(--blue);
+        overflow: hidden;
+        padding: 0.55rem 0;
+        margin-top: var(--nav-h);
+      }
+      .ticker-track {
+        display: flex;
+        gap: 2rem;
+        white-space: nowrap;
+        animation: ticker 36s linear infinite;
+      }
+      .ticker-item {
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.9);
+        flex-shrink: 0;
+        letter-spacing: 0.04em;
+      }
+      .ticker-item::after {
+        content: "·";
+        opacity: 0.35;
+        margin-left: 0.75rem;
+      }
+
+      /* HERO — flush against ticker (no extra top padding beyond nav) */
+      .hero {
+        min-height: calc(100vh - var(--nav-h) - 36px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 4rem 0 5rem;
+        position: relative;
+        overflow: hidden;
+        background: #080d1e;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            ellipse 70% 80% at 15% 50%,
+            rgba(29, 78, 216, 0.35) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 50% 60% at 85% 20%,
+            rgba(37, 99, 235, 0.2) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 60% 50% at 70% 80%,
+            rgba(5, 150, 105, 0.12) 0%,
+            transparent 55%
+          ),
+          #080d1e;
+      }
+      .hero-noise {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        opacity: 0.5;
+      }
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+          );
+        background-size: 60px 60px;
+      }
+      .hero-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+        animation: meshMove 12s ease-in-out infinite;
+      }
+      .hero-orb-1 {
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(29, 78, 216, 0.3),
+          transparent 70%
+        );
+        top: -100px;
+        left: -150px;
+      }
+      .hero-orb-2 {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(37, 99, 235, 0.2),
+          transparent 70%
+        );
+        top: 50%;
+        right: -100px;
+        animation-delay: 4s;
+      }
+      .hero-orb-3 {
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(5, 150, 105, 0.15),
+          transparent 70%
+        );
+        bottom: -80px;
+        left: 40%;
+        animation-delay: 8s;
+      }
+      .hero-particles {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .hero-particle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        animation: drift var(--dur, 8s) ease-in-out infinite;
+      }
+      .hero .container {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      @media (min-width: 1024px) {
+        .hero .container {
+          grid-template-columns: 1.2fr 0.8fr;
+          gap: 4rem;
+        }
+      }
+      .hero-left {
+        animation: slideLeft 0.8s 0.1s var(--ease) both;
+      }
+      .hero-live-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 1.75rem;
+      }
+      .hero-h1 {
+        font-family: var(--font-head);
+        font-size: clamp(2.6rem, 6.5vw, 5rem);
+        font-weight: 900;
+        line-height: 1.04;
+        letter-spacing: -0.02em;
+        margin-bottom: 1.5rem;
+        color: #fff;
+      }
+      .hero-h1 .line-top {
+        display: block;
+        color: rgba(255, 255, 255, 0.92);
+      }
+      .hero-h1 .line-mid {
+        display: block;
+        font-style: italic;
+        background: linear-gradient(120deg, #60a5fa, #34d399);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        padding-bottom: 0.05em;
+      }
+      .hero-h1 .line-bot {
+        display: block;
+        font-size: 0.42em;
+        font-style: normal;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.55);
+        letter-spacing: -0.005em;
+        margin-top: 0.3em;
+        font-family: var(--font-body);
+      }
+      .hero-earn-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.625rem;
+        margin-bottom: 1.75rem;
+        animation: slideLeft 0.7s 0.2s var(--ease) both;
+      }
+      .her-amount {
+        font-family: var(--font-head);
+        font-size: 2.4rem;
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -0.04em;
+        line-height: 1;
+      }
+      .her-sep {
+        width: 1.5px;
+        height: 2rem;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 1px;
+      }
+      .her-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.65);
+      }
+      .her-methods {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+        margin-top: 0.125rem;
+      }
+      .her-method {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 99px;
+        padding: 0.22rem 0.7rem;
+        font-family: var(--font-mono);
+        font-size: 0.58rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.75);
+        letter-spacing: 0.04em;
+        transition: all 0.2s;
+      }
+      .her-method:hover {
+        background: rgba(255, 255, 255, 0.14);
+        color: #fff;
+      }
+      .her-method i {
+        font-size: 0.5rem;
+        color: #34d399;
+      }
+      .hero-desc {
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.9;
+        max-width: 480px;
+        margin-bottom: 2rem;
+        animation: slideLeft 0.7s 0.28s var(--ease) both;
+        font-weight: 400;
+      }
+      .hero-desc strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .hero-live-strip {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+        animation: slideLeft 0.7s 0.33s var(--ease) both;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 14px;
+        padding: 1rem 1.25rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+      }
+      .hls-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+      }
+      .hls-val {
+        font-family: var(--font-head);
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -0.02em;
+        line-height: 1;
+      }
+      .hls-val.green {
+        background: linear-gradient(120deg, #34d399, #6ee7b7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .hls-label {
+        font-family: var(--font-mono);
+        font-size: 0.58rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .hls-div {
+        width: 1px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .hero-flags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2.25rem;
+        animation: slideLeft 0.7s 0.38s var(--ease) both;
+      }
+      .hero-flag-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 99px;
+        padding: 0.35rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.85);
+        transition: all 0.25s var(--spring);
+        cursor: default;
+      }
+      .hero-flag-chip:hover {
+        background: rgba(255, 255, 255, 0.14);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.22);
+        transform: translateY(-4px) scale(1.06);
+      }
+      .hero-flag-chip em {
+        font-style: normal;
+        font-family: var(--font-mono);
+        font-size: 0.58rem;
+        color: #34d399;
+        margin-left: 0.15rem;
+      }
+      .hero-ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.875rem;
+        margin-bottom: 2rem;
+        animation: slideLeft 0.7s 0.44s var(--ease) both;
+      }
+      .hero-proof {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        animation: slideLeft 0.7s 0.5s var(--ease) both;
+      }
+      .hp-item {
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .hp-item i {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.65rem;
+      }
+      .hero-right {
+        animation: slideRight 0.85s 0.15s var(--ease) both;
+      }
+      .hero-chat-wrap {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        overflow: hidden;
+        backdrop-filter: blur(16px);
+      }
+      .hcw-header {
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .hcw-av {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        flex-shrink: 0;
+      }
+      .hcw-name {
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: #fff;
+      }
+      .hcw-status {
+        font-size: 0.7rem;
+        color: var(--em2);
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .hcw-earn-badge {
+        margin-left: auto;
+        background: rgba(52, 211, 153, 0.15);
+        border: 1px solid rgba(52, 211, 153, 0.25);
+        border-radius: 99px;
+        padding: 0.25rem 0.75rem;
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        color: #34d399;
+        font-weight: 600;
+      }
+      .hcw-msgs {
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+        min-height: 200px;
+      }
+      .hcw-msg {
+        display: flex;
+        gap: 0.625rem;
+        align-items: flex-start;
+      }
+      .hcw-msg-av {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+      .hcw-bubble {
+        background: rgba(255, 255, 255, 0.09);
+        border-radius: 6px 14px 14px 14px;
+        padding: 0.6rem 0.875rem;
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.55;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .hcw-bubble.me {
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        color: #fff;
+        border: none;
+        border-radius: 14px 6px 14px 14px;
+        margin-left: auto;
+      }
+      .hcw-msg.right {
+        flex-direction: row-reverse;
+      }
+      .hcw-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .hcw-stat {
+        padding: 0.875rem 0.75rem;
+        text-align: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .hcw-stat:last-child {
+        border-right: none;
+      }
+      .hcw-stat-val {
+        font-family: var(--font-head);
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -0.02em;
+        line-height: 1;
+      }
+      .hcw-stat-val.green {
+        color: #34d399;
+      }
+      .hcw-stat-val.blue {
+        color: #60a5fa;
+      }
+      .hcw-stat-lbl {
+        font-family: var(--font-mono);
+        font-size: 0.52rem;
+        color: rgba(255, 255, 255, 0.45);
+        margin-top: 0.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .hcw-calc {
+        padding: 1rem 1.25rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .hcw-calc-label {
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.75rem;
+      }
+      .calc-row {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+      }
+      .calc-lbl {
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.55);
+        width: 80px;
+        flex-shrink: 0;
+      }
+      .calc-slider {
+        flex: 1;
+        -webkit-appearance: none;
+        appearance: none;
+        height: 3px;
+        border-radius: 2px;
+        background: linear-gradient(
+          90deg,
+          #60a5fa var(--val, 30%),
+          rgba(255, 255, 255, 0.15) var(--val, 30%)
+        );
+        outline: none;
+      }
+      .calc-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #60a5fa;
+        cursor: pointer;
+        box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+      }
+      .calc-val {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        color: #fff;
+        width: 32px;
+        text-align: right;
+      }
+      .calc-result-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0.625rem;
+        padding-top: 0.625rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .calc-result-lbl {
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .calc-result-amount {
+        font-family: var(--font-head);
+        font-size: 1.4rem;
+        font-weight: 900;
+        color: #34d399;
+        letter-spacing: -0.03em;
+      }
+      .hcw-cta {
+        padding: 1rem 1.25rem;
+        background: rgba(255, 255, 255, 0.03);
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .hcw-cta a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.875rem;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        color: #fff;
+        font-size: 0.875rem;
+        font-weight: 700;
+        transition: all 0.2s;
+        box-shadow: var(--sh-b);
+      }
+      .hcw-cta a:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.5);
+      }
+
+      /* HOW IT WORKS */
+      .how-section {
+        background: var(--bg2);
+        position: relative;
+      }
+      .how-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(99, 102, 241, 0.25),
+          transparent
+        );
+      }
+      .steps-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      @media (min-width: 640px) {
+        .steps-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .step-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 2rem 1.75rem;
+        text-align: center;
+        position: relative;
+        transition: all 0.35s var(--spring);
+      }
+      .step-card:hover {
+        border-color: var(--blue-border);
+        transform: translateY(-8px);
+        box-shadow: var(--sh-md);
+      }
+      .step-num {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.25rem;
+        font-family: var(--font-head);
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: #fff;
+        box-shadow: var(--sh-b);
+        transition: transform 0.4s var(--spring);
+      }
+      .step-card:hover .step-num {
+        transform: scale(1.15) rotate(-6deg);
+      }
+      .step-card h3 {
+        font-family: var(--font-head);
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+      }
+      .step-card p {
+        font-size: 0.875rem;
+        color: var(--muted);
+        line-height: 1.85;
+      }
+      .step-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        background: var(--em-soft);
+        color: var(--em);
+        border: 1px solid rgba(5, 150, 105, 0.2);
+        padding: 0.25rem 0.75rem;
+        border-radius: 99px;
+        font-family: var(--font-mono);
+        font-size: 0.58rem;
+        font-weight: 600;
+        margin-top: 0.875rem;
+      }
+
+      /* 5 WAYS TO EARN */
+      .earn-section {
+        background: linear-gradient(
+          160deg,
+          #06091a 0%,
+          #0a0f22 60%,
+          #06091a 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .earn-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            ellipse 60% 70% at 10% 40%,
+            rgba(29, 78, 216, 0.15) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 50% 50% at 90% 60%,
+            rgba(5, 150, 105, 0.08) 0%,
+            transparent 55%
+          );
+      }
+      .earn-section::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.025) 1px,
+          transparent 1px
+        );
+        background-size: 28px 28px;
+      }
+      .earn-hd .eyebrow {
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .earn-hd .eyebrow::before {
+        background: rgba(255, 255, 255, 0.35);
+      }
+      .earn-hd .sec-title {
+        color: #fff;
+      }
+      .earn-hd .sec-sub {
+        color: rgba(255, 255, 255, 0.65);
+      }
+      .earn-range {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.25rem;
+        padding: 2rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 3rem;
+        position: relative;
+        z-index: 2;
+      }
+      .er-item {
+        display: flex;
+        flex-direction: column;
+      }
+      .er-val {
+        font-family: var(--font-head);
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: #fff;
+      }
+      .er-val.accent {
+        background: linear-gradient(120deg, #60a5fa, #34d399);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .er-lbl {
+        font-family: var(--font-mono);
+        font-size: 0.58rem;
+        color: rgba(255, 255, 255, 0.45);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-top: 0.25rem;
+      }
+      .er-sep {
+        width: 1px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.12);
+      }
+      .earn-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        position: relative;
+        z-index: 2;
+      }
+      @media (min-width: 640px) {
+        .earn-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .earn-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .em-card {
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 1.75rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s var(--ease);
+      }
+      .em-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        border-radius: 20px 20px 0 0;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .em-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+      .em-card:hover::before {
+        opacity: 1;
+      }
+      .emc-1::before {
+        background: linear-gradient(90deg, #60a5fa, #3b82f6);
+      }
+      .emc-2::before {
+        background: linear-gradient(90deg, #34d399, #10b981);
+      }
+      .emc-3::before {
+        background: linear-gradient(90deg, #a78bfa, #7c3aed);
+      }
+      .emc-4::before {
+        background: linear-gradient(90deg, #fcd34d, #d97706);
+      }
+      .emc-5::before {
+        background: linear-gradient(90deg, #f87171, #dc2626);
+      }
+      .emc-1:hover {
+        box-shadow:
+          0 24px 52px rgba(0, 0, 0, 0.4),
+          0 0 32px rgba(96, 165, 250, 0.12);
+      }
+      .emc-2:hover {
+        box-shadow:
+          0 24px 52px rgba(0, 0, 0, 0.4),
+          0 0 32px rgba(52, 211, 153, 0.1);
+      }
+      .emc-3:hover {
+        box-shadow:
+          0 24px 52px rgba(0, 0, 0, 0.4),
+          0 0 32px rgba(167, 139, 250, 0.1);
+      }
+      .emc-4:hover {
+        box-shadow:
+          0 24px 52px rgba(0, 0, 0, 0.4),
+          0 0 32px rgba(252, 211, 77, 0.08);
+      }
+      .emc-5:hover {
+        box-shadow:
+          0 24px 52px rgba(0, 0, 0, 0.4),
+          0 0 32px rgba(248, 113, 113, 0.08);
+      }
+      @media (min-width: 640px) and (max-width: 1023px) {
+        .emc-wide {
+          grid-column: span 2;
+        }
+      }
+      .em-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.2rem 0.65rem;
+        border-radius: 99px;
+        font-family: var(--font-mono);
+        font-size: 0.56rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        margin-bottom: 1rem;
+      }
+      .emc-1 .em-badge {
+        background: rgba(96, 165, 250, 0.15);
+        color: #93c5fd;
+        border: 1px solid rgba(96, 165, 250, 0.25);
+      }
+      .emc-2 .em-badge {
+        background: rgba(52, 211, 153, 0.15);
+        color: #6ee7b7;
+        border: 1px solid rgba(52, 211, 153, 0.25);
+      }
+      .emc-3 .em-badge {
+        background: rgba(167, 139, 250, 0.15);
+        color: #c4b5fd;
+        border: 1px solid rgba(167, 139, 250, 0.25);
+      }
+      .emc-4 .em-badge {
+        background: rgba(252, 211, 77, 0.15);
+        color: #fde68a;
+        border: 1px solid rgba(252, 211, 77, 0.25);
+      }
+      .emc-5 .em-badge {
+        background: rgba(248, 113, 113, 0.15);
+        color: #fca5a5;
+        border: 1px solid rgba(248, 113, 113, 0.25);
+      }
+      .em-icon {
+        font-size: 1.875rem;
+        display: block;
+        line-height: 1;
+        margin-bottom: 0.875rem;
+      }
+      .em-title {
+        font-family: var(--font-head);
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 0.25rem;
+        letter-spacing: -0.01em;
+      }
+      .em-earn {
+        font-family: var(--font-head);
+        font-size: 1.4rem;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        margin-bottom: 0.625rem;
+        line-height: 1;
+      }
+      .emc-1 .em-earn {
+        color: #93c5fd;
+      }
+      .emc-2 .em-earn {
+        color: #6ee7b7;
+      }
+      .emc-3 .em-earn {
+        color: #c4b5fd;
+      }
+      .emc-4 .em-earn {
+        color: #fde68a;
+      }
+      .emc-5 .em-earn {
+        color: #fca5a5;
+      }
+      .em-desc {
+        font-size: 0.84rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.8;
+      }
+      .em-note {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        margin-top: 0.875rem;
+        font-family: var(--font-mono);
+        font-size: 0.58rem;
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .em-note i {
+        font-size: 0.5rem;
+      }
+      .earn-total {
+        position: relative;
+        z-index: 2;
+        margin-top: 2.5rem;
+        padding: 2.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+        justify-content: space-between;
+      }
+      .et-left .et-lbl {
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        color: rgba(255, 255, 255, 0.45);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 0.375rem;
+      }
+      .et-left .et-val {
+        font-family: var(--font-head);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -0.04em;
+      }
+      .et-left .et-sub {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 0.375rem;
+      }
+      .et-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .et-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 99px;
+        padding: 0.35rem 0.875rem;
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
+      }
+      .et-pill i {
+        font-size: 0.55rem;
+        color: #60a5fa;
+      }
+
+      /* COUNTRIES */
+      .countries-section {
+        background: var(--bg2);
+      }
+      .countries-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      @media (min-width: 480px) {
+        .countries-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (min-width: 768px) {
+        .countries-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (min-width: 1100px) {
+        .countries-grid {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+      .country-card {
+        border-radius: 18px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.28s var(--ease);
+        position: relative;
+        height: 190px;
+        border: 2px solid transparent;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      }
+      .country-card:hover,
+      .country-card.active {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25);
+        border-color: var(--blue2);
+      }
+      .cc-img {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.5s var(--ease);
+      }
+      .country-card:hover .cc-img,
+      .country-card.active .cc-img {
+        transform: scale(1.07);
+      }
+      .cc-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(6, 9, 26, 0.9) 0%,
+          rgba(6, 9, 26, 0.3) 60%,
+          rgba(6, 9, 26, 0.08) 100%
+        );
+        transition: background 0.25s;
+      }
+      .country-card.active .cc-overlay {
+        background: linear-gradient(
+          to top,
+          rgba(29, 78, 216, 0.8) 0%,
+          rgba(29, 78, 216, 0.2) 60%,
+          transparent 100%
+        );
+      }
+      .cc-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1rem;
+      }
+      .cc-flag {
+        font-size: 1.75rem;
+        margin-bottom: 0.2rem;
+        line-height: 1;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+      }
+      .cc-name {
+        font-family: var(--font-head);
+        font-size: 0.9rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 0.1rem;
+      }
+      .cc-fee {
+        font-family: var(--font-mono);
+        font-size: 0.58rem;
+        color: rgba(255, 255, 255, 0.75);
+      }
+      .cc-badge {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.6rem;
+        transition: all 0.2s;
+        backdrop-filter: blur(6px);
+      }
+      .country-card:hover .cc-badge,
+      .country-card.active .cc-badge {
+        background: var(--blue);
+        color: #fff;
+        border-color: transparent;
+      }
+
+      /* TOPICS */
+      .topics-section {
+        background: var(--white);
+        position: relative;
+      }
+      .topics-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(99, 102, 241, 0.18),
+          transparent
+        );
+      }
+      .topics-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      @media (min-width: 600px) {
+        .topics-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .topics-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .topic-card {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 1.75rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.28s var(--ease);
+      }
+      .topic-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s var(--ease);
+      }
+      .tc-blue::after {
+        background: linear-gradient(90deg, var(--blue), var(--blue2));
+      }
+      .tc-green::after {
+        background: linear-gradient(90deg, var(--em), var(--em2));
+      }
+      .tc-indigo::after {
+        background: linear-gradient(90deg, #4f46e5, #818cf8);
+      }
+      .tc-violet::after {
+        background: linear-gradient(90deg, #7c3aed, #a78bfa);
+      }
+      .topic-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--sh-md);
+        background: var(--white);
+      }
+      .topic-card:hover::after {
+        transform: scaleX(1);
+      }
+      .topic-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        margin-bottom: 1.1rem;
+        border: 1px solid var(--border);
+      }
+      .tc-blue .topic-icon {
+        background: rgba(29, 78, 216, 0.07);
+        border-color: var(--blue-border);
+      }
+      .tc-green .topic-icon {
+        background: rgba(5, 150, 105, 0.07);
+        border-color: rgba(5, 150, 105, 0.2);
+      }
+      .tc-indigo .topic-icon {
+        background: rgba(79, 70, 229, 0.07);
+        border-color: rgba(79, 70, 229, 0.2);
+      }
+      .tc-violet .topic-icon {
+        background: rgba(124, 58, 237, 0.07);
+        border-color: rgba(124, 58, 237, 0.2);
+      }
+      .topic-cat {
+        font-family: var(--font-mono);
+        font-size: 0.55rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+      }
+      .tc-blue .topic-cat {
+        color: var(--blue2);
+      }
+      .tc-green .topic-cat {
+        color: var(--em);
+      }
+      .tc-indigo .topic-cat {
+        color: #4f46e5;
+      }
+      .tc-violet .topic-cat {
+        color: #7c3aed;
+      }
+      .topic-title {
+        font-family: var(--font-head);
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+      }
+      .topic-desc {
+        font-size: 0.84rem;
+        color: var(--muted);
+        line-height: 1.8;
+        margin-bottom: 0.875rem;
+      }
+      .topic-earn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        font-weight: 600;
+        padding: 0.25rem 0.7rem;
+        border-radius: 99px;
+        border: 1px solid;
+      }
+      .tc-blue .topic-earn {
+        background: rgba(29, 78, 216, 0.07);
+        border-color: var(--blue-border);
+        color: var(--blue2);
+      }
+      .tc-green .topic-earn {
+        background: rgba(5, 150, 105, 0.07);
+        border-color: rgba(5, 150, 105, 0.2);
+        color: var(--em);
+      }
+      .tc-indigo .topic-earn {
+        background: rgba(79, 70, 229, 0.07);
+        border-color: rgba(79, 70, 229, 0.2);
+        color: #4f46e5;
+      }
+      .tc-violet .topic-earn {
+        background: rgba(124, 58, 237, 0.07);
+        border-color: rgba(124, 58, 237, 0.2);
+        color: #7c3aed;
+      }
+
+      /* LIVE REQUESTS */
+      .requests-section {
+        background: var(--bg);
+      }
+      .requests-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+      @media (min-width: 900px) {
+        .requests-wrap {
+          grid-template-columns: 1.1fr 0.9fr;
+        }
+      }
+      .req-pills {
+        display: flex;
+        gap: 0.625rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.25rem;
+      }
+      .req-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        background: #fff;
+        border: 1.5px solid var(--border);
+        border-radius: 99px;
+        padding: 0.28rem 0.875rem;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--ink2);
+      }
+      .req-card {
+        background: #fff;
+        border: 1.5px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 0.75rem;
+        transition: all 0.2s;
+      }
+      .req-card:hover {
+        border-color: var(--blue-border);
+        box-shadow: 0 8px 24px rgba(29, 78, 216, 0.1);
+      }
+      .req-card-head {
+        display: flex;
+        align-items: center;
+        gap: 0.875rem;
+        padding: 0.875rem 1rem 0.75rem;
+      }
+      .req-av {
+        position: relative;
+        flex-shrink: 0;
+      }
+      .req-av img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--border);
+        background: var(--bg);
+      }
+      .req-flag {
+        position: absolute;
+        bottom: -2px;
+        right: -3px;
+        font-size: 0.75rem;
+        line-height: 1;
+      }
+      .req-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .req-name {
+        font-weight: 700;
+        font-size: 0.875rem;
+        color: var(--ink);
+      }
+      .req-meta {
+        font-size: 0.68rem;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        flex-wrap: wrap;
+        margin-top: 0.1rem;
+      }
+      .req-earn {
+        flex-shrink: 0;
+        font-family: var(--font-head);
+        font-size: 0.82rem;
+        font-weight: 900;
+        color: var(--em2);
+        background: rgba(5, 150, 105, 0.1);
+        padding: 0.2rem 0.6rem;
+        border-radius: 99px;
+        border: 1px solid rgba(16, 185, 129, 0.2);
+      }
+      .req-topic-row {
+        padding: 0.5rem 1rem 0.625rem;
+        border-top: 1.5px solid var(--bg2);
+      }
+      .req-topic-bubble {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 4px 12px 12px 12px;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.82rem;
+        color: var(--ink2);
+        line-height: 1.5;
+        display: inline-block;
+      }
+      .req-actions {
+        padding: 0.625rem 1rem;
+        display: flex;
+        gap: 0.5rem;
+        border-top: 1.5px solid var(--border);
+        align-items: center;
+        background: var(--bg2);
+      }
+      .req-time {
+        margin-left: auto;
+        font-size: 0.62rem;
+        color: var(--faint);
+        font-family: var(--font-mono);
+      }
+      .btn-xsm {
+        padding: 0.32rem 0.875rem;
+        font-size: 0.76rem;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        transition: all 0.2s;
+      }
+      .btn-accept {
+        background: linear-gradient(135deg, #065f46, var(--em));
+        color: #fff;
+      }
+      .btn-skip {
+        background: var(--bg2);
+        color: var(--muted);
+        border: 1px solid var(--border);
+      }
+      .btn-skip:hover {
+        border-color: var(--border2);
+        color: var(--ink);
+      }
+      .req-panel {
+        background: #fff;
+        border: 1.5px solid var(--border);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--sh);
+      }
+      .req-panel-img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+      }
+      .req-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-bottom: 1.5px solid var(--border);
+      }
+      .rps {
+        padding: 0.875rem 0.75rem;
+        text-align: center;
+        border-right: 1.5px solid var(--border);
+      }
+      .rps:last-child {
+        border-right: none;
+      }
+      .rps-val {
+        font-family: var(--font-head);
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: var(--ink);
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+      .rps.green .rps-val {
+        color: var(--em2);
+      }
+      .rps.blue .rps-val {
+        color: var(--blue2);
+      }
+      .rps-lbl {
+        font-family: var(--font-mono);
+        font-size: 0.55rem;
+        color: var(--faint);
+        margin-top: 0.15rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .req-panel-cta {
+        padding: 1rem 1.25rem;
+      }
+      .req-panel-cta a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.9rem;
+        border-radius: 99px;
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        color: #fff;
+        font-size: 0.875rem;
+        font-weight: 700;
+        transition: all 0.2s;
+        box-shadow: var(--sh-b);
+      }
+      .req-panel-cta a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 28px rgba(37, 99, 235, 0.45);
+      }
+
+      /* TESTIMONIALS */
+      .proof-section {
+        background: #080d1e;
+        position: relative;
+        overflow: hidden;
+      }
+      .proof-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 60% at 30% 50%,
+            rgba(29, 78, 216, 0.1) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 40% 40% at 80% 50%,
+            rgba(5, 150, 105, 0.06) 0%,
+            transparent 55%
+          );
+        pointer-events: none;
+      }
+      .tgrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        position: relative;
+        z-index: 2;
+      }
+      @media (min-width: 640px) {
+        .tgrid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .tgrid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 639px) {
+        .tgrid {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          gap: 1rem;
+          padding-bottom: 1rem;
+          grid-template-columns: unset;
+        }
+        .tgrid::-webkit-scrollbar {
+          display: none;
+        }
+        .tcard {
+          flex: 0 0 calc(90vw - 2rem);
+          max-width: 360px;
+          scroll-snap-align: center;
+        }
+        .testimonials-dots {
+          display: flex !important;
+        }
+      }
+      .testimonials-dots {
+        display: none;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 1.25rem;
+      }
+      .t-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: all 0.35s var(--spring);
+        cursor: pointer;
+        border: none;
+        padding: 0;
+      }
+      .t-dot.active {
+        background: #60a5fa;
+        width: 22px;
+        border-radius: 4px;
+      }
+      .tcard {
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 20px;
+        padding: 1.625rem;
+        transition: all 0.28s var(--ease);
+        position: relative;
+        overflow: hidden;
+      }
+      .tcard::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--blue), var(--blue2));
+        border-radius: 20px 20px 0 0;
+        transform: scaleX(0);
+        transition: transform 0.35s;
+      }
+      .tcard::after {
+        content: "\201C";
+        position: absolute;
+        top: -14px;
+        right: 18px;
+        font-family: Georgia, serif;
+        font-size: 7rem;
+        color: rgba(96, 165, 250, 0.08);
+        pointer-events: none;
+        line-height: 1;
+        user-select: none;
+      }
+      .tcard:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+        border-color: rgba(96, 165, 250, 0.28);
+      }
+      .tcard:hover::before {
+        transform: scaleX(1);
+      }
+      .tcard-stars {
+        color: #fbbf24;
+        font-size: 0.78rem;
+        margin-bottom: 0.875rem;
+        letter-spacing: 0.06em;
+      }
+      .tcard-quote {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.85;
+        margin-bottom: 1.25rem;
+        font-style: italic;
+      }
+      .tcard-footer {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .tcard-av {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        flex-shrink: 0;
+      }
+      .tcard-name {
+        font-weight: 700;
+        font-size: 0.84rem;
+        color: #fff;
+      }
+      .tcard-loc {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .tcard-earn {
+        font-family: var(--font-mono);
+        font-size: 0.62rem;
+        color: #6ee7b7;
+        margin-top: 0.12rem;
+        font-weight: 600;
+      }
+
+      /* TRUST */
+      .trust-section {
+        background: var(--white);
+        position: relative;
+      }
+      .trust-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(99, 102, 241, 0.18),
+          transparent
+        );
+      }
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      @media (min-width: 1024px) {
+        .trust-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .trust-card {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 1.75rem;
+        text-align: center;
+        transition: all 0.28s var(--ease);
+        position: relative;
+        overflow: hidden;
+      }
+      .trust-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--sh-md);
+        border-color: var(--blue-border);
+      }
+      .trust-icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.35rem;
+        margin: 0 auto 0.875rem;
+        border: 1px solid var(--border);
+      }
+      .ti-blue {
+        background: rgba(29, 78, 216, 0.07);
+        border-color: var(--blue-border);
+      }
+      .ti-green {
+        background: rgba(5, 150, 105, 0.07);
+        border-color: rgba(5, 150, 105, 0.18);
+      }
+      .ti-indigo {
+        background: rgba(79, 70, 229, 0.07);
+        border-color: rgba(79, 70, 229, 0.18);
+      }
+      .ti-violet {
+        background: rgba(124, 58, 237, 0.07);
+        border-color: rgba(124, 58, 237, 0.18);
+      }
+      .trust-num {
+        font-family: var(--font-head);
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--ink);
+        letter-spacing: -0.03em;
+        margin-bottom: 0.2rem;
+      }
+      .trust-title {
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--ink);
+        margin-bottom: 0.375rem;
+      }
+      .trust-desc {
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      /* FAQ */
+      .faq-section {
+        background: var(--bg2);
+      }
+      .faq-wrap {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .faq-item {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 0.625rem;
+        transition: all 0.2s;
+        background: var(--white);
+      }
+      .faq-item:hover {
+        border-color: var(--blue-border);
+      }
+      .faq-q {
+        padding: 1.1rem 1.25rem;
+        font-weight: 700;
+        font-size: 0.875rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--ink);
+        transition: color 0.2s;
+        user-select: none;
+        letter-spacing: -0.005em;
+      }
+      .faq-q i {
+        color: var(--muted);
+        transition: transform 0.25s;
+        flex-shrink: 0;
+        margin-left: 1rem;
+      }
+      .faq-q.open {
+        color: var(--blue2);
+      }
+      .faq-q.open i {
+        transform: rotate(180deg);
+        color: var(--blue2);
+      }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        font-size: 0.875rem;
+        line-height: 1.85;
+        color: var(--muted);
+        transition:
+          max-height 0.3s,
+          padding 0.3s;
+      }
+      .faq-a.open {
+        max-height: 320px;
+        padding: 1rem 1.25rem;
+        border-top: 1px solid var(--border);
+      }
+
+      /* LEGAL */
+      .legal-section {
+        background: var(--bg2);
+      }
+      .legal-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      @media (min-width: 640px) {
+        .legal-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .legal-card {
+        background: #fff;
+        border: 1.5px solid var(--border);
+        border-radius: 20px;
+        padding: 2rem 1.75rem 1.75rem;
+        cursor: pointer;
+        transition: all 0.28s var(--ease);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .legal-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+      }
+      .legal-card.terms::before {
+        background: linear-gradient(90deg, var(--blue), var(--blue2));
+      }
+      .legal-card.priv::before {
+        background: linear-gradient(90deg, var(--em), var(--em2));
+      }
+      .legal-card.disc::before {
+        background: linear-gradient(90deg, #d97706, #fbbf24);
+      }
+      .legal-card:hover {
+        border-color: var(--blue-border);
+        transform: translateY(-6px);
+        box-shadow: var(--sh-md);
+      }
+      .legal-icon-w {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        margin-bottom: 1.1rem;
+        border: 1.5px solid var(--border);
+        flex-shrink: 0;
+      }
+      .legal-card.terms .legal-icon-w {
+        background: var(--blue-soft);
+        border-color: var(--blue-border);
+      }
+      .legal-card.priv .legal-icon-w {
+        background: var(--em-soft);
+        border-color: rgba(5, 150, 105, 0.25);
+      }
+      .legal-card.disc .legal-icon-w {
+        background: #fffbeb;
+        border-color: #fed7aa;
+      }
+      .legal-card-title {
+        font-family: var(--font-head);
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+      }
+      .legal-card-desc {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.8;
+        flex: 1;
+        margin-bottom: 1rem;
+      }
+      .legal-bullets {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        margin-bottom: 1.25rem;
+      }
+      .legal-bullets li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.76rem;
+        color: var(--ink2);
+      }
+      .legal-bullets li i {
+        font-size: 0.5rem;
+        flex-shrink: 0;
+      }
+      .legal-card.terms .legal-bullets li i {
+        color: var(--blue2);
+      }
+      .legal-card.priv .legal-bullets li i {
+        color: var(--em2);
+      }
+      .legal-card.disc .legal-bullets li i {
+        color: #d97706;
+      }
+      .legal-read-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.76rem;
+        font-weight: 700;
+        padding: 0.4rem 0.875rem;
+        border-radius: 99px;
+        border: 1.5px solid;
+        transition: all 0.2s;
+      }
+      .legal-card.terms .legal-read-btn {
+        color: var(--blue2);
+        border-color: var(--blue-border);
+        background: var(--blue-soft);
+      }
+      .legal-card.priv .legal-read-btn {
+        color: var(--em);
+        border-color: rgba(5, 150, 105, 0.28);
+        background: var(--em-soft);
+      }
+      .legal-card.disc .legal-read-btn {
+        color: #d97706;
+        border-color: #fbbf24;
+        background: #fffbeb;
+      }
+      .legal-card:hover .legal-read-btn {
+        transform: translateX(4px);
+      }
+      .legal-trust-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+        justify-content: center;
+        margin-top: 3rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid var(--border);
+      }
+      .ltr-item {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--muted);
+      }
+      .ltr-item i {
+        color: var(--blue2);
+        font-size: 0.68rem;
+      }
+
+      /* CTA SECTION */
+      .cta-section {
+        background: linear-gradient(
+          135deg,
+          #06091a 0%,
+          #0a0f22 50%,
+          #06091a 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 80% at 80% 50%,
+            rgba(29, 78, 216, 0.12) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 40% 60% at 20% 50%,
+            rgba(29, 78, 216, 0.06) 0%,
+            transparent 55%
+          );
+        pointer-events: none;
+      }
+      .cta-inner {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 5rem 1.25rem;
+      }
+      .cta-inner h2 {
+        font-family: var(--font-head);
+        font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-bottom: 0.875rem;
+      }
+      .cta-inner h2 em {
+        font-style: italic;
+        background: linear-gradient(120deg, #60a5fa, #34d399);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .cta-inner p {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.65);
+        max-width: 460px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.85;
+      }
+      .cta-btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      /* MODALS */
+      .offer-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(6, 9, 26, 0.65);
+        backdrop-filter: blur(16px);
+        z-index: 10002;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .offer-overlay.show {
+        display: flex;
+      }
+      .offer-box {
+        background: #fff;
+        border-radius: 24px;
+        width: 100%;
+        max-width: 500px;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: var(--sh-xl);
+        position: relative;
+        animation: fadeUp 0.32s var(--spring);
+      }
+      .offer-head {
+        background: var(--bg2);
+        border-radius: 24px 24px 0 0;
+        padding: 2.25rem 2rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .offer-head::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(29, 78, 216, 0.06) 1.5px,
+          transparent 1.5px
+        );
+        background-size: 24px 24px;
+      }
+      .offer-head-bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.08;
+      }
+      .offer-head-content {
+        position: relative;
+        z-index: 2;
+      }
+      .offer-ribbon {
+        position: absolute;
+        top: 1.5rem;
+        left: -3.25rem;
+        background: var(--blue);
+        color: #fff;
+        font-family: var(--font-body);
+        font-size: 0.68rem;
+        font-weight: 800;
+        padding: 0.32rem 3.75rem;
+        transform: rotate(-40deg);
+        letter-spacing: 0.06em;
+        z-index: 3;
+      }
+      .offer-flag-big {
+        font-size: 2.75rem;
+        display: block;
+        margin-bottom: 0.5rem;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+      }
+      .offer-cname {
+        font-family: var(--font-head);
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--ink);
+        display: block;
+        letter-spacing: -0.03em;
+      }
+      .offer-csub {
+        font-size: 0.8rem;
+        color: var(--muted);
+        display: block;
+        margin-top: 0.25rem;
+        font-family: var(--font-mono);
+      }
+      .offer-close-btn {
+        position: absolute;
+        top: 0.875rem;
+        right: 0.875rem;
+        z-index: 10;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.07);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--muted);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        transition: all 0.2s;
+      }
+      .offer-close-btn:hover {
+        background: var(--red);
+        color: #fff;
+        border-color: var(--red);
+      }
+      .offer-body {
+        padding: 1.75rem;
+      }
+      @media (max-width: 540px) {
+        .offer-body {
+          padding: 1.25rem;
+        }
+      }
+      .offer-urgency-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: rgba(220, 38, 38, 0.07);
+        color: var(--red);
+        border: 1px solid rgba(220, 38, 38, 0.18);
+        padding: 0.38rem 0.875rem;
+        border-radius: 99px;
+        font-size: 0.76rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+      .offer-pricing-box {
+        text-align: center;
+        padding: 1.5rem;
+        background: var(--blue-soft);
+        border-radius: 14px;
+        border: 1px solid var(--blue-border);
+        margin-bottom: 1.25rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .offer-pricing-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--blue), var(--blue2));
+      }
+      .op-was {
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        color: var(--faint);
+        text-decoration: line-through;
+        letter-spacing: 0.04em;
+      }
+      .op-now {
+        font-family: var(--font-head);
+        font-size: 3.25rem;
+        font-weight: 900;
+        color: var(--blue);
+        letter-spacing: -0.04em;
+        line-height: 1;
+        margin: 0.2rem 0;
+      }
+      .op-lbl {
+        font-family: var(--font-mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--blue2);
+      }
+      .op-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--red), #f87171);
+        color: #fff;
+        padding: 0.2rem 0.875rem;
+        border-radius: 99px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        margin: 0.5rem 0;
+      }
+      .op-save {
+        font-size: 0.84rem;
+        font-weight: 700;
+        color: var(--blue);
+        margin-top: 0.25rem;
+      }
+      .offer-timer {
+        background: rgba(29, 78, 216, 0.06);
+        border: 1px solid rgba(29, 78, 216, 0.18);
+        border-radius: 8px;
+        padding: 0.7rem 1rem;
+        text-align: center;
+        font-size: 0.78rem;
+        color: var(--blue2);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+      }
+      .offer-feats {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+        margin-bottom: 1.5rem;
+      }
+      .offer-feats li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.84rem;
+        color: var(--ink2);
+      }
+      .offer-feats li i {
+        color: var(--em);
+        font-size: 0.72rem;
+        flex-shrink: 0;
+      }
+      .offer-foot {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1rem;
+        border-top: 1px solid var(--border);
+        background: var(--bg);
+        border-radius: 0 0 24px 24px;
+      }
+      .of-trust {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.68rem;
+        font-weight: 600;
+        color: var(--faint);
+      }
+      .of-trust i {
+        color: var(--blue2);
+      }
+      .chat-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(6, 9, 26, 0.45);
+        backdrop-filter: blur(12px);
+        z-index: 10001;
+        display: none;
+        align-items: flex-end;
+        justify-content: center;
+      }
+      @media (min-width: 600px) {
+        .chat-overlay {
+          align-items: center;
+          padding: 1rem;
+        }
+      }
+      .chat-overlay.show {
+        display: flex;
+      }
+      .chat-modal {
+        background: #fff;
+        border-radius: 24px 24px 0 0;
+        width: 100%;
+        max-width: 460px;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--sh-xl);
+        animation: slideUp 0.35s var(--spring);
+      }
+      @media (min-width: 600px) {
+        .chat-modal {
+          border-radius: 24px;
+          height: 540px;
+          animation: fadeUp 0.3s var(--spring);
+        }
+      }
+      .cm-head {
+        display: flex;
+        align-items: center;
+        gap: 0.875rem;
+        padding: 0.875rem 1.25rem;
+        border-bottom: 1px solid var(--border);
+        flex-shrink: 0;
+        background: var(--bg);
+      }
+      .cm-head-av {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--blue-border);
+        flex-shrink: 0;
+      }
+      .cm-head-name {
+        font-weight: 700;
+        font-size: 0.875rem;
+        color: var(--ink);
+      }
+      .cm-head-status {
+        font-size: 0.68rem;
+        color: var(--em2);
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .cm-head-close {
+        margin-left: auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--muted);
+        transition: all 0.2s;
+      }
+      .cm-head-close:hover {
+        background: var(--red);
+        color: #fff;
+        border-color: var(--red);
+      }
+      .cm-msgs {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+        background: #fff;
+      }
+      .cm-msg {
+        max-width: 78%;
+        animation: bubbleIn 0.3s var(--ease);
+      }
+      .cm-bubble {
+        padding: 0.6rem 0.875rem;
+        border-radius: 12px;
+        font-size: 0.84rem;
+        line-height: 1.55;
+      }
+      .cm-time {
+        font-size: 0.6rem;
+        color: var(--faint);
+        margin-top: 0.2rem;
+      }
+      .cm-msg.them {
+        align-self: flex-start;
+      }
+      .cm-msg.them .cm-bubble {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        color: var(--ink3);
+        border-bottom-left-radius: 4px;
+      }
+      .cm-msg.me {
+        align-self: flex-end;
+        text-align: right;
+      }
+      .cm-msg.me .cm-bubble {
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        color: #fff;
+        border-bottom-right-radius: 4px;
+      }
+      .cm-msg.me .cm-time {
+        text-align: right;
+      }
+      .typing-dots {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.5rem 0.875rem;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        border-bottom-left-radius: 4px;
+        width: fit-content;
+      }
+      .typing-dots span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--faint);
+        animation: typing 1.2s infinite;
+      }
+      .typing-dots span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .typing-dots span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      .cm-earn-notice {
+        text-align: center;
+        background: var(--em-soft);
+        border: 1px solid rgba(5, 150, 105, 0.15);
+        border-radius: 99px;
+        padding: 0.28rem 1rem;
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        color: var(--em);
+        margin: 0 1rem 0.625rem;
+        flex-shrink: 0;
+      }
+      .cm-input-area {
+        padding: 0.875rem 1rem;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        flex-shrink: 0;
+        background: #fff;
+      }
+      .cm-inp {
+        flex: 1;
+        padding: 0.6rem 1rem;
+        border: 1.5px solid var(--border);
+        border-radius: 99px;
+        font-family: var(--font-body);
+        font-size: 0.84rem;
+        color: var(--ink);
+        background: var(--bg);
+        outline: none;
+        transition: all 0.2s;
+      }
+      .cm-inp:focus {
+        border-color: var(--blue2);
+        background: #fff;
+      }
+      .cm-inp::placeholder {
+        color: var(--faint);
+      }
+      .cm-send {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        border: none;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 0.84rem;
+        transition: all 0.2s;
+        flex-shrink: 0;
+      }
+      .cm-send:hover {
+        transform: scale(1.08);
+      }
+      .lm-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(6, 9, 26, 0.55);
+        backdrop-filter: blur(16px);
+        z-index: 10003;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .lm-overlay.show {
+        display: flex;
+      }
+      .lm-box {
+        background: #fff;
+        border: 1.5px solid var(--border);
+        border-radius: 24px;
+        width: 100%;
+        max-width: 580px;
+        max-height: 88vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--sh-xl);
+        animation: fadeUp 0.32s var(--spring);
+        overflow: hidden;
+      }
+      .lm-head {
+        padding: 1.5rem 1.75rem;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: flex-start;
+        gap: 0.875rem;
+        flex-shrink: 0;
+        background: var(--bg);
+      }
+      .lm-head-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        flex-shrink: 0;
+        border: 1px solid var(--border);
+        background: var(--bg2);
+      }
+      .lm-head-title {
+        font-family: var(--font-head);
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+      }
+      .lm-head-sub {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        color: var(--faint);
+        margin-top: 0.15rem;
+      }
+      .lm-close {
+        margin-left: auto;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--muted);
+        font-size: 0.8rem;
+        transition: all 0.2s;
+        flex-shrink: 0;
+      }
+      .lm-close:hover {
+        background: var(--red);
+        color: #fff;
+        border-color: var(--red);
+      }
+      .lm-tabs {
+        display: flex;
+        border-bottom: 1px solid var(--border);
+        flex-shrink: 0;
+        background: #fff;
+        overflow-x: auto;
+      }
+      .lm-tab {
+        padding: 0.7rem 1.1rem;
+        font-size: 0.76rem;
+        font-weight: 700;
+        color: var(--muted);
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+      .lm-tab.active {
+        color: var(--blue2);
+        border-bottom-color: var(--blue2);
+        background: var(--blue-soft);
+      }
+      .lm-body {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem 1.75rem;
+        font-size: 0.84rem;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+      .lm-body h3 {
+        font-family: var(--font-head);
+        font-size: 0.9rem;
+        font-weight: 800;
+        color: var(--ink);
+        margin: 1.5rem 0 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .lm-body h3::before {
+        content: "";
+        width: 3px;
+        height: 14px;
+        background: linear-gradient(180deg, var(--blue), var(--blue2));
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+      .lm-body h3:first-child {
+        margin-top: 0;
+      }
+      .lm-body p {
+        margin-bottom: 0.875rem;
+      }
+      .lm-body ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        margin-bottom: 1rem;
+      }
+      .lm-body ul li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.625rem;
+        padding: 0.5rem 0.75rem;
+        background: var(--bg);
+        border-radius: 8px;
+        border-left: 2px solid var(--blue-border);
+      }
+      .lm-body ul li::before {
+        content: "→";
+        color: var(--blue2);
+        flex-shrink: 0;
+        font-size: 0.75rem;
+        margin-top: 0.05rem;
+        font-weight: 700;
+      }
+      .lm-foot {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid var(--border);
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+      }
+      .lm-foot-note {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--faint);
+      }
+      .lm-foot a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.5rem 1.1rem;
+        border-radius: 99px;
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        color: #fff;
+        font-size: 0.76rem;
+        font-weight: 700;
+        transition: all 0.2s;
+        box-shadow: var(--sh-b);
+      }
+      .lm-foot a:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 24px rgba(37, 99, 235, 0.4);
+      }
+
+      /* FOOTER */
+      .footer {
+        background: var(--ink);
+        color: rgba(255, 255, 255, 0.4);
+        padding: 2.5rem 0;
+      }
+      .footer-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: center;
+      }
+      .footer-logo-name {
+        font-family: var(--font-head);
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: 0.01em;
+      }
+      .footer-logo-name em {
+        color: var(--blue2);
+        font-style: normal;
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.1rem;
+      }
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.25rem 0.7rem;
+        border-radius: 99px;
+        transition: all 0.2s;
+      }
+      .footer-links a:hover {
+        color: var(--blue2);
+        background: rgba(29, 78, 216, 0.08);
+      }
+      .footer-copy {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .footer-copy a {
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      /* STICKY / FLOAT */
+      .sticky-cta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 998;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid var(--border);
+        padding: 0.7rem 0;
+        transform: translateY(100%);
+        transition: transform 0.3s;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.07);
+      }
+      .sticky-cta.show {
+        transform: translateY(0);
+      }
+      .sticky-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .sticky-txt {
+        font-weight: 700;
+        font-size: 0.84rem;
+        color: var(--ink);
+      }
+      .sticky-sub {
+        font-size: 0.66rem;
+        color: var(--muted);
+      }
+      .float-wa {
+        position: fixed;
+        bottom: 76px;
+        right: 1.25rem;
+        z-index: 997;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        color: #fff;
+        text-decoration: none;
+        animation:
+          float 3.5s ease-in-out infinite,
+          wa-ring 2.5s infinite;
+        transition: all 0.2s;
+      }
+      .float-wa:hover {
+        background: #1fa352;
+        animation: none;
+        transform: scale(1.1);
+      }
+      .notif {
+        position: fixed;
+        top: 78px;
+        right: 16px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 0.7rem 1rem;
+        z-index: 10000;
+        transform: translateX(140%);
+        transition: transform 0.3s;
+        max-width: 280px;
+        font-size: 0.84rem;
+        box-shadow: var(--sh-md);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .notif.show {
+        transform: translateX(0);
+      }
+      .notif i {
+        color: var(--em);
+      }
+      .sp-container {
+        position: fixed;
+        bottom: 86px;
+        left: 16px;
+        z-index: 996;
+        pointer-events: none;
+        max-width: 260px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .sp-item {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-left: 2.5px solid var(--blue);
+        border-radius: 8px;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.72rem;
+        color: var(--ink2);
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        opacity: 0;
+        transform: translateX(-20px);
+        animation: spIn 0.4s forwards;
+        box-shadow: var(--sh);
+      }
+      .sp-item i {
+        color: var(--blue2);
+        flex-shrink: 0;
+      }
+      .cookie-bar {
+        position: fixed;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%) translateY(220%);
+        width: calc(100% - 2rem);
+        max-width: 380px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 1.25rem;
+        z-index: 1005;
+        transition: transform 0.4s;
+        box-shadow: var(--sh-lg);
+      }
+      .cookie-bar.show {
+        transform: translateX(-50%) translateY(0);
+      }
+      .cookie-txt {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.65;
+        margin-bottom: 0.875rem;
+        text-align: center;
+      }
+      .cookie-btns {
+        display: flex;
+        gap: 0.625rem;
+      }
+      .cookie-btn {
+        flex: 1;
+        padding: 0.5rem;
+        border-radius: 99px;
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: 0.78rem;
+        cursor: pointer;
+        border: none;
+        transition: opacity 0.2s;
+      }
+      .cookie-btn:hover {
+        opacity: 0.85;
+      }
+      .cookie-btn.accept {
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        color: #fff;
+      }
+      .cookie-btn.decline {
+        background: var(--bg2);
+        color: var(--muted);
+        border: 1px solid var(--border);
+      }
+
+      /* ══════════════════════════════════════════
+         DARK MODE — improved clarity
+      ══════════════════════════════════════════ */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ink: #f0f4ff;
+          --ink2: #dde4f8;
+          --ink3: #c4ccdf;
+          --muted: #a0acc8;
+          --faint: #6b7a9e;
+          --border: #1e2540;
+          --border2: #2a3158;
+          --bg: #0b0f20;
+          --bg2: #0f1428;
+          --white: #111827;
+          --blue-soft: #0d1a3a;
+          --blue-border: #1e3a6e;
+          --em-soft: #071a14;
+        }
+        body {
+          background: var(--bg);
+        }
+        .how-section {
+          background: #0b0f20;
+        }
+        .topics-section {
+          background: #0d1120;
+        }
+        .trust-section {
+          background: #0b0f20;
+        }
+        .faq-section {
+          background: #0d1120;
+        }
+        .legal-section {
+          background: #0b0f20;
+        }
+        .countries-section {
+          background: #0d1120;
+        }
+        .requests-section {
+          background: #0b0f20;
+        }
+        .step-card {
+          background: #0f1428;
+          border-color: #1e2540;
+        }
+        .step-card h3 {
+          color: #f0f4ff;
+        }
+        .step-card p {
+          color: #a0acc8;
+        }
+        .topic-card {
+          background: #0f1428;
+          border-color: #1e2540;
+        }
+        .topic-card:hover {
+          background: #131b30;
+        }
+        .topic-title {
+          color: #f0f4ff;
+        }
+        .topic-desc {
+          color: #a0acc8;
+        }
+        .trust-card {
+          background: #0f1428;
+          border-color: #1e2540;
+        }
+        .trust-num,
+        .trust-title {
+          color: #f0f4ff;
+        }
+        .trust-desc {
+          color: #a0acc8;
+        }
+        .faq-item {
+          background: #0f1428;
+          border-color: #1e2540;
+        }
+        .faq-q {
+          color: #f0f4ff;
+        }
+        .faq-a {
+          color: #a0acc8;
+        }
+        .faq-a.open {
+          border-top-color: #1e2540;
+        }
+        .legal-card {
+          background: #0f1428;
+          border-color: #1e2540;
+        }
+        .legal-card-title {
+          color: #f0f4ff;
+        }
+        .legal-card-desc {
+          color: #a0acc8;
+        }
+        .legal-bullets li {
+          color: #dde4f8;
+        }
+        .req-card {
+          background: #0f1428;
+          border-color: #1e2540;
+        }
+        .req-name {
+          color: #f0f4ff;
+        }
+        .req-meta {
+          color: #a0acc8;
+        }
+        .req-topic-bubble {
+          background: #0b0f20;
+          border-color: #1e2540;
+          color: #dde4f8;
+        }
+        .req-topic-row {
+          border-top-color: #1e2540;
+        }
+        .req-actions {
+          background: #0d1120;
+          border-top-color: #1e2540;
+        }
+        .req-pill {
+          background: #0f1428;
+          border-color: #1e2540;
+          color: #dde4f8;
+        }
+        .offer-box {
+          background: #0f1428;
+        }
+        .offer-head {
+          background: #0b0f20;
+        }
+        .offer-foot {
+          background: #0d1120;
+          border-top-color: #1e2540;
+        }
+        .offer-pricing-box {
+          background: #0d1a3a;
+          border-color: #1e3a6e;
+        }
+        .offer-feats li {
+          color: #dde4f8;
+        }
+        .offer-cname {
+          color: #f0f4ff;
+        }
+        .offer-timer {
+          background: rgba(29, 78, 216, 0.1);
+        }
+        .offer-urgency-pill {
+          background: rgba(220, 38, 38, 0.12);
+        }
+        .cm-msgs {
+          background: #0b0f20;
+        }
+        .cm-msg.them .cm-bubble {
+          background: #0f1428;
+          border-color: #1e2540;
+          color: #dde4f8;
+        }
+        .cm-head {
+          background: #0f1428;
+          border-bottom-color: #1e2540;
+        }
+        .cm-head-name {
+          color: #f0f4ff;
+        }
+        .cm-inp {
+          background: #0b0f20;
+          border-color: #1e2540;
+          color: #f0f4ff;
+        }
+        .cm-inp::placeholder {
+          color: #6b7a9e;
+        }
+        .cm-earn-notice {
+          background: #071a14;
+        }
+        .cm-input-area {
+          background: #0f1428;
+          border-top-color: #1e2540;
+        }
+        .cm-head-close {
+          background: #131b30;
+          border-color: #1e2540;
+          color: #a0acc8;
+        }
+        .lm-box {
+          background: #0f1428;
+        }
+        .lm-head {
+          background: #0b0f20;
+          border-bottom-color: #1e2540;
+        }
+        .lm-head-title {
+          color: #f0f4ff;
+        }
+        .lm-head-sub {
+          color: #6b7a9e;
+        }
+        .lm-head-icon {
+          background: #131b30;
+          border-color: #1e2540;
+        }
+        .lm-tabs {
+          background: #0f1428;
+          border-bottom-color: #1e2540;
+        }
+        .lm-tab {
+          color: #a0acc8;
+        }
+        .lm-tab.active {
+          background: rgba(29, 78, 216, 0.15);
+          color: #60a5fa;
+          border-bottom-color: #60a5fa;
+        }
+        .lm-body {
+          color: #a0acc8;
+        }
+        .lm-body h3 {
+          color: #f0f4ff;
+        }
+        .lm-body ul li {
+          background: #0b0f20;
+          border-color: #1e3a6e;
+          color: #dde4f8;
+        }
+        .lm-foot {
+          background: #0b0f20;
+          border-top-color: #1e2540;
+        }
+        .lm-foot-note {
+          color: #6b7a9e;
+        }
+        .lm-close {
+          background: #131b30;
+          border-color: #1e2540;
+          color: #a0acc8;
+        }
+        .req-panel {
+          background: #0f1428;
+          border-color: #1e2540;
+        }
+        .rps-val {
+          color: #f0f4ff;
+        }
+        .rps {
+          border-right-color: #1e2540;
+        }
+        .req-stats-grid {
+          border-bottom-color: #1e2540;
+        }
+        .nav {
+          background: rgba(11, 15, 32, 0.97);
+          border-bottom-color: #1e2540;
+        }
+        .mobile-nav {
+          background: #0b0f20;
+          border-top-color: #1e2540;
+        }
+        .mobile-nav a {
+          color: #dde4f8;
+        }
+        .mobile-nav-div {
+          background: #1e2540;
+        }
+        .cookie-bar {
+          background: #0f1428;
+          border-color: #1e2540;
+        }
+        .cookie-txt {
+          color: #a0acc8;
+        }
+        .cookie-btn.decline {
+          background: #131b30;
+          color: #a0acc8;
+          border-color: #1e2540;
+        }
+        .notif {
+          background: #0f1428;
+          border-color: #1e2540;
+          color: #dde4f8;
+        }
+        .ti-blue {
+          background: rgba(29, 78, 216, 0.14) !important;
+          border-color: rgba(29, 78, 216, 0.25) !important;
+        }
+        .ti-green {
+          background: rgba(5, 150, 105, 0.12) !important;
+          border-color: rgba(5, 150, 105, 0.22) !important;
+        }
+        .ti-indigo {
+          background: rgba(79, 70, 229, 0.12) !important;
+          border-color: rgba(79, 70, 229, 0.22) !important;
+        }
+        .ti-violet {
+          background: rgba(124, 58, 237, 0.12) !important;
+          border-color: rgba(124, 58, 237, 0.22) !important;
+        }
+        .tc-blue .topic-icon {
+          background: rgba(29, 78, 216, 0.14);
+          border-color: rgba(29, 78, 216, 0.3);
+        }
+        .tc-green .topic-icon {
+          background: rgba(5, 150, 105, 0.12);
+          border-color: rgba(5, 150, 105, 0.25);
+        }
+        .tc-indigo .topic-icon {
+          background: rgba(79, 70, 229, 0.12);
+          border-color: rgba(79, 70, 229, 0.25);
+        }
+        .tc-violet .topic-icon {
+          background: rgba(124, 58, 237, 0.12);
+          border-color: rgba(124, 58, 237, 0.25);
+        }
+        .legal-card.terms .legal-icon-w {
+          background: #0d1a3a;
+          border-color: #1e3a6e;
+        }
+        .legal-card.priv .legal-icon-w {
+          background: #071a14;
+          border-color: rgba(5, 150, 105, 0.22);
+        }
+        .legal-card.disc .legal-icon-w {
+          background: #1a1200;
+          border-color: rgba(251, 191, 36, 0.22);
+        }
+        .legal-trust-row {
+          border-top-color: #1e2540;
+        }
+        .ltr-item {
+          color: #a0acc8;
+        }
+        .footer {
+          background: #040608;
+        }
+        .sticky-cta {
+          background: rgba(11, 15, 32, 0.97);
+          border-top-color: #1e2540;
+        }
+        .sticky-txt {
+          color: #f0f4ff;
+        }
+        .sticky-sub {
+          color: #6b7a9e;
+        }
+        .logo-name {
+          color: #f0f4ff;
+        }
+        .sec-title {
+          color: var(--ink);
+        }
+        .sec-sub {
+          color: var(--muted);
+        }
+        .eyebrow {
+          color: #60a5fa;
+        }
+        .eyebrow::before {
+          background: #60a5fa;
+        }
+        .offer-close-btn {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 255, 255, 0.14);
+          color: #a0acc8;
+        }
+        .hcw-header {
+          background: rgba(255, 255, 255, 0.03);
+        }
+        .hls-label {
+          color: rgba(255, 255, 255, 0.55);
+        }
+        /* req-pill icon */
+        .sp-item {
+          background: #0f1428;
+          border-color: #1e2540;
+          border-left-color: var(--blue);
+          color: #dde4f8;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="prog"></div>
+    <div class="loading-ovl" id="loadingOvl">
+      <div class="loading-spin"></div>
+      <p class="loading-txt" id="loadingTxt">Setting up your account…</p>
+    </div>
+
+    <!-- OFFER MODAL -->
+    <div class="offer-overlay" id="offerOverlay">
+      <div class="offer-box">
+        <button class="offer-close-btn" id="offerClose">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="offer-head" id="offerHead">
+          <div class="offer-ribbon" id="offerRibbon">23% OFF</div>
+          <div class="offer-head-bg" id="offerHeadBg"></div>
+          <div class="offer-head-content">
+            <span class="offer-flag-big" id="offerFlag">🇰🇪</span>
+            <span class="offer-cname" id="offerCname">Kenya</span>
+            <span class="offer-csub">Mulastar Registration Offer</span>
+          </div>
+        </div>
+        <div class="offer-body">
+          <div style="text-align: center">
+            <span class="offer-urgency-pill"
+              ><i class="fas fa-fire"></i
+              ><span id="offerBadge">VERIFY TO CONTINUE</span></span
+            >
+          </div>
+          <div class="offer-pricing-box">
+            <div class="op-was" id="opOld">KSH 650</div>
+            <div class="op-now" id="opNew">KSH 500</div>
+            <div class="op-lbl">Your Special Price Today</div>
+            <span class="op-badge" id="opDiscount">Save 23% Today</span>
+            <div class="op-save" id="opSave">
+              ✅ You save KSH 150 — limited time!
+            </div>
+          </div>
+          <div class="offer-timer">
+            <i class="fas fa-clock"></i
+            ><span id="offerUrgency">⏳ Offer expires soon — grab it now!</span>
+          </div>
+          <ul class="offer-feats">
+            <li>
+              <i class="fas fa-check-circle"></i> One-time fee — no monthly
+              subscriptions ever
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> 5 ways to earn — hourly, per
+              message, per session &amp; more
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Earn $3–$15 per hour of
+              conversation
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Daily withdrawals via
+              <span id="offerPayment">M-Pesa</span>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Tips &amp; bonuses from
+              satisfied clients
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> 24/7 WhatsApp support from day
+              one
+            </li>
+          </ul>
+          <a
+            href="javascript:void(0)"
+            class="btn btn-blue btn-lg btn-pulse register-link"
+            style="width: 100%; justify-content: center"
+            data-url="https://mulastar.com/register.php?ref=Sydney"
+            id="offerCta"
+          >
+            <i class="fas fa-bolt"></i
+            ><span id="offerCtaTxt">Register Now — KSH 500</span>
+          </a>
+        </div>
+        <div class="offer-foot">
+          <span class="of-trust"><i class="fas fa-lock"></i> Secure</span>
+          <span class="of-trust"
+            ><i class="fas fa-bolt"></i> Instant Access</span
+          >
+          <span class="of-trust"
+            ><i class="fas fa-shield-alt"></i> Supported</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAT MODAL -->
+    <div class="chat-overlay" id="chatOverlay" role="dialog" aria-modal="true">
+      <div class="chat-modal">
+        <div class="cm-head">
+          <img
+            id="cmAv"
+            src="https://i.pravatar.cc/88?img=12"
+            alt=""
+            class="cm-head-av"
+            width="42"
+            height="42"
+            loading="lazy"
+          />
+          <div>
+            <div class="cm-head-name" id="cmName">
+              James, 52 · United Kingdom 🇬🇧
+            </div>
+            <div class="cm-head-status">
+              <span class="blink-dot" style="width: 6px; height: 6px"></span
+              >Online now
+            </div>
+          </div>
+          <button class="cm-head-close" id="cmClose">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="cm-msgs" id="cmMsgs" role="log" aria-live="polite"></div>
+        <div class="cm-earn-notice">💰 Complete this chat to earn $3–$15</div>
+        <div class="cm-input-area">
+          <input
+            type="text"
+            class="cm-inp"
+            id="cmInp"
+            placeholder="Type a friendly reply…"
+            maxlength="200"
+            autocomplete="off"
+          />
+          <button class="cm-send" id="cmSend">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEGAL MODAL -->
+    <div class="lm-overlay" id="lmOverlay" role="dialog" aria-modal="true">
+      <div class="lm-box">
+        <div class="lm-head">
+          <div class="lm-head-icon" id="lmIcon">📄</div>
+          <div>
+            <div class="lm-head-title" id="lmTitle">Terms of Service</div>
+            <div class="lm-head-sub">Last updated: January 2025 · Mulastar</div>
+          </div>
+          <button class="lm-close" id="lmClose">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="lm-tabs">
+          <div
+            class="lm-tab active"
+            data-doc="terms"
+            onclick="switchLegal('terms')"
+          >
+            <i class="fas fa-file-lines"></i> Terms
+          </div>
+          <div
+            class="lm-tab"
+            data-doc="privacy"
+            onclick="switchLegal('privacy')"
+          >
+            <i class="fas fa-shield-halved"></i> Privacy
+          </div>
+          <div
+            class="lm-tab"
+            data-doc="disclaimer"
+            onclick="switchLegal('disclaimer')"
+          >
+            <i class="fas fa-triangle-exclamation"></i> Disclaimer
+          </div>
+        </div>
+        <div class="lm-body" id="lmBody"></div>
+        <div class="lm-foot">
+          <span class="lm-foot-note"
+            ><i class="fas fa-lock"></i>&nbsp;Secure &amp; Confidential</span
+          >
+          <a
+            href="https://wa.me/254745656143?text=I+have+a+question+about+Mulastar+policies"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-whatsapp"></i> Ask a Question</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="notif" id="notif" role="status" aria-live="polite">
+      <i class="fas fa-check-circle"></i><span id="notifTxt"></span>
+    </div>
+    <div class="sp-container" id="spContainer" aria-hidden="true"></div>
+    <div class="cookie-bar" id="cookieBar" role="dialog">
+      <p class="cookie-txt">
+        We use cookies to improve your experience. By continuing, you agree to
+        our policy.
+      </p>
+      <div class="cookie-btns">
+        <button class="cookie-btn decline" id="cookieDecline">Decline</button>
+        <button class="cookie-btn accept" id="cookieAccept">Accept All</button>
+      </div>
+    </div>
+
+    <a
+      href="https://wa.me/254745656143?text=Hello,%20I%20am%20interested%20in%20joining%20Mulastar.%20Please%20guide%20me%20on%20how%20to%20start."
+      class="float-wa"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
+
+    <div class="sticky-cta" id="stickyCta">
+      <div class="container">
+        <div class="sticky-inner">
+          <div>
+            <p class="sticky-txt">Start earning up to $800/month</p>
+            <p class="sticky-sub">5 ways to earn · 15,000+ chatters</p>
+          </div>
+          <a
+            href="javascript:void(0)"
+            class="btn btn-blue register-link"
+            data-url="https://mulastar.com/register.php?ref=Sydney"
+            >Start Earning <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <header class="nav" id="mainNav">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="/" class="logo">
+            <div class="logo-mark">
+              <img
+                src="https://res.cloudinary.com/dovhxt8ye/image/upload/v1771489674/dollar_yeahke.jpg"
+                alt="Mulastar"
+                width="38"
+                height="38"
+              />
+            </div>
+            <span class="logo-name">MULA<em>STAR</em></span>
+          </a>
+          <nav class="nav-links">
+            <a href="#how-it-works">How It Works</a>
+            <a href="#earn-methods">5 Ways to Earn</a>
+            <a href="#topics">Chat Topics</a>
+            <a href="#countries">Countries</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Support</a>
+          </nav>
+          <div class="nav-actions">
+            <a
+              href="javascript:void(0)"
+              class="nav-cta register-link"
+              data-url="https://mulastar.com/register.php?ref=Sydney"
+              ><i class="fas fa-user-plus"></i> Register Now</a
+            >
+            <button
+              class="hamburger"
+              id="hamburger"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+            >
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#earn-methods">5 Ways to Earn</a>
+      <a href="#topics">Chat Topics</a>
+      <a href="#countries">Countries</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Support</a>
+      <div class="mobile-nav-div"></div>
+      <a
+        href="javascript:void(0)"
+        class="mobile-nav-cta register-link"
+        data-url="https://mulastar.com/register.php?ref=Sydney"
+        ><i class="fas fa-rocket"></i> Start Earning Now</a
+      >
+    </nav>
+
+    <!-- TICKER — directly below nav, zero gap -->
+    <div class="ticker-bar">
+      <div style="overflow: hidden">
+        <div class="ticker-track" id="tickerTrack"></div>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-noise"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+      <div class="hero-particles" id="heroParticles"></div>
+      <div class="container">
+        <div class="hero-left">
+          <div class="hero-live-pill">
+            <span class="blink-dot"></span
+            ><span id="liveCount">1,247</span> chatters earning right now
+          </div>
+          <h1 class="hero-h1">
+            <span class="line-top">Turn Conversations</span>
+            <span class="line-mid">Into Real Cash</span>
+            <span class="line-bot"
+              >Chat with lonely foreigners · Earn $3–$15/hr · Get paid daily to
+              your phone</span
+            >
+          </h1>
+          <div class="hero-earn-row">
+            <div class="her-amount">$3–$15</div>
+            <div class="her-sep"></div>
+            <div>
+              <div class="her-label">Earned per hour · 5 ways to earn</div>
+              <div class="her-methods">
+                <span class="her-method"
+                  ><i class="fas fa-check"></i> Per Hour</span
+                >
+                <span class="her-method"
+                  ><i class="fas fa-check"></i> Per Message</span
+                >
+                <span class="her-method"
+                  ><i class="fas fa-check"></i> Per Session</span
+                >
+                <span class="her-method"
+                  ><i class="fas fa-check"></i> Tips</span
+                >
+                <span class="her-method"
+                  ><i class="fas fa-check"></i> Daily Rewards</span
+                >
+              </div>
+            </div>
+          </div>
+          <p class="hero-desc">
+            Connect with lonely people from
+            <strong>UK, USA, Canada, Qatar &amp; 150+ countries</strong> in
+            simple friendly text conversations. Your phone is your office.
+          </p>
+          <div class="hero-live-strip">
+            <div class="hls-item">
+              <div class="hls-val" id="todayEarned">$14,820</div>
+              <div class="hls-label">Paid today</div>
+            </div>
+            <div class="hls-div"></div>
+            <div class="hls-item">
+              <div class="hls-val green">15,200+</div>
+              <div class="hls-label">Active earners</div>
+            </div>
+            <div class="hls-div"></div>
+            <div class="hls-item">
+              <div class="hls-val">$2.5M+</div>
+              <div class="hls-label">Total paid out</div>
+            </div>
+            <div class="hls-div"></div>
+            <div class="hls-item">
+              <div class="hls-val green">4.8★</div>
+              <div class="hls-label">Earner rating</div>
+            </div>
+          </div>
+          <div class="hero-flags">
+            <span class="hero-flag-chip">🇬🇧 UK <em>$15/hr</em></span>
+            <span class="hero-flag-chip">🇺🇸 USA <em>$15/hr</em></span>
+            <span class="hero-flag-chip">🇨🇦 Canada <em>$15/hr</em></span>
+            <span class="hero-flag-chip">🇶🇦 Qatar <em>$15/hr</em></span>
+            <span class="hero-flag-chip">🇦🇺 Australia <em>$12/hr</em></span>
+            <span class="hero-flag-chip">🇲🇾 Malaysia <em>$12/hr</em></span>
+            <span class="hero-flag-chip">🌍 +150 more <em>$3–$15</em></span>
+          </div>
+          <div class="hero-ctas">
+            <a
+              href="javascript:void(0)"
+              class="btn btn-blue btn-xl register-link"
+              data-url="https://mulastar.com/register.php?ref=Sydney"
+              ><i class="fas fa-rocket"></i> Start Earning Now</a
+            >
+            <button class="btn btn-ghost btn-xl" id="openChatDemo">
+              <i class="fas fa-comment-dots"></i> Try a Live Chat
+            </button>
+          </div>
+          <div class="hero-proof">
+            <span class="hp-item"
+              ><i class="fas fa-shield-alt"></i> Secure &amp; Trusted</span
+            >
+            <span class="hp-item"
+              ><i class="fas fa-bolt"></i> Daily Withdrawals</span
+            >
+            <span class="hp-item"
+              ><i class="fas fa-layer-group"></i> 5 Ways to Earn</span
+            >
+            <span class="hp-item"
+              ><i class="fas fa-globe"></i> 150+ Countries</span
+            >
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-chat-wrap">
+            <div class="hcw-header">
+              <img
+                src="https://i.pravatar.cc/84?img=12"
+                alt="James"
+                class="hcw-av"
+                loading="lazy"
+              />
+              <div>
+                <div class="hcw-name">James, 52 · London 🇬🇧</div>
+                <div class="hcw-status">
+                  <span
+                    class="blink-dot"
+                    style="width: 5px; height: 5px"
+                  ></span>
+                  Online now
+                </div>
+              </div>
+              <div class="hcw-earn-badge">$5/hr + tips</div>
+            </div>
+            <div class="hcw-msgs">
+              <div class="hcw-msg">
+                <img
+                  src="https://i.pravatar.cc/64?img=12"
+                  class="hcw-msg-av"
+                  loading="lazy"
+                />
+                <div class="hcw-bubble">
+                  Hi! I'm James from London 🇬🇧 I'd love to learn about your
+                  culture and daily life. Are you free to chat?
+                </div>
+              </div>
+              <div class="hcw-msg right">
+                <div class="hcw-bubble me">
+                  Hi James! Of course 😊 I'm happy to share anything. What would
+                  you like to know?
+                </div>
+                <img
+                  src="https://i.pravatar.cc/64?img=44"
+                  class="hcw-msg-av"
+                  loading="lazy"
+                />
+              </div>
+              <div class="hcw-msg">
+                <img
+                  src="https://i.pravatar.cc/64?img=12"
+                  class="hcw-msg-av"
+                  loading="lazy"
+                />
+                <div class="hcw-bubble">
+                  Amazing! Tell me about local food where you live 🍛
+                </div>
+              </div>
+            </div>
+            <div class="hcw-stats">
+              <div class="hcw-stat">
+                <div class="hcw-stat-val" data-count="15200">0</div>
+                <div class="hcw-stat-lbl">Earners</div>
+              </div>
+              <div class="hcw-stat">
+                <div class="hcw-stat-val green">$15</div>
+                <div class="hcw-stat-lbl">Max/hr</div>
+              </div>
+              <div class="hcw-stat">
+                <div class="hcw-stat-val blue">$800</div>
+                <div class="hcw-stat-lbl">Max/month</div>
+              </div>
+              <div class="hcw-stat">
+                <div class="hcw-stat-val">5×</div>
+                <div class="hcw-stat-lbl">Earn ways</div>
+              </div>
+            </div>
+            <div class="hcw-calc">
+              <div class="hcw-calc-label">💰 Estimate your earnings</div>
+              <div class="calc-row">
+                <span class="calc-lbl">Chats / day</span
+                ><input
+                  type="range"
+                  class="calc-slider"
+                  id="calcChats"
+                  min="1"
+                  max="20"
+                  value="5"
+                  style="--val: 22%"
+                /><span class="calc-val" id="calcChatsVal">5</span>
+              </div>
+              <div class="calc-row">
+                <span class="calc-lbl">Rate / hr</span
+                ><input
+                  type="range"
+                  class="calc-slider"
+                  id="calcRate"
+                  min="3"
+                  max="15"
+                  value="5"
+                  style="--val: 17%"
+                /><span class="calc-val" id="calcRateVal">$5</span>
+              </div>
+              <div class="calc-result-row">
+                <div class="calc-result-lbl">Monthly estimate (30 days)</div>
+                <div class="calc-result-amount" id="calcResult">$750</div>
+              </div>
+            </div>
+            <div class="hcw-cta">
+              <a
+                href="javascript:void(0)"
+                class="register-link"
+                data-url="https://mulastar.com/register.php?ref=Sydney"
+                ><i class="fas fa-comment-dots"></i> Register your account —
+                Start chatting</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section section" id="how-it-works">
+      <div class="container">
+        <div class="shead center fade-up">
+          <div class="eyebrow">Simple Process</div>
+          <h2 class="sec-title">Start earning in <em>3 easy steps</em></h2>
+          <p class="sec-sub">
+            From zero to your first conversation in under an hour. Just your
+            smartphone and internet connection.
+          </p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card fade-up">
+            <div class="step-num">1</div>
+            <h3>Register Your Account</h3>
+            <p>
+              Create your profile with a one-time small activation fee. Unlocks
+              permanent access to thousands of people worldwide who want to chat
+              and pay you.
+            </p>
+            <div class="step-tag">
+              <i class="fas fa-check"></i> One-time only
+            </div>
+          </div>
+          <div class="step-card fade-up" style="transition-delay: 0.1s">
+            <div class="step-num">2</div>
+            <h3>Accept Chat Requests</h3>
+            <p>
+              Clients from UK, USA, Canada &amp; more send you requests. Accept
+              a request, have a genuine friendly conversation — earn per hour,
+              per message, or per session.
+            </p>
+            <div class="step-tag">
+              <i class="fas fa-comment"></i> 5 ways to earn
+            </div>
+          </div>
+          <div class="step-card fade-up" style="transition-delay: 0.2s">
+            <div class="step-num">3</div>
+            <h3>Earn &amp; Withdraw Daily</h3>
+            <p>
+              Earnings stack up fast with multiple earning methods. Withdraw
+              daily to M-Pesa, PayPal, MTN Money, Airtel Money — zero fees.
+            </p>
+            <div class="step-tag">
+              <i class="fas fa-dollar-sign"></i> Zero withdrawal fees
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 WAYS TO EARN -->
+    <section class="earn-section section" id="earn-methods">
+      <div class="container">
+        <div class="shead center earn-hd fade-up">
+          <div class="eyebrow">Maximize Your Income</div>
+          <h2 class="sec-title">5 Different Ways to <em>Earn Big</em></h2>
+          <p class="sec-sub">
+            Most platforms pay you one way. Mulastar pays you five. Stack your
+            earnings and maximise every minute you spend chatting.
+          </p>
+        </div>
+        <div class="earn-range fade-up">
+          <div class="er-item">
+            <div class="er-val">$3</div>
+            <div class="er-lbl">Minimum / hr</div>
+          </div>
+          <div class="er-sep"></div>
+          <div class="er-item">
+            <div class="er-val accent">$15</div>
+            <div class="er-lbl">Maximum / hr</div>
+          </div>
+          <div class="er-sep"></div>
+          <div class="er-item">
+            <div class="er-val">$800</div>
+            <div class="er-lbl">Max / month</div>
+          </div>
+          <div class="er-sep"></div>
+          <div class="er-item">
+            <div class="er-val accent">5×</div>
+            <div class="er-lbl">Earning methods</div>
+          </div>
+          <div class="er-sep"></div>
+          <div class="er-item">
+            <div class="er-val">$2.5M+</div>
+            <div class="er-lbl">Total paid out</div>
+          </div>
+        </div>
+        <div class="earn-grid">
+          <div class="em-card emc-1 fade-up">
+            <div class="em-badge"><i class="fas fa-clock"></i> Method 1</div>
+            <span class="em-icon">⏰</span>
+            <h3 class="em-title">Chat Per Hour</h3>
+            <div class="em-earn">$3–$15 / hr</div>
+            <p class="em-desc">
+              Earn $3–$15 for every hour of conversation. Your time is
+              automatically tracked and paid — the more you chat, the more you
+              earn.
+            </p>
+            <div class="em-note">
+              <i class="fas fa-bolt"></i> Auto-tracked · No manual logging
+            </div>
+          </div>
+          <div class="em-card emc-2 fade-up" style="transition-delay: 0.07s">
+            <div class="em-badge"><i class="fas fa-comment"></i> Method 2</div>
+            <span class="em-icon">💬</span>
+            <h3 class="em-title">Chat Per Message</h3>
+            <div class="em-earn">Every reply pays</div>
+            <p class="em-desc">
+              Get paid for each message you send. Great for quick conversations.
+              Every reply adds to your balance instantly — perfect if you type
+              fast!
+            </p>
+            <div class="em-note">
+              <i class="fas fa-bolt"></i> Instant balance update
+            </div>
+          </div>
+          <div class="em-card emc-3 fade-up" style="transition-delay: 0.14s">
+            <div class="em-badge">
+              <i class="fas fa-layer-group"></i> Method 3
+            </div>
+            <span class="em-icon">📋</span>
+            <h3 class="em-title">Chat Per Session</h3>
+            <div class="em-earn">$3–$5 per session</div>
+            <p class="em-desc">
+              Complete full chat sessions and get instant payment. Sessions
+              range from 15 minutes to several hours. A clean lump sum on
+              completion.
+            </p>
+            <div class="em-note">
+              <i class="fas fa-bolt"></i> Instant payout on completion
+            </div>
+          </div>
+          <div class="em-card emc-4 fade-up" style="transition-delay: 0.21s">
+            <div class="em-badge"><i class="fas fa-gift"></i> Method 4</div>
+            <span class="em-icon">🎁</span>
+            <h3 class="em-title">Tips &amp; Bonuses</h3>
+            <div class="em-earn">Unlimited upside</div>
+            <p class="em-desc">
+              Receive extra cash from satisfied clients. Generous clients tip
+              for great conversations. There's no cap — the better you chat, the
+              more you receive.
+            </p>
+            <div class="em-note">
+              <i class="fas fa-bolt"></i> Added on top of base earnings
+            </div>
+          </div>
+          <div
+            class="em-card emc-5 emc-wide fade-up"
+            style="transition-delay: 0.28s"
+          >
+            <div class="em-badge"><i class="fas fa-fire"></i> Method 5</div>
+            <span class="em-icon">🏆</span>
+            <h3 class="em-title">Daily Rewards</h3>
+            <div class="em-earn">Consistency pays extra</div>
+            <p class="em-desc">
+              Earn bonuses just for staying active. The more days in a row you
+              chat, the bigger your daily rewards become. Stack these on top of
+              all other earnings — the ultimate multiplier.
+            </p>
+            <div class="em-note">
+              <i class="fas fa-bolt"></i> Streak bonuses · Activity rewards
+            </div>
+          </div>
+        </div>
+        <div class="earn-total fade-up">
+          <div class="et-left">
+            <div class="et-lbl">Combine all 5 methods — monthly potential</div>
+            <div class="et-val">Up to $800+/month</div>
+            <div class="et-sub">
+              Hourly + per message + session fee + tips + daily bonuses =
+              maximum income
+            </div>
+          </div>
+          <div>
+            <div class="et-pills">
+              <span class="et-pill"><i class="fas fa-clock"></i> Per Hour</span
+              ><span class="et-pill"
+                ><i class="fas fa-comment"></i> Per Message</span
+              ><span class="et-pill"
+                ><i class="fas fa-layer-group"></i> Per Session</span
+              ><span class="et-pill"><i class="fas fa-gift"></i> Tips</span
+              ><span class="et-pill"
+                ><i class="fas fa-fire"></i> Daily Rewards</span
+              >
+            </div>
+            <a
+              href="javascript:void(0)"
+              class="btn btn-blue btn-lg register-link"
+              style="margin-top: 1.25rem"
+              data-url="https://mulastar.com/register.php?ref=Sydney"
+              ><i class="fas fa-rocket"></i> Start Earning All 5 Ways</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTRIES -->
+    <section class="countries-section section" id="countries">
+      <div class="container">
+        <div class="shead center fade-up">
+          <div class="eyebrow">Your Country</div>
+          <h2 class="sec-title">
+            Select your <em>country</em> to see your offer
+          </h2>
+          <p class="sec-sub">
+            Each country has a localized registration fee with exclusive
+            discounts. Tap your country to reveal your personalized deal.
+          </p>
+        </div>
+        <div class="countries-grid" id="countriesGrid"></div>
+        <p
+          style="
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--muted);
+            margin-top: 1.25rem;
+          "
+        >
+          👆 Tap your country to reveal your exclusive offer
+        </p>
+      </div>
+    </section>
+
+    <!-- TOPICS -->
+    <section class="topics-section section" id="topics">
+      <div class="container">
+        <div class="shead center fade-up">
+          <div class="eyebrow">Chat Topics</div>
+          <h2 class="sec-title">What do you <em>chat about?</em></h2>
+          <p class="sec-sub">
+            All chats are friendly, safe, and simple. No adult content — just
+            real conversations that people around the world pay for.
+          </p>
+        </div>
+        <div class="topics-grid">
+          <div class="topic-card tc-blue fade-up">
+            <div class="topic-icon">
+              <i class="fas fa-globe" style="color: var(--blue2)"></i>
+            </div>
+            <div class="topic-cat">Most Popular</div>
+            <h3 class="topic-title">Culture &amp; Daily Life</h3>
+            <p class="topic-desc">
+              Share your local traditions, food, festivals, and how everyday
+              life looks where you live. Foreigners love authentic, personal
+              perspectives.
+            </p>
+            <span class="topic-earn"
+              ><i class="fas fa-coins"></i> $3/hr base + tips</span
+            >
+          </div>
+          <div
+            class="topic-card tc-green fade-up"
+            style="transition-delay: 0.08s"
+          >
+            <div class="topic-icon">
+              <i class="fas fa-heart" style="color: var(--em)"></i>
+            </div>
+            <div class="topic-cat">Highest Demand</div>
+            <h3 class="topic-title">Friendly Companionship</h3>
+            <p class="topic-desc">
+              Many clients are lonely and simply want someone to talk to.
+              Listen, be kind, share a laugh — this is the most in-demand and
+              highest-paying chat type.
+            </p>
+            <span class="topic-earn"
+              ><i class="fas fa-coins"></i> up to $15/hr + tips</span
+            >
+          </div>
+          <div
+            class="topic-card tc-indigo fade-up"
+            style="transition-delay: 0.16s"
+          >
+            <div class="topic-icon">
+              <i class="fas fa-plane" style="color: #4f46e5"></i>
+            </div>
+            <div class="topic-cat">Travel Talk</div>
+            <h3 class="topic-title">Travel &amp; Places</h3>
+            <p class="topic-desc">
+              Discuss hidden gems in your country, travel tips, local must-sees,
+              and recommendations. Great for people planning visits or dreaming
+              of adventure.
+            </p>
+            <span class="topic-earn"
+              ><i class="fas fa-coins"></i> $4–$12/hr</span
+            >
+          </div>
+          <div
+            class="topic-card tc-violet fade-up"
+            style="transition-delay: 0.24s"
+          >
+            <div class="topic-icon">
+              <i class="fas fa-lightbulb" style="color: #7c3aed"></i>
+            </div>
+            <div class="topic-cat">Advice &amp; Opinions</div>
+            <h3 class="topic-title">Life Advice &amp; Stories</h3>
+            <p class="topic-desc">
+              People from across the world want your perspective on
+              relationships, work, and life choices. Share honestly and get paid
+              for your wisdom.
+            </p>
+            <span class="topic-earn"
+              ><i class="fas fa-coins"></i> up to $15/hr</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE REQUESTS -->
+    <section class="requests-section section">
+      <div class="container">
+        <div class="shead fade-up">
+          <div class="eyebrow">Live Requests</div>
+          <h2 class="sec-title">Real people, <em>ready to chat</em></h2>
+          <p class="sec-sub">
+            New requests arrive regularly. Every accepted and completed
+            conversation adds to your balance — hourly, per message, and per
+            session.
+          </p>
+        </div>
+        <div class="requests-wrap">
+          <div>
+            <div class="req-pills">
+              <span class="req-pill"
+                ><i
+                  class="fas fa-circle"
+                  style="font-size: 0.45rem; color: var(--em2)"
+                ></i
+                ><span id="activeReqCount">847</span> live</span
+              ><span class="req-pill"
+                ><i class="fas fa-bolt" style="color: var(--blue2)"></i> ~2 min
+                wait</span
+              ><span class="req-pill"
+                ><i class="fas fa-dollar-sign" style="color: var(--blue2)"></i>
+                $3–$15/hr</span
+              >
+            </div>
+            <div id="requestsList"></div>
+          </div>
+          <div class="req-panel fade-up">
+            <img
+              src="https://res.cloudinary.com/dovhxt8ye/image/upload/v1771731493/Earn_money_chatting_with_lonely_people_oatsrl.png"
+              alt="Earning by chatting"
+              class="req-panel-img"
+              loading="lazy"
+            />
+            <div class="req-stats-grid">
+              <div class="rps">
+                <div class="rps-val" data-count="15200">0</div>
+                <div class="rps-lbl">Earners</div>
+              </div>
+              <div class="rps green">
+                <div class="rps-val">$3–$15</div>
+                <div class="rps-lbl">Per Hour</div>
+              </div>
+              <div class="rps blue">
+                <div class="rps-val">$800</div>
+                <div class="rps-lbl">Max/Month</div>
+              </div>
+              <div class="rps">
+                <div class="rps-val">5×</div>
+                <div class="rps-lbl">Earn Ways</div>
+              </div>
+            </div>
+            <div class="req-panel-cta">
+              <a
+                href="javascript:void(0)"
+                class="register-link"
+                data-url="https://mulastar.com/register.php?ref=Sydney"
+                ><i class="fas fa-rocket"></i> Start Accepting Requests</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="proof-section section" id="testimonials">
+      <div class="container">
+        <div class="shead center fade-up">
+          <div class="eyebrow" style="color: rgba(255, 255, 255, 0.5)">
+            Real Results
+          </div>
+          <h2 class="sec-title" style="color: #fff">
+            Real chatters, <em>real earnings</em>
+          </h2>
+          <p class="sec-sub" style="color: rgba(255, 255, 255, 0.65)">
+            Over 15,000 people across Africa and beyond are earning real money
+            from their phones every day.
+          </p>
+        </div>
+        <div class="tgrid">
+          <div class="tcard fade-up">
+            <div class="tcard-stars">★★★★★</div>
+            <p class="tcard-quote">
+              "I was skeptical at first, but after my first chat I earned KSH
+              300 instantly. Now I do 5–10 chats a day around my regular job and
+              stack up hourly pay plus tips. It's genuinely changed my life."
+            </p>
+            <div class="tcard-footer">
+              <img
+                src="https://i.pravatar.cc/88?img=5"
+                alt=""
+                class="tcard-av"
+                loading="lazy"
+              />
+              <div>
+                <div class="tcard-name">Sarah M.</div>
+                <div class="tcard-loc">Nairobi, Kenya</div>
+                <div class="tcard-earn">💰 ~KSH 80,000/month</div>
+              </div>
+            </div>
+          </div>
+          <div class="tcard fade-up" style="transition-delay: 0.1s">
+            <div class="tcard-stars">★★★★★</div>
+            <p class="tcard-quote">
+              "The daily rewards streak bonus is my favourite. I've not missed a
+              day in 3 months and the bonuses keep growing. On top of my hourly
+              rate and tips I earned UGX 21M last month."
+            </p>
+            <div class="tcard-footer">
+              <img
+                src="https://i.pravatar.cc/88?img=32"
+                alt=""
+                class="tcard-av"
+                loading="lazy"
+              />
+              <div>
+                <div class="tcard-name">David K.</div>
+                <div class="tcard-loc">Kampala, Uganda</div>
+                <div class="tcard-earn">💰 ~UGX 21,000,000/month</div>
+              </div>
+            </div>
+          </div>
+          <div class="tcard fade-up" style="transition-delay: 0.2s">
+            <div class="tcard-stars">★★★★★</div>
+            <p class="tcard-quote">
+              "As a stay-at-home mum I needed flexibility. Getting paid per
+              message means even quick 5-minute chats add up fast. Support
+              always responds within minutes."
+            </p>
+            <div class="tcard-footer">
+              <img
+                src="https://i.pravatar.cc/88?img=47"
+                alt=""
+                class="tcard-av"
+                loading="lazy"
+              />
+              <div>
+                <div class="tcard-name">Grace A.</div>
+                <div class="tcard-loc">Lagos, Nigeria</div>
+                <div class="tcard-earn">💰 ~₦400,000/month</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials-dots" id="tDots">
+          <button
+            class="t-dot active"
+            data-idx="0"
+            aria-label="Slide 1"
+          ></button>
+          <button class="t-dot" data-idx="1" aria-label="Slide 2"></button>
+          <button class="t-dot" data-idx="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust-section section">
+      <div class="container">
+        <div class="shead center fade-up">
+          <div class="eyebrow">Why Trust Us</div>
+          <h2 class="sec-title">Built for <em>earners</em> like you</h2>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-card fade-up">
+            <div class="trust-icon ti-blue">
+              <i class="fas fa-lock" style="color: var(--blue2)"></i>
+            </div>
+            <div class="trust-num">256-bit</div>
+            <div class="trust-title">Secure Platform</div>
+            <p class="trust-desc">
+              SSL encryption protects all your data and transactions. Your
+              privacy is our top priority.
+            </p>
+          </div>
+          <div class="trust-card fade-up" style="transition-delay: 0.07s">
+            <div class="trust-icon ti-green">
+              <i class="fas fa-check-double" style="color: var(--em)"></i>
+            </div>
+            <div class="trust-num">$2.5M+</div>
+            <div class="trust-title">Verified Payments</div>
+            <p class="trust-desc">
+              Every payout is processed and verified. Over $2.5M paid to
+              chatters with zero payment disputes.
+            </p>
+          </div>
+          <div class="trust-card fade-up" style="transition-delay: 0.14s">
+            <div class="trust-icon ti-indigo">
+              <i class="fas fa-headset" style="color: #4f46e5"></i>
+            </div>
+            <div class="trust-num">24/7</div>
+            <div class="trust-title">Live Support</div>
+            <p class="trust-desc">
+              Our team is available around the clock via WhatsApp and email.
+              Response time: under 5 minutes.
+            </p>
+          </div>
+          <div class="trust-card fade-up" style="transition-delay: 0.21s">
+            <div class="trust-icon ti-violet">
+              <i class="fas fa-users" style="color: #7c3aed"></i>
+            </div>
+            <div class="trust-num">15,000+</div>
+            <div class="trust-title">Active Chatters</div>
+            <p class="trust-desc">
+              Join a thriving community of earners across Africa and beyond with
+              daily success stories.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section section" id="faq">
+      <div class="container">
+        <div class="shead center fade-up">
+          <div class="eyebrow">FAQ</div>
+          <h2 class="sec-title">Common <em>questions</em> answered</h2>
+          <p class="sec-sub">
+            Everything you need to know before you start chatting and earning.
+          </p>
+        </div>
+        <div class="faq-wrap" id="faqContainer"></div>
+      </div>
+    </section>
+
+    <!-- LEGAL -->
+    <section class="legal-section section" id="legal">
+      <div class="container">
+        <div class="shead center fade-up">
+          <div class="eyebrow">Transparency</div>
+          <h2 class="sec-title">Our <em>policies &amp; your rights</em></h2>
+          <p class="sec-sub">
+            We believe in complete transparency. Read our policies to fully
+            understand your rights, our obligations, and how we protect you.
+          </p>
+        </div>
+        <div class="legal-grid">
+          <div
+            class="legal-card terms fade-up"
+            onclick="openLegal('terms')"
+            tabindex="0"
+            role="button"
+          >
+            <div class="legal-icon-w">📄</div>
+            <div class="legal-card-title">Terms of Service</div>
+            <p class="legal-card-desc">
+              How the platform works, your rights as an earner, and our mutual
+              obligations as a Mulastar member.
+            </p>
+            <ul class="legal-bullets">
+              <li>
+                <i class="fas fa-circle"></i> Eligibility &amp; registration
+                requirements
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> One-time fee structure explained
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> Earner conduct &amp; community
+                rules
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> Payment terms &amp; withdrawal
+                rights
+              </li>
+            </ul>
+            <div class="legal-read-btn">
+              <i class="fas fa-file-lines"></i> Read Terms
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div
+            class="legal-card priv fade-up"
+            style="transition-delay: 0.09s"
+            onclick="openLegal('privacy')"
+            tabindex="0"
+            role="button"
+          >
+            <div class="legal-icon-w">🔐</div>
+            <div class="legal-card-title">Privacy Policy</div>
+            <p class="legal-card-desc">
+              What data we collect, how we protect it, and your full rights to
+              access, edit, or delete your information.
+            </p>
+            <ul class="legal-bullets">
+              <li><i class="fas fa-circle"></i> Data we collect &amp; why</li>
+              <li>
+                <i class="fas fa-circle"></i> We never sell your personal data
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> 256-bit SSL encryption standard
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> Your rights to access &amp;
+                deletion
+              </li>
+            </ul>
+            <div class="legal-read-btn">
+              <i class="fas fa-shield-halved"></i> Read Policy
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div
+            class="legal-card disc fade-up"
+            style="transition-delay: 0.18s"
+            onclick="openLegal('disclaimer')"
+            tabindex="0"
+            role="button"
+          >
+            <div class="legal-icon-w">⚠️</div>
+            <div class="legal-card-title">Earnings Disclaimer</div>
+            <p class="legal-card-desc">
+              Honest, realistic earning expectations, factors that influence
+              results, and full disclosure before you register.
+            </p>
+            <ul class="legal-bullets">
+              <li>
+                <i class="fas fa-circle"></i> Realistic monthly income ranges
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> Factors that affect your earnings
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> No income guarantee — full
+                disclosure
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> Registration fee risk explained
+              </li>
+            </ul>
+            <div class="legal-read-btn">
+              <i class="fas fa-triangle-exclamation"></i> Read Disclaimer
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+        <div class="legal-trust-row">
+          <span class="ltr-item"
+            ><i class="fas fa-lock"></i> SSL Encrypted</span
+          >
+          <span class="ltr-item"
+            ><i class="fas fa-building-columns"></i> Registered in Kenya</span
+          >
+          <span class="ltr-item"
+            ><i class="fas fa-envelope"></i> support@Mulastar.co.ke</span
+          >
+          <span class="ltr-item"
+            ><i class="fas fa-shield-alt"></i> GDPR Aligned</span
+          >
+          <span class="ltr-item"
+            ><i class="fas fa-file-contract"></i> No Hidden Fees</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+      <div class="container">
+        <div class="cta-inner fade-up">
+          <h2><em>Start earning today from your phone.</em></h2>
+          <p>
+            Join 15,000+ people earning real money through meaningful chat
+            conversations. Hourly + per message + per session + tips + daily
+            rewards.
+          </p>
+          <div class="cta-btns">
+            <a
+              href="javascript:void(0)"
+              class="btn btn-blue btn-xl register-link"
+              data-url="https://mulastar.com/register.php?ref=Sydney"
+              ><i class="fas fa-rocket"></i> Start Chatting Now</a
+            >
+            <a
+              href="https://wa.me/254745656143?text=Hello,%20I%20have%20a%20question%20about%20Mulastar"
+              class="btn btn-ghost btn-xl"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-whatsapp"></i> Ask on WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <a href="/" class="logo"
+            ><div class="logo-mark">
+              <img
+                src="https://res.cloudinary.com/dovhxt8ye/image/upload/v1771489674/dollar_yeahke.jpg"
+                alt="Mulastar"
+                width="38"
+                height="38"
+                loading="lazy"
+              />
+            </div>
+            <span class="footer-logo-name">MULA<em>STAR</em></span></a
+          >
+          <div class="footer-links">
+            <a href="#how-it-works">How It Works</a
+            ><a href="#earn-methods">5 Ways to Earn</a
+            ><a href="#topics">Topics</a><a href="#countries">Countries</a
+            ><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+            <a
+              href="javascript:void(0)"
+              class="register-link"
+              data-url="https://mulastar.com/register.php?ref=Sydney"
+              >Register</a
+            >
+          </div>
+          <p class="footer-copy">
+            © 2025 Mulastar. All rights reserved. Earn real money through
+            meaningful conversations worldwide.
+          </p>
+          <p class="footer-copy">
+            Built with ❤️ by
+            <a
+              href="https://wa.me/254707995729?text=Hi%20Jeff,%20I%20need%20a%20website."
+              target="_blank"
+              rel="noopener noreferrer"
+              >Jeff</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      id="chatway"
+      async
+      defer
+      src="https://cdn.chatway.app/widget.js?id=MLJmgCjySzpt"
+    ></script>
+    <script>
+      (function () {
+        "use strict";
+        const REG_URL = "https://mulastar.com/register.php?ref=Sydney";
+        const $ = (id) => document.getElementById(id);
+        const rand = (arr) => arr[Math.floor(Math.random() * arr.length)];
+        const fmt = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        const COUNTRIES = [
+          {
+            name: "Kenya",
+            flag: "🇰🇪",
+            markedPrice: "KSH 650",
+            regFee: "KSH 500",
+            save: "KSH 150",
+            discount: "23%",
+            payment: "M-Pesa",
+            urgency: "⏳ Offer expires soon!",
+            img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+          },
+          {
+            name: "Uganda",
+            flag: "🇺🇬",
+            markedPrice: "UGX 24,000",
+            regFee: "UGX 19,000",
+            save: "UGX 5,000",
+            discount: "21%",
+            payment: "MTN Money / Airtel Money",
+            urgency: "⏳ Limited spots available!",
+            img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
+          },
+          {
+            name: "Nigeria",
+            flag: "🇳🇬",
+            markedPrice: "₦10,000",
+            regFee: "₦8,000",
+            save: "₦2,000",
+            discount: "20%",
+            payment: "Bank Transfer",
+            urgency: "⏳ Offer ends soon!",
+            img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+          },
+          {
+            name: "Tanzania",
+            flag: "🇹🇿",
+            markedPrice: "TZS 15,000",
+            regFee: "TZS 12,000",
+            save: "TZS 3,000",
+            discount: "20%",
+            payment: "M-Pesa Tanzania",
+            urgency: "⏳ Grab it before it's gone!",
+            img: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80",
+          },
+          {
+            name: "South Africa",
+            flag: "🇿🇦",
+            markedPrice: "ZAR 250",
+            regFee: "ZAR 200",
+            save: "ZAR 50",
+            discount: "20%",
+            payment: "Bank Transfer / PayPal",
+            urgency: "⏳ Offer expires soon!",
+            img: "https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?auto=format&fit=crop&w=800&q=80",
+          },
+          {
+            name: "Ghana",
+            flag: "🇬🇭",
+            markedPrice: "GH₵ 100",
+            regFee: "GH₵ 80",
+            save: "GH₵ 20",
+            discount: "20%",
+            payment: "MTN MoMo",
+            urgency: "⏳ Limited time offer!",
+            img: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&w=800&q=80",
+          },
+          {
+            name: "Cameroon",
+            flag: "🇨🇲",
+            markedPrice: "XAF 5,000",
+            regFee: "XAF 4,100",
+            save: "XAF 900",
+            discount: "18%",
+            payment: "MTN Money",
+            urgency: "⏳ Limited spots!",
+            img: "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?auto=format&fit=crop&w=800&q=80",
+          },
+          {
+            name: "Zambia",
+            flag: "🇿🇲",
+            markedPrice: "ZMK 160",
+            regFee: "ZMK 130",
+            save: "ZMK 30",
+            discount: "19%",
+            payment: "Airtel Money",
+            urgency: "⏳ Offer expires soon!",
+            img: "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=800&q=80",
+          },
+          {
+            name: "Malawi",
+            flag: "🇲🇼",
+            markedPrice: "MWK 12,500",
+            regFee: "MWK 10,000",
+            save: "MWK 2,500",
+            discount: "20%",
+            payment: "Airtel Money",
+            urgency: "⏳ Grab it now!",
+            img: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&w=800&q=80",
+          },
+          {
+            name: "USA / Intl",
+            flag: "🇺🇸",
+            markedPrice: "$6.50",
+            regFee: "$5",
+            save: "$1.50",
+            discount: "23%",
+            payment: "PayPal / Bank Transfer",
+            urgency: "⏳ Limited offer!",
+            img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+          },
+        ];
+
+        const CHAT_PROFILES = [
+          {
+            name: "James, 52",
+            country: "United Kingdom",
+            flag: "🇬🇧",
+            img: "https://i.pravatar.cc/88?img=12",
+            first:
+              "Hi 👋 I'm James from London — I'd love to learn about your culture and daily life!",
+            reply:
+              "That's so interesting! To access the full platform and start earning, complete your quick registration. Takes under a minute! 🎉",
+          },
+          {
+            name: "Emily, 48",
+            country: "United States",
+            flag: "🇺🇸",
+            img: "https://i.pravatar.cc/88?img=5",
+            first:
+              "Hi 👋 I'm Emily from Chicago — curious about life in Africa!",
+            reply:
+              "Wonderful! To unlock full access and start earning (hourly + tips!), complete your registration — it's only a few steps! 🎉",
+          },
+          {
+            name: "Maria, 45",
+            country: "Spain",
+            flag: "🇪🇸",
+            img: "https://i.pravatar.cc/88?img=47",
+            first:
+              "Hi 👋 I'm Maria from Barcelona — would love a cultural exchange chat!",
+            reply:
+              "This is lovely! To keep chatting and earn across all 5 methods, complete your quick registration. Super simple! 🎉",
+          },
+        ];
+
+        const FAQS = [
+          {
+            q: "How do I get paid?",
+            a: "Once your balance reaches the minimum threshold ($5), you can withdraw via PayPal, bank transfer, M-Pesa, MTN Money, or Airtel Money. Payments are processed daily with zero withdrawal fees.",
+          },
+          {
+            q: "What are the 5 ways to earn?",
+            a: "You earn per hour (auto-tracked), per message (every reply adds to your balance), per completed session (lump sum), through tips from satisfied clients, and daily rewards for consistent activity. Use all 5 to maximise income.",
+          },
+          {
+            q: "How much can I realistically earn per month?",
+            a: "Active chatters using all 5 earning methods and doing 5–10 chats per day typically earn $200–$800/month. New members usually earn $50–$150 in their first month as they build their pace.",
+          },
+          {
+            q: "What kinds of chats will I have?",
+            a: "You'll chat with clients from UK, USA, Canada, Qatar, Malaysia and more about culture, travel, daily life, companionship, and advice. All chats are friendly, safe, and appropriate — no adult content.",
+          },
+          {
+            q: "How much time do I need to commit?",
+            a: "Completely up to you. Spare 30 minutes to earn money from one chat. Most foreigners are active from 9pm to 2am. You decide your own schedule — no fixed hours.",
+          },
+          {
+            q: "Why is there a registration fee?",
+            a: "The small one-time fee covers your account verification, platform setup, and permanent access. It filters out spam and keeps the community quality high. Most chatters recover this in their very first conversation.",
+          },
+          {
+            q: "Is this legitimate?",
+            a: "Absolutely. Mulastar is fully registered under Kenyan law and operates across 12+ African countries. Over 15,000 members are paid daily. We've paid out over $2.5 million to earners globally with full transparency.",
+          },
+        ];
+
+        const LEGAL_CONTENT = {
+          terms: {
+            icon: "📄",
+            title: "Terms of Service",
+            body: `<h3>1. Acceptance of Terms</h3><p>By registering with Mulastar, you agree to these Terms of Service. Please read them carefully before completing your registration.</p><h3>2. Eligibility</h3><ul><li>You must be at least 18 years old</li><li>You must have a valid identity document</li><li>You must have a working internet connection</li><li>You agree to provide truthful information during registration</li></ul><h3>3. Registration Fee</h3><p>The one-time registration fee (or local currency equivalent) is non-refundable. It covers account verification, platform access, and setup costs. No additional fees are charged by Mulastar for using the platform.</p><h3>4. Earner Conduct</h3><ul><li>All conversations must remain respectful and appropriate</li><li>You may not solicit personal information from clients</li><li>Harassment or inappropriate content will result in immediate account termination</li></ul><h3>5. Payments</h3><p>Earnings are paid upon reaching the $5 minimum threshold. Payment is processed within 24 hours. Mulastar does not charge withdrawal fees.</p>`,
+          },
+          privacy: {
+            icon: "🔐",
+            title: "Privacy Policy",
+            body: `<h3>1. Information We Collect</h3><ul><li>Name and contact information during registration</li><li>Payment information (processed securely, not stored on our servers)</li><li>Conversation activity data for platform quality purposes</li></ul><h3>2. How We Use Your Information</h3><ul><li>To verify your identity and prevent fraud</li><li>To process your earnings and payments</li><li>To provide customer support</li></ul><h3>3. What We Don't Do</h3><ul><li>We do not sell your personal data to third parties</li><li>We do not share your information without consent</li></ul><h3>4. Your Rights</h3><ul><li>Right to access your personal data</li><li>Right to correct inaccurate information</li><li>Right to request account deletion</li></ul>`,
+          },
+          disclaimer: {
+            icon: "⚠️",
+            title: "Earnings Disclaimer",
+            body: `<h3>Important Notice</h3><p>Mulastar is committed to complete transparency about earning potential.</p><h3>Realistic Expectations</h3><ul><li>Most new members earn $30–$150/month in their first 1–3 months</li><li>Experienced members typically earn $100–$400/month</li><li>Maximum projections require 3+ completed chats daily, 7 days a week, using all earning methods</li></ul><h3>Factors That Affect Earnings</h3><ul><li>Time invested per day and days active per week</li><li>Which earning methods you activate</li><li>Conversational skills and client satisfaction ratings</li></ul><h3>No Income Guarantee</h3><p>Mulastar does not guarantee any specific level of income. Earnings figures are examples and projections, not guarantees.</p>`,
+          },
+        };
+
+        /* REGISTER LINKS */
+        document.addEventListener("click", (e) => {
+          const el = e.target.closest(".register-link");
+          if (el) {
+            e.preventDefault();
+            const o = $("loadingOvl");
+            if (o) {
+              $("loadingTxt").textContent = "Setting up your account…";
+              o.classList.add("show");
+            }
+            setTimeout(
+              () => (window.location.href = el.dataset.url || REG_URL),
+              1200,
+            );
+          }
+        });
+
+        /* HERO PARTICLES */
+        const pc = $("heroParticles");
+        if (pc) {
+          for (let i = 0; i < 18; i++) {
+            const d = document.createElement("div"),
+              sz = Math.random() * 8 + 4;
+            d.className = "hero-particle";
+            d.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random() * 100}%;top:${Math.random() * 100}%;--dur:${Math.random() * 8 + 6}s;animation-delay:${Math.random() * 6}s;opacity:${Math.random() * 0.12 + 0.04}`;
+            pc.appendChild(d);
+          }
+        }
+
+        /* CALC */
+        const calcC = $("calcChats"),
+          calcR = $("calcRate"),
+          calcRes = $("calcResult");
+        const updateCalc = () => {
+          if (!calcC || !calcR) return;
+          const ch = parseInt(calcC.value),
+            rt = parseInt(calcR.value);
+          if (calcRes) calcRes.textContent = "$" + fmt(ch * rt * 30);
+          $("calcChatsVal").textContent = ch;
+          $("calcRateVal").textContent = "$" + rt;
+          calcC.style.setProperty("--val", ((ch - 1) / 19) * 100 + "%");
+          calcR.style.setProperty("--val", ((rt - 3) / 12) * 100 + "%");
+        };
+        calcC?.addEventListener("input", updateCalc);
+        calcR?.addEventListener("input", updateCalc);
+        updateCalc();
+
+        /* LIVE EARNED */
+        let todayBase = 14820;
+        setInterval(() => {
+          if (document.hidden) return;
+          todayBase += Math.floor(Math.random() * 35) + 5;
+          const el = $("todayEarned");
+          if (el) el.textContent = "$" + fmt(todayBase);
+        }, 8000);
+
+        /* LIVE COUNT */
+        let lc = 1247;
+        const lcEl = $("liveCount");
+        setInterval(() => {
+          if (document.hidden) return;
+          lc = Math.max(1000, lc + Math.floor(Math.random() * 18) - 5);
+          if (lcEl) lcEl.textContent = fmt(lc);
+        }, 7000);
+
+        /* REQUEST COUNT */
+        let rc = 847;
+        setInterval(() => {
+          if (document.hidden) return;
+          rc = Math.max(
+            600,
+            Math.min(1200, rc + Math.floor(Math.random() * 12) - 5),
+          );
+          const el = $("activeReqCount");
+          if (el) el.textContent = fmt(rc);
+        }, 9000);
+
+        /* NAV */
+        const ham = $("hamburger"),
+          mNav = $("mobileNav");
+        const closeMNav = () => {
+          ham.classList.remove("open");
+          mNav.classList.remove("open");
+          ham.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        };
+        const openMNav = () => {
+          ham.classList.add("open");
+          mNav.classList.add("open");
+          ham.setAttribute("aria-expanded", "true");
+          document.body.style.overflow = "hidden";
+        };
+        ham?.addEventListener("click", (e) => {
+          e.stopPropagation();
+          mNav.classList.contains("open") ? closeMNav() : openMNav();
+        });
+        mNav
+          ?.querySelectorAll("a")
+          .forEach((a) => a.addEventListener("click", closeMNav));
+        document.addEventListener("click", (e) => {
+          if (
+            mNav?.classList.contains("open") &&
+            !mNav.contains(e.target) &&
+            !ham.contains(e.target)
+          )
+            closeMNav();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            closeMNav();
+            closeChat();
+            closeOffer();
+            closeLegal();
+          }
+        });
+
+        /* SCROLL */
+        let lastY = 0,
+          sTick = false;
+        const hs = () => {
+          const sy = window.scrollY,
+            dh = document.documentElement.scrollHeight - window.innerHeight;
+          $("mainNav")?.classList.toggle("scrolled", sy > 50);
+          const pb = $("prog");
+          if (pb) pb.style.width = (dh > 0 ? (sy / dh) * 100 : 0) + "%";
+          const sc = $("stickyCta");
+          if (sc) {
+            sy > 600 && sy < lastY
+              ? sc.classList.add("show")
+              : sc.classList.remove("show");
+          }
+          lastY = sy;
+          sTick = false;
+        };
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!sTick) {
+              requestAnimationFrame(hs);
+              sTick = true;
+            }
+          },
+          { passive: true },
+        );
+
+        /* INTERSECTION OBSERVER */
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (!e.isIntersecting) return;
+              const el = e.target;
+              if (el.classList.contains("fade-up")) el.classList.add("visible");
+              if (el.dataset.count && !el.dataset.animated) {
+                el.dataset.animated = "true";
+                const target = parseInt(el.dataset.count),
+                  dur = 2200,
+                  start = performance.now();
+                const run = (now) => {
+                  const p = Math.min((now - start) / dur, 1),
+                    v = Math.floor(target * (1 - Math.pow(1 - p, 3)));
+                  el.textContent = fmt(v);
+                  if (p < 1) requestAnimationFrame(run);
+                  else el.textContent = fmt(target);
+                };
+                requestAnimationFrame(run);
+              }
+            });
+          },
+          { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
+        );
+        document
+          .querySelectorAll(".fade-up,[data-count]")
+          .forEach((el) => obs.observe(el));
+
+        /* TICKER */
+        const tickItems = [
+          "✓ 15,000+ Verified Earners",
+          "✓ $2.5M+ Paid Out",
+          "✓ One-Time Fee Only",
+          "✓ 5 Ways to Earn",
+          "✓ $3–$15 Per Hour",
+          "✓ UK · USA · Canada · Qatar",
+          "✓ Daily Payouts",
+          "✓ 4.8★ Rating",
+          "✓ 24/7 Real Support",
+          "✓ No Monthly Subscriptions",
+          "✓ Per Hour · Per Message · Per Session · Tips · Daily Rewards",
+        ];
+        const tt = $("tickerTrack");
+        if (tt) {
+          [...tickItems, ...tickItems].forEach((t) => {
+            const s = document.createElement("span");
+            s.className = "ticker-item";
+            s.innerHTML = `<i class="fas fa-check-circle" style="color:rgba(255,255,255,.8);font-size:.55rem"></i> ${t}`;
+            tt.appendChild(s);
+          });
+        }
+
+        /* OFFER MODAL */
+        let selCountry = COUNTRIES[0];
+        const offerOverlay = $("offerOverlay");
+        function openOffer(c) {
+          selCountry = c;
+          $("offerFlag").textContent = c.flag;
+          $("offerCname").textContent = c.name;
+          $("opOld").textContent = c.markedPrice;
+          $("opNew").textContent = c.regFee;
+          $("opDiscount").textContent = "Save " + c.discount + " Today";
+          $("offerBadge").textContent = c.discount + " OFF — LIMITED TIME";
+          $("offerRibbon").textContent = c.discount + " OFF";
+          $("opSave").textContent =
+            "✅ You save " + c.save + " — limited time!";
+          $("offerUrgency").textContent = c.urgency;
+          $("offerPayment").textContent = c.payment;
+          $("offerCtaTxt").textContent = "Register Now — " + c.regFee;
+          $("offerHeadBg").style.backgroundImage = "url('" + c.img + "')";
+          offerOverlay.classList.add("show");
+          document.body.style.overflow = "hidden";
+        }
+        function closeOffer() {
+          offerOverlay?.classList.remove("show");
+          if (
+            !$("chatOverlay")?.classList.contains("show") &&
+            !$("lmOverlay")?.classList.contains("show")
+          )
+            document.body.style.overflow = "";
+        }
+        $("offerClose")?.addEventListener("click", closeOffer);
+        offerOverlay?.addEventListener("click", (e) => {
+          if (e.target === offerOverlay) closeOffer();
+        });
+
+        /* COUNTRIES GRID */
+        const cg = $("countriesGrid");
+        if (cg) {
+          const frag = document.createDocumentFragment();
+          COUNTRIES.forEach((c, i) => {
+            const card = document.createElement("div");
+            card.className = "country-card fade-up";
+            card.style.transitionDelay = i * 0.05 + "s";
+            card.innerHTML = `<div class="cc-img" style="background-image:url('${c.img}')"></div><div class="cc-overlay"></div><div class="cc-content"><div class="cc-flag">${c.flag}</div><div class="cc-name">${c.name}</div><div class="cc-fee">${c.regFee}</div></div><div class="cc-badge"><i class="fas fa-arrow-right"></i></div>`;
+            card.addEventListener("click", () => {
+              document
+                .querySelectorAll(".country-card")
+                .forEach((x) => x.classList.remove("active"));
+              card.classList.add("active");
+              openOffer(c);
+            });
+            frag.appendChild(card);
+          });
+          cg.appendChild(frag);
+          cg.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
+        }
+
+        /* LIVE REQUESTS */
+        const rl = $("requestsList");
+        let reqData = [
+          {
+            name: "James",
+            age: 52,
+            country: "UK",
+            flag: "🇬🇧",
+            topic: "Cultural exchange 🌍 — curious about daily life in Africa",
+            time: "2 min ago",
+            occ: "Retired Teacher",
+            img: "https://i.pravatar.cc/92?img=12",
+          },
+          {
+            name: "Emily",
+            age: 48,
+            country: "USA",
+            flag: "🇺🇸",
+            topic: "Casual conversation ☕ — want to connect genuinely",
+            time: "5 min ago",
+            occ: "Business Owner",
+            img: "https://i.pravatar.cc/92?img=5",
+          },
+          {
+            name: "Maria",
+            age: 45,
+            country: "Spain",
+            flag: "🇪🇸",
+            topic: "Travel stories & tips 🗺️ — planning an Africa trip",
+            time: "8 min ago",
+            occ: "Consultant",
+            img: "https://i.pravatar.cc/92?img=47",
+          },
+        ];
+        function buildReqCard(r) {
+          const card = document.createElement("div");
+          card.className = "req-card";
+          card.innerHTML = `<div class="req-card-head"><div class="req-av"><img src="${r.img}" alt="${r.name}" loading="lazy" width="44" height="44" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(r.name)}&size=88&background=0f172a&color=fff'"/><span class="req-flag">${r.flag || "🌍"}</span></div><div class="req-info"><div class="req-name">${r.name}${r.age ? ", " + r.age : ""}</div><div class="req-meta"><i class="fas fa-location-dot" style="font-size:.55rem;color:var(--em2)"></i> ${r.country}${r.occ ? " · " + r.occ : ""}</div></div><div class="req-earn">$3–$15</div></div><div class="req-topic-row"><div class="req-topic-bubble">${r.topic}</div></div><div class="req-actions"><button class="btn-xsm btn-accept" onclick="acceptReq(this,'${r.name}')"><i class="fas fa-check"></i> Accept</button><button class="btn-xsm btn-skip" onclick="skipReq(this)"><i class="fas fa-forward"></i> Skip</button><span class="req-time"><i class="fas fa-clock"></i> ${r.time}</span></div>`;
+          return card;
+        }
+        function renderReqs() {
+          if (!rl) return;
+          const f = document.createDocumentFragment();
+          reqData.forEach((r) => f.appendChild(buildReqCard(r)));
+          rl.innerHTML = "";
+          rl.appendChild(f);
+        }
+        window.acceptReq = (btn, name) => {
+          btn.innerHTML = '<i class="fas fa-check"></i> Accepted';
+          btn.disabled = true;
+          btn.style.opacity = ".5";
+          showNotif("Chat accepted! Register to start earning.");
+          setTimeout(() => {
+            const c = btn.closest(".req-card");
+            if (c) {
+              c.style.cssText +=
+                "opacity:0;transform:translateX(20px);transition:all .3s";
+              setTimeout(() => {
+                c.remove();
+                addRandReq();
+              }, 300);
+            }
+          }, 1500);
+        };
+        window.skipReq = (btn) => {
+          const c = btn.closest(".req-card");
+          if (c) {
+            c.style.cssText +=
+              "opacity:0;transform:translateX(-20px);transition:all .3s";
+            setTimeout(() => {
+              c.remove();
+              addRandReq();
+            }, 300);
+          }
+        };
+        const rNames = [
+          "Sophie",
+          "Kevin",
+          "Anna",
+          "Marco",
+          "Lisa",
+          "Thomas",
+          "Grace",
+          "James",
+          "Olivia",
+          "David",
+          "Priya",
+          "Carlos",
+        ];
+        const rCountries = [
+          { n: "USA", f: "🇺🇸" },
+          { n: "UK", f: "🇬🇧" },
+          { n: "Canada", f: "🇨🇦" },
+          { n: "Germany", f: "🇩🇪" },
+          { n: "Australia", f: "🇦🇺" },
+          { n: "Qatar", f: "🇶🇦" },
+          { n: "Malaysia", f: "🇲🇾" },
+        ];
+        const rTopics = [
+          "Cultural exchange 🌍 — curious about daily life",
+          "Casual conversation ☕ — want to connect genuinely",
+          "Travel stories & tips 🗺️ — planning an Africa trip",
+          "Life experiences chat 💬 — open to any topic",
+        ];
+        const rOccs = [
+          "Retired Teacher",
+          "Business Owner",
+          "Software Engineer",
+          "Doctor",
+          "Artist",
+          "Consultant",
+        ];
+        const rImgs = [10, 20, 25, 30, 35, 40, 45, 50, 55, 60];
+        function addRandReq() {
+          const c2 = rand(rCountries);
+          reqData = [
+            {
+              name: rand(rNames),
+              age: Math.floor(Math.random() * 30) + 38,
+              country: c2.n,
+              flag: c2.f,
+              topic: rand(rTopics),
+              time: "Just now",
+              occ: rand(rOccs),
+              img: `https://i.pravatar.cc/92?img=${rand(rImgs)}`,
+            },
+            ...reqData.slice(0, 2),
+          ];
+          renderReqs();
+        }
+        renderReqs();
+        setInterval(() => {
+          if (!document.hidden && Math.random() > 0.55) addRandReq();
+        }, 30000);
+
+        /* NOTIFICATIONS */
+        let notifT = null;
+        const showNotif = (msg) => {
+          const n = $("notif"),
+            t = $("notifTxt");
+          if (!n || !t) return;
+          t.textContent = msg;
+          n.classList.add("show");
+          clearTimeout(notifT);
+          notifT = setTimeout(() => n.classList.remove("show"), 3500);
+        };
+
+        /* CHAT MODAL */
+        let chatReplied = false,
+          chatTimeout = null,
+          chatIdx = 0;
+        const chatOverlay = $("chatOverlay"),
+          cmMsgs = $("cmMsgs"),
+          cmInp = $("cmInp");
+        function openChat(idx) {
+          const p = CHAT_PROFILES[idx % CHAT_PROFILES.length];
+          chatReplied = false;
+          clearTimeout(chatTimeout);
+          if (cmInp) cmInp.value = "";
+          if (cmMsgs) cmMsgs.innerHTML = "";
+          $("cmName").textContent = p.name + " · " + p.country + " " + p.flag;
+          $("cmAv").src = p.img;
+          chatOverlay.classList.add("show");
+          document.body.style.overflow = "hidden";
+          window._ap = p;
+          const ty = addTyping();
+          chatTimeout = setTimeout(() => {
+            ty.remove();
+            addMsg("them", p.first);
+            cmInp?.focus();
+          }, 1400);
+        }
+        function closeChat() {
+          chatOverlay?.classList.remove("show");
+          clearTimeout(chatTimeout);
+          if (
+            !offerOverlay?.classList.contains("show") &&
+            !$("lmOverlay")?.classList.contains("show")
+          )
+            document.body.style.overflow = "";
+        }
+        $("cmClose")?.addEventListener("click", closeChat);
+        chatOverlay?.addEventListener("click", (e) => {
+          if (e.target === chatOverlay) closeChat();
+        });
+        function addMsg(side, text) {
+          const now = new Date(),
+            time =
+              now.getHours() + ":" + String(now.getMinutes()).padStart(2, "0");
+          const div = document.createElement("div");
+          div.className = "cm-msg " + side;
+          div.innerHTML = `<div class="cm-bubble">${text}</div><div class="cm-time">${time}</div>`;
+          cmMsgs.appendChild(div);
+          cmMsgs.scrollTop = cmMsgs.scrollHeight;
+          return div;
+        }
+        function addTyping() {
+          const div = document.createElement("div");
+          div.className = "cm-msg them";
+          div.innerHTML =
+            '<div class="typing-dots"><span></span><span></span><span></span></div>';
+          cmMsgs.appendChild(div);
+          cmMsgs.scrollTop = cmMsgs.scrollHeight;
+          return div;
+        }
+        function sendMsg() {
+          const text = (cmInp?.value || "").trim();
+          if (!text) return;
+          if (cmInp) cmInp.value = "";
+          addMsg("me", text);
+          if (!chatReplied) {
+            chatReplied = true;
+            chatTimeout = setTimeout(() => {
+              const t = addTyping();
+              chatTimeout = setTimeout(() => {
+                t.remove();
+                const p = window._ap || CHAT_PROFILES[0];
+                addMsg("them", p.reply);
+                chatTimeout = setTimeout(() => {
+                  closeChat();
+                  openOffer(selCountry || COUNTRIES[0]);
+                }, 2400);
+              }, 1600);
+            }, 600);
+          }
+        }
+        $("cmSend")?.addEventListener("click", sendMsg);
+        cmInp?.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") sendMsg();
+        });
+        $("openChatDemo")?.addEventListener("click", () => openChat(chatIdx++));
+
+        /* FAQ */
+        const fc = $("faqContainer");
+        if (fc) {
+          const frag = document.createDocumentFragment();
+          FAQS.forEach((f) => {
+            const item = document.createElement("div");
+            item.className = "faq-item";
+            item.innerHTML = `<div class="faq-q">${f.q} <i class="fas fa-chevron-down"></i></div><div class="faq-a">${f.a}</div>`;
+            const q = item.querySelector(".faq-q"),
+              a = item.querySelector(".faq-a");
+            q.addEventListener("click", () => {
+              const isOpen = a.classList.contains("open");
+              document
+                .querySelectorAll(".faq-a")
+                .forEach((x) => x.classList.remove("open"));
+              document
+                .querySelectorAll(".faq-q")
+                .forEach((x) => x.classList.remove("open"));
+              if (!isOpen) {
+                a.classList.add("open");
+                q.classList.add("open");
+              }
+            });
+            frag.appendChild(item);
+          });
+          fc.appendChild(frag);
+        }
+
+        /* LEGAL */
+        window.openLegal = (type) => {
+          switchLegal(type);
+          $("lmOverlay")?.classList.add("show");
+          document.body.style.overflow = "hidden";
+        };
+        window.switchLegal = (type) => {
+          document
+            .querySelectorAll(".lm-tab")
+            .forEach((t) =>
+              t.classList.toggle("active", t.dataset.doc === type),
+            );
+          const c = LEGAL_CONTENT[type];
+          if (!c) return;
+          const lmTitle = $("lmTitle"),
+            lmIcon = $("lmIcon"),
+            lmBody = $("lmBody");
+          if (lmTitle) lmTitle.textContent = c.title;
+          if (lmIcon) lmIcon.textContent = c.icon;
+          if (lmBody) {
+            lmBody.innerHTML = c.body;
+            lmBody.scrollTop = 0;
+          }
+        };
+        function closeLegal() {
+          $("lmOverlay")?.classList.remove("show");
+          if (
+            !offerOverlay?.classList.contains("show") &&
+            !$("chatOverlay")?.classList.contains("show")
+          )
+            document.body.style.overflow = "";
+        }
+        $("lmClose")?.addEventListener("click", closeLegal);
+        $("lmOverlay")?.addEventListener("click", function (e) {
+          if (e.target === this) closeLegal();
+        });
+        document.querySelectorAll(".legal-card").forEach((c) =>
+          c.addEventListener("keypress", (e) => {
+            if (e.key === "Enter" || e.key === " ") c.click();
+          }),
+        );
+
+        /* SOCIAL PROOF */
+        const spNames = [
+          "Sarah from Nairobi",
+          "John from Lagos",
+          "Maria from Dar es Salaam",
+          "David from Accra",
+          "Linda from Kampala",
+          "Paul from Johannesburg",
+          "Grace from Enugu",
+          "Amina from Mombasa",
+        ];
+        const spActions = [
+          { i: "fa-user-plus", t: "just activated their account" },
+          { i: "fa-comment", t: "started chatting with a UK client" },
+          { i: "fa-dollar-sign", t: "earned $15 in one hour" },
+          { i: "fa-fire", t: "unlocked a 7-day streak bonus!" },
+          { i: "fa-star", t: "received a 5-star rating + tip" },
+          { i: "fa-gift", t: "received a $3 tip from a UK client" },
+        ];
+        const spC = $("spContainer");
+        let spActive = false;
+        const showSP = () => {
+          if (!spC || spActive || document.hidden) return;
+          spActive = true;
+          const n = rand(spNames),
+            a = rand(spActions);
+          const el = document.createElement("div");
+          el.className = "sp-item";
+          el.innerHTML = `<i class="fas ${a.i}"></i><span><strong>${n}</strong> ${a.t}</span>`;
+          spC.appendChild(el);
+          setTimeout(() => {
+            el.style.cssText += "opacity:0;transition:opacity .4s";
+            setTimeout(() => {
+              el.remove();
+              spActive = false;
+            }, 400);
+          }, 7000);
+        };
+        setTimeout(showSP, 10000);
+        setInterval(showSP, 12000);
+
+        /* COOKIE */
+        const hasCookie = () => {
+          try {
+            return !!localStorage.getItem("cookieConsent");
+          } catch {
+            return true;
+          }
+        };
+        const setCookie = (v) => {
+          try {
+            localStorage.setItem("cookieConsent", v);
+          } catch {}
+        };
+        if (!hasCookie())
+          setTimeout(() => $("cookieBar")?.classList.add("show"), 3500);
+        $("cookieAccept")?.addEventListener("click", () => {
+          setCookie("true");
+          $("cookieBar")?.classList.remove("show");
+        });
+        $("cookieDecline")?.addEventListener("click", () => {
+          setCookie("false");
+          $("cookieBar")?.classList.remove("show");
+        });
+
+        /* SMOOTH SCROLL */
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+          a.addEventListener("click", (e) => {
+            const id = a.getAttribute("href").slice(1),
+              el = document.getElementById(id);
+            if (el) {
+              e.preventDefault();
+              closeMNav();
+              el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        });
+
+        /* TESTIMONIALS MOBILE DOTS */
+        (function () {
+          var tgrid = document.querySelector(".tgrid");
+          var dots = document.querySelectorAll(".t-dot");
+          if (!tgrid || !dots.length) return;
+          var updateDots = function () {
+            var total = tgrid.scrollWidth - tgrid.clientWidth;
+            var progress = total > 0 ? tgrid.scrollLeft / total : 0;
+            var idx = Math.round(progress * (dots.length - 1));
+            dots.forEach(function (d, i) {
+              d.classList.toggle("active", i === idx);
+            });
+          };
+          tgrid.addEventListener("scroll", updateDots, { passive: true });
+          dots.forEach(function (d) {
+            d.addEventListener("click", function () {
+              var idx = parseInt(d.dataset.idx);
+              var cardW = tgrid.scrollWidth / dots.length;
+              tgrid.scrollTo({ left: idx * cardW, behavior: "smooth" });
+            });
+          });
+        })();
+
+        switchLegal("terms");
+      })();
+    </script>
+  </body>
+</html>
