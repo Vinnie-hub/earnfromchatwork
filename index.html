@@ -6,10 +6,10 @@
       name="viewport"
       content="width=device-width,initial-scale=1.0,maximum-scale=5.0"
     />
-    <title>Mulastar – Get Paid to Chat With Lonely Foreigners</title>
+    <title>Mulastar – Get Paid to Chat With People From Abroad</title>
     <meta
       name="description"
-      content="Earn $3–$15/hr chatting with lonely people from UK, USA, Canada, Qatar & more. 5 ways to earn. Join 15,000+ earners. Daily M-Pesa payouts."
+      content="Earn $2–$8/hr chatting with people from UK, USA, Canada, Qatar & more. 5 ways to earn. Join 8,000+ earners. Daily M-Pesa payouts."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -98,7 +98,6 @@
         cursor: pointer;
       }
 
-      /* PROGRESS */
       #prog {
         position: fixed;
         top: 0;
@@ -109,7 +108,6 @@
         z-index: 9999;
       }
 
-      /* LOADING */
       .loading-ovl {
         position: fixed;
         inset: 0;
@@ -255,15 +253,11 @@
         box-shadow: 0 10px 28px rgba(37, 99, 235, 0.45);
       }
 
-      /* ═══════════════════════════════════════════
-         HAMBURGER — Fixed for light mode visibility
-      ═══════════════════════════════════════════ */
       .hamburger {
         display: flex;
         flex-direction: column;
         gap: 5px;
         cursor: pointer;
-        /* Visible pill with border — clearly tappable on white nav */
         padding: 0.55rem 0.7rem;
         background: var(--bg2);
         border: 1.5px solid var(--border2);
@@ -294,7 +288,6 @@
       }
       .hamburger span {
         display: block;
-        /* Thicker + dark ink color — visible on any light background */
         width: 22px;
         height: 2.5px;
         background: var(--ink2);
@@ -314,16 +307,12 @@
         transform: translateY(-7.5px) rotate(-45deg);
         background: var(--blue2);
       }
-      /* Open state: highlight the button */
       .hamburger.open {
         background: var(--blue-soft);
         border-color: var(--blue-border);
         box-shadow: 0 2px 12px rgba(29, 78, 216, 0.18);
       }
 
-      /* ═══════════════════════════════════════════
-         MOBILE NAV — Better light-mode panel
-      ═══════════════════════════════════════════ */
       .mobile-nav {
         position: fixed;
         top: var(--nav-h);
@@ -338,10 +327,8 @@
         gap: 0.15rem;
         transform: translateX(100%);
         transition: transform 0.32s var(--ease);
-        /* Top accent line matching brand */
         border-top: 2px solid var(--blue-border);
         overflow-y: auto;
-        /* Depth shadow */
         box-shadow: -6px 0 40px rgba(0, 0, 0, 0.13);
       }
       .mobile-nav.open {
@@ -400,7 +387,6 @@
         box-shadow: 0 14px 30px rgba(37, 99, 235, 0.45);
       }
 
-      /* LAYOUT */
       .container {
         width: 100%;
         max-width: 1200px;
@@ -478,7 +464,7 @@
         animation: btn-pulse-ring 2.5s infinite;
       }
 
-      /* SECTION TITLES */
+      /* SECTIONS */
       .section {
         padding: 5.5rem 0;
       }
@@ -2731,7 +2717,7 @@
         font-size: 0.68rem;
       }
 
-      /* CTA SECTION */
+      /* CTA */
       .cta-section {
         background: linear-gradient(
           135deg,
@@ -3042,6 +3028,7 @@
         color: var(--blue2);
       }
 
+      /* CHAT MODAL */
       .chat-overlay {
         position: fixed;
         inset: 0;
@@ -3255,6 +3242,7 @@
         transform: scale(1.08);
       }
 
+      /* LEGAL MODAL */
       .lm-overlay {
         position: fixed;
         inset: 0;
@@ -3668,7 +3656,7 @@
         border: 1px solid var(--border);
       }
 
-      /* DARK MODE */
+      /* ─── DARK MODE ─── */
       @media (prefers-color-scheme: dark) {
         :root {
           --ink: #f0f4ff;
@@ -3822,20 +3810,42 @@
         .offer-urgency-pill {
           background: rgba(220, 38, 38, 0.12);
         }
-        .cm-msgs {
-          background: #0b0f20;
-        }
-        .cm-msg.them .cm-bubble {
+
+        /* ─── CHAT MODAL DARK MODE FIX ─── */
+        .chat-modal {
           background: #0f1428;
-          border-color: #1e2540;
-          color: #dde4f8;
+          border: 1px solid #1e2540;
         }
         .cm-head {
-          background: #0f1428;
+          background: #0b0f20;
           border-bottom-color: #1e2540;
         }
         .cm-head-name {
           color: #f0f4ff;
+        }
+        .cm-msgs {
+          background: #0b0f20;
+        }
+        .cm-msg.them .cm-bubble {
+          background: #141e35;
+          border-color: #1e2540;
+          color: #e2e8f8;
+        }
+        .typing-dots {
+          background: #141e35;
+          border-color: #1e2540;
+        }
+        .typing-dots span {
+          background: #6b7a9e;
+        }
+        .cm-earn-notice {
+          background: #071a14;
+          color: #6ee7b7;
+          border-color: rgba(52, 211, 153, 0.2);
+        }
+        .cm-input-area {
+          background: #0f1428;
+          border-top-color: #1e2540;
         }
         .cm-inp {
           background: #0b0f20;
@@ -3845,18 +3855,19 @@
         .cm-inp::placeholder {
           color: #6b7a9e;
         }
-        .cm-earn-notice {
-          background: #071a14;
+        .cm-inp:focus {
+          background: #0d1428;
+          border-color: var(--blue2);
         }
-        .cm-input-area {
-          background: #0f1428;
-          border-top-color: #1e2540;
+        .cm-time {
+          color: #6b7a9e;
         }
         .cm-head-close {
           background: #131b30;
           border-color: #1e2540;
           color: #a0acc8;
         }
+
         .lm-box {
           background: #0f1428;
         }
@@ -4072,7 +4083,6 @@
           color: #dde4f8;
         }
       }
-
       @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
@@ -4135,7 +4145,7 @@
               message, per session &amp; more
             </li>
             <li>
-              <i class="fas fa-check-circle"></i> Earn $3–$15 per hour of
+              <i class="fas fa-check-circle"></i> Earn $2–$8 per hour of
               conversation
             </li>
             <li>
@@ -4201,7 +4211,7 @@
           </button>
         </div>
         <div class="cm-msgs" id="cmMsgs" role="log" aria-live="polite"></div>
-        <div class="cm-earn-notice">💰 Complete this chat to earn $3–$15</div>
+        <div class="cm-earn-notice">💰 Complete this chat to earn $2–$8</div>
         <div class="cm-input-area">
           <input
             type="text"
@@ -4299,7 +4309,7 @@
           <div>
             <p class="sticky-txt">
               <i class="fa-solid fa-sack-dollar money-icon"></i> Start earning
-              up to $800/month
+              up to $350/month
             </p>
           </div>
           <a
@@ -4391,18 +4401,18 @@
         <div class="hero-left">
           <div class="hero-live-pill">
             <span class="blink-dot"></span
-            ><span id="liveCount">1,247</span> chatters earning right now
+            ><span id="liveCount">847</span> chatters earning right now
           </div>
           <h1 class="hero-h1">
             <span class="line-top">Turn Conversations</span>
             <span class="line-mid">Into Real Cash</span>
             <span class="line-bot"
-              >Chat with lonely foreigners · Earn $3–$15/hr · Get paid daily to
+              >Chat with people from abroad · Earn $2–$8/hr · Get paid daily to
               your phone</span
             >
           </h1>
           <div class="hero-earn-row">
-            <div class="her-amount">$3–$15</div>
+            <div class="her-amount">$2–$8</div>
             <div class="her-sep"></div>
             <div>
               <div class="her-label">Earned per hour · 5 ways to earn</div>
@@ -4426,39 +4436,40 @@
             </div>
           </div>
           <p class="hero-desc">
-            Connect with lonely people from
-            <strong>UK, USA, Canada, Qatar &amp; 150+ countries</strong> in
-            simple friendly text conversations. Your phone is your office.
+            Connect with people from
+            <strong>UK, USA, Canada, Qatar &amp; 100+ countries</strong> in
+            friendly text conversations. Your phone is your office. Results vary
+            based on activity and effort.
           </p>
           <div class="hero-live-strip">
             <div class="hls-item">
-              <div class="hls-val" id="todayEarned">$14,820</div>
+              <div class="hls-val" id="todayEarned">$3,240</div>
               <div class="hls-label">Paid today</div>
             </div>
             <div class="hls-div"></div>
             <div class="hls-item">
-              <div class="hls-val green">15,200+</div>
+              <div class="hls-val green">8,400+</div>
               <div class="hls-label">Active earners</div>
             </div>
             <div class="hls-div"></div>
             <div class="hls-item">
-              <div class="hls-val">$2.5M+</div>
+              <div class="hls-val">$890K+</div>
               <div class="hls-label">Total paid out</div>
             </div>
             <div class="hls-div"></div>
             <div class="hls-item">
-              <div class="hls-val green">4.8★</div>
+              <div class="hls-val green">4.6★</div>
               <div class="hls-label">Earner rating</div>
             </div>
           </div>
           <div class="hero-flags">
-            <span class="hero-flag-chip">🇬🇧 UK <em>$15/hr</em></span>
-            <span class="hero-flag-chip">🇺🇸 USA <em>$15/hr</em></span>
-            <span class="hero-flag-chip">🇨🇦 Canada <em>$15/hr</em></span>
-            <span class="hero-flag-chip">🇶🇦 Qatar <em>$15/hr</em></span>
-            <span class="hero-flag-chip">🇦🇺 Australia <em>$12/hr</em></span>
-            <span class="hero-flag-chip">🇲🇾 Malaysia <em>$12/hr</em></span>
-            <span class="hero-flag-chip">🌍 +150 more <em>$3–$15</em></span>
+            <span class="hero-flag-chip">🇬🇧 UK <em>$8/hr</em></span>
+            <span class="hero-flag-chip">🇺🇸 USA <em>$8/hr</em></span>
+            <span class="hero-flag-chip">🇨🇦 Canada <em>$8/hr</em></span>
+            <span class="hero-flag-chip">🇶🇦 Qatar <em>$7/hr</em></span>
+            <span class="hero-flag-chip">🇦🇺 Australia <em>$6/hr</em></span>
+            <span class="hero-flag-chip">🇲🇾 Malaysia <em>$5/hr</em></span>
+            <span class="hero-flag-chip">🌍 +100 more <em>$2–$8</em></span>
           </div>
           <div class="hero-ctas">
             <a
@@ -4482,7 +4493,7 @@
               ><i class="fas fa-layer-group"></i> 5 Ways to Earn</span
             >
             <span class="hp-item"
-              ><i class="fas fa-globe"></i> 150+ Countries</span
+              ><i class="fas fa-globe"></i> 100+ Countries</span
             >
           </div>
         </div>
@@ -4498,14 +4509,11 @@
               <div>
                 <div class="hcw-name">James, 52 · London 🇬🇧</div>
                 <div class="hcw-status">
-                  <span
-                    class="blink-dot"
-                    style="width: 5px; height: 5px"
-                  ></span>
-                  Online now
+                  <span class="blink-dot" style="width: 5px; height: 5px"></span
+                  >Online now
                 </div>
               </div>
-              <div class="hcw-earn-badge">$5/hr + tips</div>
+              <div class="hcw-earn-badge">$4/hr + tips</div>
             </div>
             <div class="hcw-msgs">
               <div class="hcw-msg">
@@ -4543,16 +4551,16 @@
             </div>
             <div class="hcw-stats">
               <div class="hcw-stat">
-                <div class="hcw-stat-val" data-count="15200">0</div>
+                <div class="hcw-stat-val" data-count="8400">0</div>
                 <div class="hcw-stat-lbl">Earners</div>
               </div>
               <div class="hcw-stat">
-                <div class="hcw-stat-val green">$15</div>
+                <div class="hcw-stat-val green">$8</div>
                 <div class="hcw-stat-lbl">Max/hr</div>
               </div>
               <div class="hcw-stat">
-                <div class="hcw-stat-val blue">$800</div>
-                <div class="hcw-stat-lbl">Max/month</div>
+                <div class="hcw-stat-val blue">$350</div>
+                <div class="hcw-stat-lbl">Est/month</div>
               </div>
               <div class="hcw-stat">
                 <div class="hcw-stat-val">5×</div>
@@ -4568,11 +4576,11 @@
                   class="calc-slider"
                   id="calcChats"
                   min="1"
-                  max="20"
-                  value="5"
-                  style="--val: 22%"
+                  max="10"
+                  value="4"
+                  style="--val: 33%"
                 />
-                <span class="calc-val" id="calcChatsVal">5</span>
+                <span class="calc-val" id="calcChatsVal">4</span>
               </div>
               <div class="calc-row">
                 <span class="calc-lbl">Rate / hr</span>
@@ -4580,16 +4588,16 @@
                   type="range"
                   class="calc-slider"
                   id="calcRate"
-                  min="3"
-                  max="15"
-                  value="5"
-                  style="--val: 17%"
+                  min="2"
+                  max="8"
+                  value="4"
+                  style="--val: 33%"
                 />
-                <span class="calc-val" id="calcRateVal">$5</span>
+                <span class="calc-val" id="calcRateVal">$4</span>
               </div>
               <div class="calc-result-row">
                 <div class="calc-result-lbl">Monthly estimate (30 days)</div>
-                <div class="calc-result-amount" id="calcResult">$750</div>
+                <div class="calc-result-amount" id="calcResult">$480</div>
               </div>
             </div>
             <div class="hcw-cta">
@@ -4623,8 +4631,8 @@
             <h3>Register Your Account</h3>
             <p>
               Create your profile with a one-time small activation fee. Unlocks
-              permanent access to thousands of people worldwide who want to chat
-              and pay you.
+              access to people worldwide who want to chat. Most members recover
+              this in their first few completed sessions.
             </p>
             <div class="step-tag">
               <i class="fas fa-check"></i> One-time only
@@ -4636,7 +4644,7 @@
             <p>
               Clients from UK, USA, Canada &amp; more send you requests. Accept
               a request, have a genuine friendly conversation — earn per hour,
-              per message, or per session.
+              per message, or per completed session.
             </p>
             <div class="step-tag">
               <i class="fas fa-comment"></i> 5 ways to earn
@@ -4646,8 +4654,9 @@
             <div class="step-num">3</div>
             <h3>Earn &amp; Withdraw Daily</h3>
             <p>
-              Earnings stack up fast with multiple earning methods. Withdraw
-              daily to M-Pesa, PayPal, MTN Money, Airtel Money — zero fees.
+              Earnings accumulate as you chat. Withdraw daily to M-Pesa, PayPal,
+              MTN Money, or Airtel Money — zero withdrawal fees. Minimum $5
+              threshold.
             </p>
             <div class="step-tag">
               <i class="fas fa-dollar-sign"></i> Zero withdrawal fees
@@ -4662,26 +4671,26 @@
       <div class="container">
         <div class="shead center earn-hd fade-up">
           <div class="eyebrow">Maximize Your Income</div>
-          <h2 class="sec-title">5 Different Ways to <em>Earn Big</em></h2>
+          <h2 class="sec-title">5 Different Ways to <em>Earn</em></h2>
           <p class="sec-sub">
-            Most platforms pay you one way. Mulastar pays you five. Stack your
-            earnings and maximise every minute you spend chatting.
+            Most platforms pay you one way. Mulastar pays you five. Combine
+            earning methods to increase your income from each conversation.
           </p>
         </div>
         <div class="earn-range fade-up">
           <div class="er-item">
-            <div class="er-val">$3</div>
+            <div class="er-val">$2</div>
             <div class="er-lbl">Minimum / hr</div>
           </div>
           <div class="er-sep"></div>
           <div class="er-item">
-            <div class="er-val accent">$15</div>
+            <div class="er-val accent">$8</div>
             <div class="er-lbl">Maximum / hr</div>
           </div>
           <div class="er-sep"></div>
           <div class="er-item">
-            <div class="er-val">$800</div>
-            <div class="er-lbl">Max / month</div>
+            <div class="er-val">$350</div>
+            <div class="er-lbl">Avg active / month</div>
           </div>
           <div class="er-sep"></div>
           <div class="er-item">
@@ -4690,7 +4699,7 @@
           </div>
           <div class="er-sep"></div>
           <div class="er-item">
-            <div class="er-val">$2.5M+</div>
+            <div class="er-val">$890K+</div>
             <div class="er-lbl">Total paid out</div>
           </div>
         </div>
@@ -4699,11 +4708,11 @@
             <div class="em-badge"><i class="fas fa-clock"></i> Method 1</div>
             <span class="em-icon">⏰</span>
             <h3 class="em-title">Chat Per Hour</h3>
-            <div class="em-earn">$3–$15 / hr</div>
+            <div class="em-earn">$2–$8 / hr</div>
             <p class="em-desc">
-              Earn $3–$15 for every hour of conversation. Your time is
-              automatically tracked and paid — the more you chat, the more you
-              earn.
+              Earn $2–$8 for every hour of conversation. Your time is
+              automatically tracked — the more you chat, the more you earn.
+              Rates vary by client country and demand.
             </p>
             <div class="em-note">
               <i class="fas fa-bolt"></i> Auto-tracked · No manual logging
@@ -4715,9 +4724,9 @@
             <h3 class="em-title">Chat Per Message</h3>
             <div class="em-earn">Every reply pays</div>
             <p class="em-desc">
-              Get paid for each message you send. Great for quick conversations.
-              Every reply adds to your balance instantly — perfect if you type
-              fast!
+              Get paid for each message you send. Great for quick exchanges.
+              Every reply adds to your balance — useful for high-activity
+              conversations.
             </p>
             <div class="em-note">
               <i class="fas fa-bolt"></i> Instant balance update
@@ -4729,25 +4738,25 @@
             </div>
             <span class="em-icon">📋</span>
             <h3 class="em-title">Chat Per Session</h3>
-            <div class="em-earn">$3–$5 per session</div>
+            <div class="em-earn">$2–$4 per session</div>
             <p class="em-desc">
-              Complete full chat sessions and get instant payment. Sessions
-              range from 15 minutes to several hours. A clean lump sum on
-              completion.
+              Complete full chat sessions and receive payment on completion.
+              Sessions typically range from 20 minutes to an hour. A
+              straightforward lump sum per session.
             </p>
             <div class="em-note">
-              <i class="fas fa-bolt"></i> Instant payout on completion
+              <i class="fas fa-bolt"></i> Paid on completion
             </div>
           </div>
           <div class="em-card emc-4 fade-up" style="transition-delay: 0.21s">
             <div class="em-badge"><i class="fas fa-gift"></i> Method 4</div>
             <span class="em-icon">🎁</span>
             <h3 class="em-title">Tips &amp; Bonuses</h3>
-            <div class="em-earn">Unlimited upside</div>
+            <div class="em-earn">Extra on top</div>
             <p class="em-desc">
-              Receive extra cash from satisfied clients. Generous clients tip
-              for great conversations. There's no cap — the better you chat, the
-              more you receive.
+              Some satisfied clients leave voluntary tips for good
+              conversations. Tips are added on top of your base earnings. Not
+              guaranteed, but a welcome addition.
             </p>
             <div class="em-note">
               <i class="fas fa-bolt"></i> Added on top of base earnings
@@ -4762,9 +4771,9 @@
             <h3 class="em-title">Daily Rewards</h3>
             <div class="em-earn">Consistency pays extra</div>
             <p class="em-desc">
-              Earn bonuses just for staying active. The more days in a row you
-              chat, the bigger your daily rewards become. Stack these on top of
-              all other earnings — the ultimate multiplier.
+              Stay active consistently and earn small daily bonuses. The longer
+              your activity streak, the higher the reward. These accumulate
+              gradually over weeks and months of regular use.
             </p>
             <div class="em-note">
               <i class="fas fa-bolt"></i> Streak bonuses · Activity rewards
@@ -4773,11 +4782,13 @@
         </div>
         <div class="earn-total fade-up">
           <div class="et-left">
-            <div class="et-lbl">Combine all 5 methods — monthly potential</div>
-            <div class="et-val">Up to $800+/month</div>
+            <div class="et-lbl">
+              Active members using all 5 methods — monthly range
+            </div>
+            <div class="et-val">$100–$350/month</div>
             <div class="et-sub">
-              Hourly + per message + session fee + tips + daily bonuses =
-              maximum income
+              Hourly + per message + session fee + tips + daily bonuses. Results
+              depend on hours invested and activity level. See full disclaimer.
             </div>
           </div>
           <div>
@@ -4815,8 +4826,8 @@
             Select your <em>country</em> to see your offer
           </h2>
           <p class="sec-sub">
-            Each country has a localized registration fee with exclusive
-            discounts. Tap your country to reveal your personalized deal.
+            Each country has a localized registration fee. Tap your country to
+            reveal your personal deal.
           </p>
         </div>
         <div class="countries-grid" id="countriesGrid"></div>
@@ -4829,7 +4840,7 @@
             margin-top: 1.25rem;
           "
         >
-          👆 Tap your country to reveal your exclusive offer
+          👆 Tap your country to reveal your offer
         </p>
       </div>
     </section>
@@ -4854,11 +4865,11 @@
             <h3 class="topic-title">Culture &amp; Daily Life</h3>
             <p class="topic-desc">
               Share your local traditions, food, festivals, and how everyday
-              life looks where you live. Foreigners love authentic, personal
+              life looks where you live. Foreigners enjoy authentic, personal
               perspectives.
             </p>
             <span class="topic-earn"
-              ><i class="fas fa-coins"></i> $3/hr base + tips</span
+              ><i class="fas fa-coins"></i> $2/hr base + tips</span
             >
           </div>
           <div
@@ -4871,12 +4882,12 @@
             <div class="topic-cat">Highest Demand</div>
             <h3 class="topic-title">Friendly Companionship</h3>
             <p class="topic-desc">
-              Many clients are lonely and simply want someone to talk to.
-              Listen, be kind, share a laugh — this is the most in-demand and
-              highest-paying chat type.
+              Many clients want someone to have a genuine conversation with.
+              Listen, be kind, share a laugh — this is the most in-demand chat
+              type and can attract the highest tips.
             </p>
             <span class="topic-earn"
-              ><i class="fas fa-coins"></i> up to $15/hr + tips</span
+              ><i class="fas fa-coins"></i> up to $8/hr + tips</span
             >
           </div>
           <div
@@ -4889,12 +4900,11 @@
             <div class="topic-cat">Travel Talk</div>
             <h3 class="topic-title">Travel &amp; Places</h3>
             <p class="topic-desc">
-              Discuss hidden gems in your country, travel tips, local must-sees,
-              and recommendations. Great for people planning visits or dreaming
-              of adventure.
+              Discuss local hidden gems, travel tips, and recommendations. Great
+              for people planning visits or dreaming of adventure.
             </p>
             <span class="topic-earn"
-              ><i class="fas fa-coins"></i> $4–$12/hr</span
+              ><i class="fas fa-coins"></i> $3–$6/hr</span
             >
           </div>
           <div
@@ -4907,12 +4917,12 @@
             <div class="topic-cat">Advice &amp; Opinions</div>
             <h3 class="topic-title">Life Advice &amp; Stories</h3>
             <p class="topic-desc">
-              People from across the world want your perspective on
-              relationships, work, and life choices. Share honestly and get paid
-              for your wisdom.
+              People from around the world want your perspective on
+              relationships, work, and life. Share honestly and earn for your
+              time and insight.
             </p>
             <span class="topic-earn"
-              ><i class="fas fa-coins"></i> up to $15/hr</span
+              ><i class="fas fa-coins"></i> up to $8/hr</span
             >
           </div>
         </div>
@@ -4939,15 +4949,15 @@
                   class="fas fa-circle"
                   style="font-size: 0.45rem; color: var(--em2)"
                 ></i
-                ><span id="activeReqCount">847</span> live</span
+                ><span id="activeReqCount">312</span> live</span
               >
               <span class="req-pill"
-                ><i class="fas fa-bolt" style="color: var(--blue2)"></i> ~2 min
+                ><i class="fas fa-bolt" style="color: var(--blue2)"></i> ~5 min
                 wait</span
               >
               <span class="req-pill"
                 ><i class="fas fa-dollar-sign" style="color: var(--blue2)"></i>
-                $3–$15/hr</span
+                $2–$8/hr</span
               >
             </div>
             <div id="requestsList"></div>
@@ -4961,16 +4971,16 @@
             />
             <div class="req-stats-grid">
               <div class="rps">
-                <div class="rps-val" data-count="15200">0</div>
+                <div class="rps-val" data-count="8400">0</div>
                 <div class="rps-lbl">Earners</div>
               </div>
               <div class="rps green">
-                <div class="rps-val">$3–$15</div>
+                <div class="rps-val">$2–$8</div>
                 <div class="rps-lbl">Per Hour</div>
               </div>
               <div class="rps blue">
-                <div class="rps-val">$800</div>
-                <div class="rps-lbl">Max/Month</div>
+                <div class="rps-val">$350</div>
+                <div class="rps-lbl">Avg/Month</div>
               </div>
               <div class="rps">
                 <div class="rps-val">5×</div>
@@ -5001,17 +5011,18 @@
             Real chatters, <em>real earnings</em>
           </h2>
           <p class="sec-sub" style="color: rgba(255, 255, 255, 0.65)">
-            Over 15,000 people across Africa and beyond are earning real money
-            from their phones every day.
+            Thousands of people across Africa are earning extra income from
+            their phones through Mulastar.
           </p>
         </div>
         <div class="tgrid">
           <div class="tcard fade-up">
             <div class="tcard-stars">★★★★★</div>
             <p class="tcard-quote">
-              "I was skeptical at first, but after my first chat I earned KSH
-              300 instantly. Now I do 5–10 chats a day around my regular job and
-              stack up hourly pay plus tips. It's genuinely changed my life."
+              "I was unsure at first, but after my first few chats I started
+              earning steadily. Now I do 3–5 chats a day around my regular job
+              and the extra money helps me cover monthly expenses. The
+              per-message system means even short chats count."
             </p>
             <div class="tcard-footer">
               <img
@@ -5023,16 +5034,17 @@
               <div>
                 <div class="tcard-name">Sarah M.</div>
                 <div class="tcard-loc">Nairobi, Kenya</div>
-                <div class="tcard-earn">💰 ~KSH 80,000/month</div>
+                <div class="tcard-earn">💰 ~KSH 22,000/month extra</div>
               </div>
             </div>
           </div>
           <div class="tcard fade-up" style="transition-delay: 0.1s">
             <div class="tcard-stars">★★★★★</div>
             <p class="tcard-quote">
-              "The daily rewards streak bonus is my favourite. I've not missed a
-              day in 3 months and the bonuses keep growing. On top of my hourly
-              rate and tips I earned UGX 21M last month."
+              "The daily rewards streak bonus is a nice extra. I've been active
+              for 2 months consistently and the bonuses have grown week by week.
+              Combined with hourly pay and occasional tips it adds up to a
+              meaningful side income."
             </p>
             <div class="tcard-footer">
               <img
@@ -5044,7 +5056,7 @@
               <div>
                 <div class="tcard-name">David K.</div>
                 <div class="tcard-loc">Kampala, Uganda</div>
-                <div class="tcard-earn">💰 ~UGX 21,000,000/month</div>
+                <div class="tcard-earn">💰 ~UGX 5,000,000/month extra</div>
               </div>
             </div>
           </div>
@@ -5052,8 +5064,9 @@
             <div class="tcard-stars">★★★★★</div>
             <p class="tcard-quote">
               "As a stay-at-home mum I needed flexibility. Getting paid per
-              message means even quick 5-minute chats add up fast. Support
-              always responds within minutes."
+              message means even 10-minute chats during nap time add to my
+              balance. Customer support is responsive and the withdrawal process
+              is straightforward."
             </p>
             <div class="tcard-footer">
               <img
@@ -5065,7 +5078,7 @@
               <div>
                 <div class="tcard-name">Grace A.</div>
                 <div class="tcard-loc">Lagos, Nigeria</div>
-                <div class="tcard-earn">💰 ~₦400,000/month</div>
+                <div class="tcard-earn">💰 ~₦90,000/month extra</div>
               </div>
             </div>
           </div>
@@ -5098,18 +5111,18 @@
             <div class="trust-title">Secure Platform</div>
             <p class="trust-desc">
               SSL encryption protects all your data and transactions. Your
-              privacy is our top priority.
+              privacy and payment details are always protected.
             </p>
           </div>
           <div class="trust-card fade-up" style="transition-delay: 0.07s">
             <div class="trust-icon ti-green">
               <i class="fas fa-check-double" style="color: var(--em)"></i>
             </div>
-            <div class="trust-num">$2.5M+</div>
+            <div class="trust-num">$890K+</div>
             <div class="trust-title">Verified Payments</div>
             <p class="trust-desc">
-              Every payout is processed and verified. Over $2.5M paid to
-              chatters with zero payment disputes.
+              Every payout is processed and verified. Over $890K paid to
+              chatters with a consistent track record of timely payments.
             </p>
           </div>
           <div class="trust-card fade-up" style="transition-delay: 0.14s">
@@ -5119,19 +5132,19 @@
             <div class="trust-num">24/7</div>
             <div class="trust-title">Live Support</div>
             <p class="trust-desc">
-              Our team is available around the clock via WhatsApp and email.
-              Response time: under 5 minutes.
+              Our team is available around the clock via WhatsApp and email. We
+              aim to respond to every message within 15 minutes.
             </p>
           </div>
           <div class="trust-card fade-up" style="transition-delay: 0.21s">
             <div class="trust-icon ti-violet">
               <i class="fas fa-users" style="color: #7c3aed"></i>
             </div>
-            <div class="trust-num">15,000+</div>
+            <div class="trust-num">8,000+</div>
             <div class="trust-title">Active Chatters</div>
             <p class="trust-desc">
-              Join a thriving community of earners across Africa and beyond with
-              daily success stories.
+              Join a growing community of earners across Africa who supplement
+              their income through daily chat activity.
             </p>
           </div>
         </div>
@@ -5159,8 +5172,8 @@
           <div class="eyebrow">Transparency</div>
           <h2 class="sec-title">Our <em>policies &amp; your rights</em></h2>
           <p class="sec-sub">
-            We believe in complete transparency. Read our policies to fully
-            understand your rights, our obligations, and how we protect you.
+            We believe in complete transparency. Read our policies to understand
+            your rights, our obligations, and how we protect you.
           </p>
         </div>
         <div class="legal-grid">
@@ -5289,9 +5302,8 @@
         <div class="cta-inner fade-up">
           <h2><em>Start earning today from your phone.</em></h2>
           <p>
-            Join 15,000+ people earning real money through meaningful chat
-            conversations. Hourly + per message + per session + tips + daily
-            rewards.
+            Join 8,000+ people earning extra income through chat conversations.
+            Hourly + per message + per session + tips + daily rewards.
           </p>
           <div class="cta-btns">
             <a
@@ -5343,8 +5355,8 @@
             >
           </div>
           <p class="footer-copy">
-            © 2025 Mulastar. All rights reserved. Earn real money through
-            meaningful conversations worldwide.
+            © 2025 Mulastar. All rights reserved. Earn extra income through
+            conversations worldwide.
           </p>
           <p class="footer-copy">
             Built with ❤️ by
@@ -5505,7 +5517,7 @@
             first:
               "Hi 👋 I'm Emily from Chicago — curious about life in Africa!",
             reply:
-              "Wonderful! To unlock full access and start earning (hourly + tips!), complete your registration — it's only a few steps! 🎉",
+              "Wonderful! To unlock full access and start earning, complete your registration — it's only a few steps! 🎉",
           },
           {
             name: "Maria, 45",
@@ -5522,31 +5534,31 @@
         const FAQS = [
           {
             q: "How do I get paid?",
-            a: "Once your balance reaches the minimum threshold ($5), you can withdraw via PayPal, bank transfer, M-Pesa, MTN Money, or Airtel Money. Payments are processed daily with zero withdrawal fees.",
+            a: "Once your balance reaches the $5 minimum threshold, you can withdraw via PayPal, bank transfer, M-Pesa, MTN Money, or Airtel Money. Payments are typically processed within 24 hours with zero withdrawal fees.",
           },
           {
             q: "What are the 5 ways to earn?",
-            a: "You earn per hour (auto-tracked), per message (every reply adds to your balance), per completed session (lump sum), through tips from satisfied clients, and daily rewards for consistent activity. Use all 5 to maximise income.",
+            a: "You earn per hour (auto-tracked), per message (every reply adds to your balance), per completed session (flat fee), through voluntary tips from satisfied clients, and daily rewards for consistent activity. Using all 5 together increases your total income.",
           },
           {
             q: "How much can I realistically earn per month?",
-            a: "Active chatters using all 5 earning methods and doing 5–10 chats per day typically earn $200–$800/month. New members usually earn $50–$150 in their first month as they build their pace.",
+            a: "Results vary based on how many hours you put in. Members who complete 3–5 chats daily and use all earning methods typically earn $50–$200/month. Highly active members who treat this as a serious part-time commitment can earn $200–$350/month. The figures depend entirely on your activity level.",
           },
           {
             q: "What kinds of chats will I have?",
-            a: "You'll chat with clients from UK, USA, Canada, Qatar, Malaysia and more about culture, travel, daily life, companionship, and advice. All chats are friendly, safe, and appropriate — no adult content.",
+            a: "You'll chat with clients from UK, USA, Canada, Qatar, Malaysia and more about culture, travel, daily life, companionship, and advice. All chats are friendly, safe, and appropriate — no adult content of any kind.",
           },
           {
             q: "How much time do I need to commit?",
-            a: "Completely up to you. Spare 30 minutes to earn money from one chat. Most foreigners are active from 9pm to 2am. You decide your own schedule — no fixed hours.",
+            a: "There's no minimum requirement. You can do a single 30-minute chat to earn something small, or put in several hours daily for more income. Most clients are active in evenings and weekends. You set your own schedule.",
           },
           {
             q: "Why is there a registration fee?",
-            a: "The small one-time fee covers your account verification, platform setup, and permanent access. It filters out spam and keeps the community quality high. Most chatters recover this in their very first conversation.",
+            a: "The small one-time fee covers your account verification, platform setup, and access costs. It also helps maintain platform quality. Most active members recover this fee within their first week of regular chatting.",
           },
           {
             q: "Is this legitimate?",
-            a: "Absolutely. Mulastar is fully registered under Kenyan law and operates across 12+ African countries. Over 15,000 members are paid daily. We've paid out over $2.5 million to earners globally with full transparency.",
+            a: "Yes. Mulastar is registered in Kenya and operates across multiple African countries. We have paid out over $890K to verified earners. We publish our earnings disclaimer openly and do not guarantee any specific income level — results depend on individual effort.",
           },
         ];
 
@@ -5554,17 +5566,17 @@
           terms: {
             icon: "📄",
             title: "Terms of Service",
-            body: `<h3>1. Acceptance of Terms</h3><p>By registering with Mulastar, you agree to these Terms of Service. Please read them carefully before completing your registration.</p><h3>2. Eligibility</h3><ul><li>You must be at least 18 years old</li><li>You must have a valid identity document</li><li>You must have a working internet connection</li><li>You agree to provide truthful information during registration</li></ul><h3>3. Registration Fee</h3><p>The one-time registration fee (or local currency equivalent) is non-refundable. It covers account verification, platform access, and setup costs. No additional fees are charged by Mulastar for using the platform.</p><h3>4. Earner Conduct</h3><ul><li>All conversations must remain respectful and appropriate</li><li>You may not solicit personal information from clients</li><li>Harassment or inappropriate content will result in immediate account termination</li></ul><h3>5. Payments</h3><p>Earnings are paid upon reaching the $5 minimum threshold. Payment is processed within 24 hours. Mulastar does not charge withdrawal fees.</p>`,
+            body: `<h3>1. Acceptance of Terms</h3><p>By registering with Mulastar, you agree to these Terms of Service. Please read them carefully before completing your registration.</p><h3>2. Eligibility</h3><ul><li>You must be at least 18 years old</li><li>You must have a valid identity document</li><li>You must have a working internet connection</li><li>You agree to provide truthful information during registration</li></ul><h3>3. Registration Fee</h3><p>The one-time registration fee (in local currency equivalent) is non-refundable once account access is granted. It covers account verification, platform access, and setup costs. No additional recurring fees are charged by Mulastar.</p><h3>4. Earner Conduct</h3><ul><li>All conversations must remain respectful and appropriate</li><li>You may not solicit personal information from clients</li><li>Harassment or inappropriate content will result in immediate account termination</li></ul><h3>5. Payments</h3><p>Earnings are paid upon reaching the $5 minimum threshold. Payment is typically processed within 24 hours. Mulastar does not charge withdrawal fees.</p>`,
           },
           privacy: {
             icon: "🔐",
             title: "Privacy Policy",
-            body: `<h3>1. Information We Collect</h3><ul><li>Name and contact information during registration</li><li>Payment information (processed securely, not stored on our servers)</li><li>Conversation activity data for platform quality purposes</li></ul><h3>2. How We Use Your Information</h3><ul><li>To verify your identity and prevent fraud</li><li>To process your earnings and payments</li><li>To provide customer support</li></ul><h3>3. What We Don't Do</h3><ul><li>We do not sell your personal data to third parties</li><li>We do not share your information without consent</li></ul><h3>4. Your Rights</h3><ul><li>Right to access your personal data</li><li>Right to correct inaccurate information</li><li>Right to request account deletion</li></ul>`,
+            body: `<h3>1. Information We Collect</h3><ul><li>Name and contact information during registration</li><li>Payment information (processed securely, not stored on our servers)</li><li>Conversation activity data for platform quality purposes</li></ul><h3>2. How We Use Your Information</h3><ul><li>To verify your identity and prevent fraud</li><li>To process your earnings and payments</li><li>To provide customer support</li></ul><h3>3. What We Don't Do</h3><ul><li>We do not sell your personal data to third parties</li><li>We do not share your information without your consent</li></ul><h3>4. Your Rights</h3><ul><li>Right to access your personal data</li><li>Right to correct inaccurate information</li><li>Right to request account deletion</li></ul>`,
           },
           disclaimer: {
             icon: "⚠️",
             title: "Earnings Disclaimer",
-            body: `<h3>Important Notice</h3><p>Mulastar is committed to complete transparency about earning potential.</p><h3>Realistic Expectations</h3><ul><li>Most new members earn $30–$150/month in their first 1–3 months</li><li>Experienced members typically earn $100–$400/month</li><li>Maximum projections require 3+ completed chats daily, 7 days a week, using all earning methods</li></ul><h3>Factors That Affect Earnings</h3><ul><li>Time invested per day and days active per week</li><li>Which earning methods you activate</li><li>Conversational skills and client satisfaction ratings</li></ul><h3>No Income Guarantee</h3><p>Mulastar does not guarantee any specific level of income. Earnings figures are examples and projections, not guarantees.</p>`,
+            body: `<h3>Important Notice — Please Read</h3><p>Mulastar is committed to full transparency about earning potential. Please read this carefully before registering.</p><h3>Realistic Expectations</h3><ul><li>New members typically earn $10–$50 in their first month as they learn the platform</li><li>Members chatting 3–5 hours daily typically earn $50–$200/month</li><li>Highly active members may earn $200–$350/month over time</li><li>Higher figures require consistent daily effort over many weeks</li></ul><h3>Factors That Affect Earnings</h3><ul><li>Hours invested per day and days active per week</li><li>Which earning methods you activate and how effectively</li><li>Conversational quality and client satisfaction</li><li>Demand fluctuations on the platform</li></ul><h3>No Income Guarantee</h3><p>Mulastar does not guarantee any specific level of income. All earnings figures shown on this site are examples or averages, not guarantees. Your results may be lower or higher. The registration fee is non-refundable once access is granted.</p>`,
           },
         };
 
@@ -5608,42 +5620,42 @@
           if (calcRes) calcRes.textContent = "$" + fmt(ch * rt * 30);
           $("calcChatsVal").textContent = ch;
           $("calcRateVal").textContent = "$" + rt;
-          calcC.style.setProperty("--val", ((ch - 1) / 19) * 100 + "%");
-          calcR.style.setProperty("--val", ((rt - 3) / 12) * 100 + "%");
+          calcC.style.setProperty("--val", ((ch - 1) / 9) * 100 + "%");
+          calcR.style.setProperty("--val", ((rt - 2) / 6) * 100 + "%");
         };
         calcC?.addEventListener("input", updateCalc);
         calcR?.addEventListener("input", updateCalc);
         updateCalc();
 
         /* LIVE EARNED */
-        let todayBase = 14820;
+        let todayBase = 3240;
         setInterval(() => {
           if (document.hidden) return;
-          todayBase += Math.floor(Math.random() * 35) + 5;
+          todayBase += Math.floor(Math.random() * 12) + 2;
           const el = $("todayEarned");
           if (el) el.textContent = "$" + fmt(todayBase);
-        }, 8000);
+        }, 12000);
 
         /* LIVE COUNT */
-        let lc = 1247;
+        let lc = 847;
         const lcEl = $("liveCount");
         setInterval(() => {
           if (document.hidden) return;
-          lc = Math.max(1000, lc + Math.floor(Math.random() * 18) - 5);
+          lc = Math.max(600, lc + Math.floor(Math.random() * 10) - 4);
           if (lcEl) lcEl.textContent = fmt(lc);
-        }, 7000);
+        }, 10000);
 
         /* REQUEST COUNT */
-        let rc = 847;
+        let rc = 312;
         setInterval(() => {
           if (document.hidden) return;
           rc = Math.max(
-            600,
-            Math.min(1200, rc + Math.floor(Math.random() * 12) - 5),
+            200,
+            Math.min(500, rc + Math.floor(Math.random() * 8) - 3),
           );
           const el = $("activeReqCount");
           if (el) el.textContent = fmt(rc);
-        }, 9000);
+        }, 12000);
 
         /* NAV */
         const ham = $("hamburger"),
@@ -5744,14 +5756,14 @@
 
         /* TICKER */
         const tickItems = [
-          "✓ 15,000+ Verified Earners",
-          "✓ $2.5M+ Paid Out",
+          "✓ 8,000+ Verified Earners",
+          "✓ $890K+ Paid Out",
           "✓ One-Time Fee Only",
           "✓ 5 Ways to Earn",
-          "✓ $3–$15 Per Hour",
+          "✓ $2–$8 Per Hour",
           "✓ UK · USA · Canada · Qatar",
           "✓ Daily Payouts",
-          "✓ 4.8★ Rating",
+          "✓ 4.6★ Rating",
           "✓ 24/7 Real Support",
           "✓ No Monthly Subscriptions",
           "✓ Per Hour · Per Message · Per Session · Tips · Daily Rewards",
@@ -5831,7 +5843,7 @@
             country: "UK",
             flag: "🇬🇧",
             topic: "Cultural exchange 🌍 — curious about daily life in Africa",
-            time: "2 min ago",
+            time: "3 min ago",
             occ: "Retired Teacher",
             img: "https://i.pravatar.cc/92?img=12",
           },
@@ -5841,7 +5853,7 @@
             country: "USA",
             flag: "🇺🇸",
             topic: "Casual conversation ☕ — want to connect genuinely",
-            time: "5 min ago",
+            time: "7 min ago",
             occ: "Business Owner",
             img: "https://i.pravatar.cc/92?img=5",
           },
@@ -5851,7 +5863,7 @@
             country: "Spain",
             flag: "🇪🇸",
             topic: "Travel stories & tips 🗺️ — planning an Africa trip",
-            time: "8 min ago",
+            time: "11 min ago",
             occ: "Consultant",
             img: "https://i.pravatar.cc/92?img=47",
           },
@@ -5859,7 +5871,7 @@
         function buildReqCard(r) {
           const card = document.createElement("div");
           card.className = "req-card";
-          card.innerHTML = `<div class="req-card-head"><div class="req-av"><img src="${r.img}" alt="${r.name}" loading="lazy" width="44" height="44" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(r.name)}&size=88&background=0f172a&color=fff'"/><span class="req-flag">${r.flag || "🌍"}</span></div><div class="req-info"><div class="req-name">${r.name}${r.age ? ", " + r.age : ""}</div><div class="req-meta"><i class="fas fa-location-dot" style="font-size:.55rem;color:var(--em2)"></i> ${r.country}${r.occ ? " · " + r.occ : ""}</div></div><div class="req-earn">$3–$15</div></div><div class="req-topic-row"><div class="req-topic-bubble">${r.topic}</div></div><div class="req-actions"><button class="btn-xsm btn-accept" onclick="acceptReq(this,'${r.name}')"><i class="fas fa-check"></i> Accept</button><button class="btn-xsm btn-skip" onclick="skipReq(this)"><i class="fas fa-forward"></i> Skip</button><span class="req-time"><i class="fas fa-clock"></i> ${r.time}</span></div>`;
+          card.innerHTML = `<div class="req-card-head"><div class="req-av"><img src="${r.img}" alt="${r.name}" loading="lazy" width="44" height="44" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(r.name)}&size=88&background=0f172a&color=fff'"/><span class="req-flag">${r.flag || "🌍"}</span></div><div class="req-info"><div class="req-name">${r.name}${r.age ? ", " + r.age : ""}</div><div class="req-meta"><i class="fas fa-location-dot" style="font-size:.55rem;color:var(--em2)"></i> ${r.country}${r.occ ? " · " + r.occ : ""}</div></div><div class="req-earn">$2–$8</div></div><div class="req-topic-row"><div class="req-topic-bubble">${r.topic}</div></div><div class="req-actions"><button class="btn-xsm btn-accept" onclick="acceptReq(this,'${r.name}')"><i class="fas fa-check"></i> Accept</button><button class="btn-xsm btn-skip" onclick="skipReq(this)"><i class="fas fa-forward"></i> Skip</button><span class="req-time"><i class="fas fa-clock"></i> ${r.time}</span></div>`;
           return card;
         }
         function renderReqs() {
@@ -5955,7 +5967,7 @@
         renderReqs();
         setInterval(() => {
           if (!document.hidden && Math.random() > 0.55) addRandReq();
-        }, 30000);
+        }, 40000);
 
         /* NOTIFICATIONS */
         let notifT = null;
@@ -6138,10 +6150,10 @@
         const spActions = [
           { i: "fa-user-plus", t: "just activated their account" },
           { i: "fa-comment", t: "started chatting with a UK client" },
-          { i: "fa-dollar-sign", t: "earned $15 in one hour" },
-          { i: "fa-fire", t: "unlocked a 7-day streak bonus!" },
-          { i: "fa-star", t: "received a 5-star rating + tip" },
-          { i: "fa-gift", t: "received a $3 tip from a UK client" },
+          { i: "fa-dollar-sign", t: "completed a chat and earned" },
+          { i: "fa-fire", t: "unlocked a 7-day streak bonus" },
+          { i: "fa-star", t: "received a 5-star rating from a client" },
+          { i: "fa-gift", t: "received a tip from a satisfied client" },
         ];
         const spC = $("spContainer");
         let spActive = false;
@@ -6162,8 +6174,8 @@
             }, 400);
           }, 7000);
         };
-        setTimeout(showSP, 10000);
-        setInterval(showSP, 12000);
+        setTimeout(showSP, 12000);
+        setInterval(showSP, 15000);
 
         /* COOKIE */
         const hasCookie = () => {
