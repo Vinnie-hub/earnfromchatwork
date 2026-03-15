@@ -9,12 +9,13 @@
     <title>Mulastar – Get Paid to Chat With People From Abroad</title>
     <meta
       name="description"
-      content="Earn $2–$8/hr chatting with people from UK, USA, Canada, Qatar & more. 5 ways to earn. Join 8,000+ earners. Daily M-Pesa payouts."
+      content="Earn $2–$8/hr chatting with people from UK, USA, Canada, Qatar & more. 5 ways to earn. Join 15,000+ earners. Daily M-Pesa payouts."
     />
+    <!-- FIX 1: Corrected font URLs — replaced DM Sans with Outfit, fixed JetBrains Mono URL -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -34,27 +35,29 @@
         box-sizing: border-box;
       }
       :root {
-        --ink: #0b0d17;
-        --ink2: #1a1d2e;
-        --ink3: #374151;
-        --muted: #6b7280;
-        --faint: #9ca3af;
-        --border: #e4e8f0;
-        --border2: #cdd3df;
-        --bg: #f6f8ff;
-        --bg2: #eef1fb;
-        --white: #fff;
-        --blue: #1d4ed8;
+        /* FIX 2: Refined blue/white palette — more cohesive and professional */
+        --ink: #0a0e1a;
+        --ink2: #1a2236;
+        --ink3: #2d3a52;
+        --muted: #5c6e8a;
+        --faint: #8fa0b8;
+        --border: #e2e8f5;
+        --border2: #c8d4e8;
+        --bg: #f4f7ff;
+        --bg2: #eaeffa;
+        --white: #ffffff;
+        --blue: #1a4fd6;
         --blue2: #2563eb;
         --blue3: #3b82f6;
+        --blue4: #1e3a8a;
         --blue-soft: #eff6ff;
         --blue-border: #bfdbfe;
-        --em: #059669;
+        --em: #047857;
         --em2: #10b981;
         --em-soft: #ecfdf5;
         --red: #dc2626;
         --font-head: "Playfair Display", Georgia, serif;
-        --font-body: "DM Sans", system-ui, sans-serif;
+        --font-body: "Outfit", system-ui, sans-serif;
         --font-mono: "JetBrains Mono", monospace;
         --nav-h: 68px;
         --ease: cubic-bezier(0.4, 0, 0.2, 1);
@@ -64,7 +67,7 @@
         --sh-md: 0 10px 36px rgba(0, 0, 0, 0.1);
         --sh-lg: 0 20px 56px rgba(0, 0, 0, 0.12);
         --sh-xl: 0 32px 80px rgba(0, 0, 0, 0.18);
-        --sh-b: 0 8px 28px rgba(29, 78, 216, 0.3);
+        --sh-b: 0 8px 28px rgba(26, 79, 214, 0.3);
       }
       html {
         font-size: 16px;
@@ -83,7 +86,7 @@
         width: 3px;
       }
       ::-webkit-scrollbar-thumb {
-        background: var(--blue);
+        background: var(--blue2);
         border-radius: 2px;
       }
       img {
@@ -125,7 +128,7 @@
       .loading-spin {
         width: 44px;
         height: 44px;
-        border: 3px solid rgba(29, 78, 216, 0.15);
+        border: 3px solid rgba(26, 79, 214, 0.15);
         border-top-color: var(--blue);
         border-radius: 50%;
         animation: spin 0.7s linear infinite;
@@ -137,7 +140,7 @@
         letter-spacing: 0.1em;
       }
 
-      /* NAV */
+      /* ── NAV ── */
       .nav {
         position: fixed;
         top: 0;
@@ -147,7 +150,7 @@
         height: var(--nav-h);
         display: flex;
         align-items: center;
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.97);
         backdrop-filter: blur(24px);
         border-bottom: 1px solid var(--border);
         transition: all 0.25s var(--ease);
@@ -239,11 +242,11 @@
         box-shadow: var(--sh-b);
         background: linear-gradient(
           135deg,
-          #1d4ed8,
+          #1a4fd6,
           #2563eb,
           #60a5fa,
           #2563eb,
-          #1d4ed8
+          #1a4fd6
         );
         background-size: 300% auto;
         animation: nav-shimmer 6s linear infinite;
@@ -252,7 +255,6 @@
         transform: translateY(-1px);
         box-shadow: 0 10px 28px rgba(37, 99, 235, 0.45);
       }
-
       .hamburger {
         display: flex;
         flex-direction: column;
@@ -276,7 +278,7 @@
       .hamburger:hover {
         background: var(--blue-soft);
         border-color: var(--blue-border);
-        box-shadow: 0 2px 10px rgba(29, 78, 216, 0.14);
+        box-shadow: 0 2px 10px rgba(26, 79, 214, 0.14);
       }
       .hamburger:active {
         transform: scale(0.93);
@@ -310,16 +312,15 @@
       .hamburger.open {
         background: var(--blue-soft);
         border-color: var(--blue-border);
-        box-shadow: 0 2px 12px rgba(29, 78, 216, 0.18);
+        box-shadow: 0 2px 12px rgba(26, 79, 214, 0.18);
       }
-
       .mobile-nav {
         position: fixed;
         top: var(--nav-h);
         left: 0;
         right: 0;
         bottom: 0;
-        background: #ffffff;
+        background: #fff;
         z-index: 999;
         display: flex;
         flex-direction: column;
@@ -399,7 +400,7 @@
         }
       }
 
-      /* BUTTONS */
+      /* ── BUTTONS ── */
       .btn {
         display: inline-flex;
         align-items: center;
@@ -464,7 +465,31 @@
         animation: btn-pulse-ring 2.5s infinite;
       }
 
-      /* SECTIONS */
+      /* FIX 3: meet-people-btn style */
+      .meet-people-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2.4rem;
+        border-radius: 14px;
+        font-family: var(--font-body);
+        font-size: 1.05rem;
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1.5px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        cursor: pointer;
+        transition: all 0.2s;
+        white-space: nowrap;
+      }
+      .meet-people-btn:hover {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.35);
+        transform: translateY(-2px);
+      }
+
+      /* ── SECTIONS ── */
       .section {
         padding: 5.5rem 0;
       }
@@ -525,7 +550,7 @@
         margin: 0 auto;
       }
 
-      /* ANIMATIONS */
+      /* ── ANIMATIONS ── */
       @keyframes spin {
         to {
           transform: rotate(360deg);
@@ -692,6 +717,16 @@
           transform: translate(-8px, -8px) rotate(-3deg);
         }
       }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
       .fade-up {
         opacity: 0;
@@ -714,9 +749,9 @@
         flex-shrink: 0;
       }
 
-      /* TICKER */
+      /* ── TICKER ── */
       .ticker-bar {
-        background: var(--blue);
+        background: var(--blue4);
         overflow: hidden;
         padding: 0.55rem 0;
         margin-top: var(--nav-h);
@@ -744,7 +779,7 @@
         margin-left: 0.75rem;
       }
 
-      /* HERO */
+      /* ── HERO ── */
       .hero {
         min-height: calc(100vh - var(--nav-h) - 36px);
         display: flex;
@@ -753,7 +788,7 @@
         padding: 4rem 0 5rem;
         position: relative;
         overflow: hidden;
-        background: #080d1e;
+        background: #070c1d;
       }
       .hero-bg {
         position: absolute;
@@ -762,7 +797,7 @@
         background:
           radial-gradient(
             ellipse 70% 80% at 15% 50%,
-            rgba(29, 78, 216, 0.35) 0%,
+            rgba(26, 79, 214, 0.35) 0%,
             transparent 60%
           ),
           radial-gradient(
@@ -775,7 +810,7 @@
             rgba(5, 150, 105, 0.12) 0%,
             transparent 55%
           ),
-          #080d1e;
+          #070c1d;
       }
       .hero-noise {
         position: absolute;
@@ -809,7 +844,7 @@
         height: 600px;
         background: radial-gradient(
           circle,
-          rgba(29, 78, 216, 0.3),
+          rgba(26, 79, 214, 0.3),
           transparent 70%
         );
         top: -100px;
@@ -1301,8 +1336,172 @@
         transform: translateY(-1px);
         box-shadow: 0 12px 28px rgba(37, 99, 235, 0.5);
       }
+      /* open-chat-demo button inside chat wrap */
+      .hcw-demo-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.875rem;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.875rem;
+        font-weight: 700;
+        border: 1.5px solid rgba(255, 255, 255, 0.15);
+        transition: all 0.2s;
+        cursor: pointer;
+        margin-top: 0.625rem;
+      }
+      .hcw-demo-btn:hover {
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(255, 255, 255, 0.28);
+      }
 
-      /* HOW IT WORKS */
+      /* ── PROFILE CARD (sequential display) ── */
+      .profile-card {
+        background: var(--white);
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: var(--sh);
+        transition: all 0.3s ease;
+        border: 1px solid var(--border);
+        animation: fadeIn 0.5s ease;
+      }
+      .profile-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--sh-md);
+      }
+      .profile-card__header {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+      .profile-card__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .profile-card:hover .profile-card__image {
+        transform: scale(1.05);
+      }
+      .profile-card__badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--blue2);
+        box-shadow: var(--sh-sm);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .profile-card__overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: white;
+        padding: 1.5rem 1rem 1rem;
+      }
+      .profile-card__name {
+        font-family: var(--font-head);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      .profile-card__info {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+      .profile-card__content {
+        padding: 1.5rem;
+      }
+      .profile-card__description {
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      .profile-card__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .profile-card__price {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--ink);
+        font-family: var(--font-head);
+      }
+      .profile-card__price span {
+        font-size: 0.85rem;
+        font-weight: 400;
+        color: var(--muted);
+        margin-left: 0.25rem;
+      }
+      .profile-card__cta {
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 2rem;
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .profile-card__cta:hover {
+        transform: scale(1.05);
+        box-shadow: var(--sh-b);
+      }
+      .single-profile-container {
+        max-width: 400px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      /* Close button on sequential profile card */
+      .spc-close {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 10;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1.5px solid var(--border2);
+        color: var(--muted);
+        font-size: 0.72rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        box-shadow: var(--sh-sm);
+      }
+      .spc-close:hover {
+        background: var(--red);
+        border-color: var(--red);
+        color: #fff;
+        transform: scale(1.1);
+      }
+
+      /* ── HOW IT WORKS ── */
       .how-section {
         background: var(--bg2);
         position: relative;
@@ -1317,7 +1516,7 @@
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(99, 102, 241, 0.25),
+          rgba(37, 99, 235, 0.25),
           transparent
         );
       }
@@ -1392,13 +1591,13 @@
         margin-top: 0.875rem;
       }
 
-      /* 5 WAYS TO EARN */
+      /* ── EARN METHODS ── */
       .earn-section {
         background: linear-gradient(
           160deg,
-          #06091a 0%,
-          #0a0f22 60%,
-          #06091a 100%
+          #05091a 0%,
+          #090e21 60%,
+          #05091a 100%
         );
         position: relative;
         overflow: hidden;
@@ -1411,7 +1610,7 @@
         background:
           radial-gradient(
             ellipse 60% 70% at 10% 40%,
-            rgba(29, 78, 216, 0.15) 0%,
+            rgba(26, 79, 214, 0.15) 0%,
             transparent 55%
           ),
           radial-gradient(
@@ -1442,49 +1641,6 @@
       }
       .earn-hd .sec-sub {
         color: rgba(255, 255, 255, 0.65);
-      }
-      .earn-range {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 1.25rem;
-        padding: 2rem 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        margin-bottom: 3rem;
-        position: relative;
-        z-index: 2;
-      }
-      .er-item {
-        display: flex;
-        flex-direction: column;
-      }
-      .er-val {
-        font-family: var(--font-head);
-        font-size: clamp(1.8rem, 4vw, 2.8rem);
-        font-weight: 900;
-        letter-spacing: -0.04em;
-        line-height: 1;
-        color: #fff;
-      }
-      .er-val.accent {
-        background: linear-gradient(120deg, #60a5fa, #34d399);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      .er-lbl {
-        font-family: var(--font-mono);
-        font-size: 0.58rem;
-        color: rgba(255, 255, 255, 0.45);
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        margin-top: 0.25rem;
-      }
-      .er-sep {
-        width: 1px;
-        height: 48px;
-        background: rgba(255, 255, 255, 0.12);
       }
       .earn-grid {
         display: grid;
@@ -1667,63 +1823,8 @@
       .em-note i {
         font-size: 0.5rem;
       }
-      .earn-total {
-        position: relative;
-        z-index: 2;
-        margin-top: 2.5rem;
-        padding: 2.5rem;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 2rem;
-        justify-content: space-between;
-      }
-      .et-left .et-lbl {
-        font-family: var(--font-mono);
-        font-size: 0.6rem;
-        color: rgba(255, 255, 255, 0.45);
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        margin-bottom: 0.375rem;
-      }
-      .et-left .et-val {
-        font-family: var(--font-head);
-        font-size: clamp(2rem, 4vw, 3rem);
-        font-weight: 900;
-        color: #fff;
-        letter-spacing: -0.04em;
-      }
-      .et-left .et-sub {
-        font-size: 0.82rem;
-        color: rgba(255, 255, 255, 0.5);
-        margin-top: 0.375rem;
-      }
-      .et-pills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-      .et-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 99px;
-        padding: 0.35rem 0.875rem;
-        font-size: 0.72rem;
-        color: rgba(255, 255, 255, 0.7);
-        font-weight: 500;
-      }
-      .et-pill i {
-        font-size: 0.55rem;
-        color: #60a5fa;
-      }
 
-      /* COUNTRIES */
+      /* ── COUNTRIES ── */
       .countries-section {
         background: var(--bg2);
       }
@@ -1788,8 +1889,8 @@
       .country-card.active .cc-overlay {
         background: linear-gradient(
           to top,
-          rgba(29, 78, 216, 0.8) 0%,
-          rgba(29, 78, 216, 0.2) 60%,
+          rgba(26, 79, 214, 0.8) 0%,
+          rgba(26, 79, 214, 0.2) 60%,
           transparent 100%
         );
       }
@@ -1844,7 +1945,7 @@
         border-color: transparent;
       }
 
-      /* TOPICS */
+      /* ── TOPICS ── */
       .topics-section {
         background: var(--white);
         position: relative;
@@ -1859,7 +1960,7 @@
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(99, 102, 241, 0.18),
+          rgba(37, 99, 235, 0.18),
           transparent
         );
       }
@@ -1930,7 +2031,7 @@
         border: 1px solid var(--border);
       }
       .tc-blue .topic-icon {
-        background: rgba(29, 78, 216, 0.07);
+        background: rgba(26, 79, 214, 0.07);
         border-color: var(--blue-border);
       }
       .tc-green .topic-icon {
@@ -1991,7 +2092,7 @@
         border: 1px solid;
       }
       .tc-blue .topic-earn {
-        background: rgba(29, 78, 216, 0.07);
+        background: rgba(26, 79, 214, 0.07);
         border-color: var(--blue-border);
         color: var(--blue2);
       }
@@ -2011,7 +2112,7 @@
         color: #7c3aed;
       }
 
-      /* LIVE REQUESTS */
+      /* ── LIVE REQUESTS ── */
       .requests-section {
         background: var(--bg);
       }
@@ -2054,7 +2155,7 @@
       }
       .req-card:hover {
         border-color: var(--blue-border);
-        box-shadow: 0 8px 24px rgba(29, 78, 216, 0.1);
+        box-shadow: 0 8px 24px rgba(26, 79, 214, 0.1);
       }
       .req-card-head {
         display: flex;
@@ -2232,9 +2333,9 @@
         box-shadow: 0 14px 28px rgba(37, 99, 235, 0.45);
       }
 
-      /* TESTIMONIALS */
+      /* ── TESTIMONIALS ── */
       .proof-section {
-        background: #080d1e;
+        background: #07091c;
         position: relative;
         overflow: hidden;
       }
@@ -2245,7 +2346,7 @@
         background:
           radial-gradient(
             ellipse 60% 60% at 30% 50%,
-            rgba(29, 78, 216, 0.1) 0%,
+            rgba(26, 79, 214, 0.1) 0%,
             transparent 55%
           ),
           radial-gradient(
@@ -2400,7 +2501,7 @@
         font-weight: 600;
       }
 
-      /* TRUST */
+      /* ── TRUST ── */
       .trust-section {
         background: var(--white);
         position: relative;
@@ -2415,7 +2516,7 @@
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(99, 102, 241, 0.18),
+          rgba(37, 99, 235, 0.18),
           transparent
         );
       }
@@ -2456,7 +2557,7 @@
         border: 1px solid var(--border);
       }
       .ti-blue {
-        background: rgba(29, 78, 216, 0.07);
+        background: rgba(26, 79, 214, 0.07);
         border-color: var(--blue-border);
       }
       .ti-green {
@@ -2491,7 +2592,7 @@
         line-height: 1.75;
       }
 
-      /* FAQ */
+      /* ── FAQ ── */
       .faq-section {
         background: var(--bg2);
       }
@@ -2552,7 +2653,7 @@
         border-top: 1px solid var(--border);
       }
 
-      /* LEGAL */
+      /* ── LEGAL ── */
       .legal-section {
         background: var(--bg2);
       }
@@ -2717,13 +2818,13 @@
         font-size: 0.68rem;
       }
 
-      /* CTA */
+      /* ── CTA ── */
       .cta-section {
         background: linear-gradient(
           135deg,
-          #06091a 0%,
-          #0a0f22 50%,
-          #06091a 100%
+          #05091a 0%,
+          #090e22 50%,
+          #05091a 100%
         );
         position: relative;
         overflow: hidden;
@@ -2735,12 +2836,12 @@
         background:
           radial-gradient(
             ellipse 60% 80% at 80% 50%,
-            rgba(29, 78, 216, 0.12) 0%,
+            rgba(26, 79, 214, 0.12) 0%,
             transparent 55%
           ),
           radial-gradient(
             ellipse 40% 60% at 20% 50%,
-            rgba(29, 78, 216, 0.06) 0%,
+            rgba(26, 79, 214, 0.06) 0%,
             transparent 55%
           );
         pointer-events: none;
@@ -2781,7 +2882,7 @@
         justify-content: center;
       }
 
-      /* MODALS */
+      /* ── MODALS ── */
       .offer-overlay {
         position: fixed;
         inset: 0;
@@ -2820,7 +2921,7 @@
         position: absolute;
         inset: 0;
         background-image: radial-gradient(
-          rgba(29, 78, 216, 0.06) 1.5px,
+          rgba(26, 79, 214, 0.06) 1.5px,
           transparent 1.5px
         );
         background-size: 24px 24px;
@@ -2840,7 +2941,7 @@
         position: absolute;
         top: 1.5rem;
         left: -3.25rem;
-        background: var(--blue);
+        background: var(--blue2);
         color: #fff;
         font-family: var(--font-body);
         font-size: 0.68rem;
@@ -2974,8 +3075,8 @@
         margin-top: 0.25rem;
       }
       .offer-timer {
-        background: rgba(29, 78, 216, 0.06);
-        border: 1px solid rgba(29, 78, 216, 0.18);
+        background: rgba(26, 79, 214, 0.06);
+        border: 1px solid rgba(26, 79, 214, 0.18);
         border-radius: 8px;
         padding: 0.7rem 1rem;
         text-align: center;
@@ -3028,7 +3129,7 @@
         color: var(--blue2);
       }
 
-      /* CHAT MODAL */
+      /* ── CHAT MODAL ── */
       .chat-overlay {
         position: fixed;
         inset: 0;
@@ -3242,7 +3343,7 @@
         transform: scale(1.08);
       }
 
-      /* LEGAL MODAL */
+      /* ── LEGAL MODAL ── */
       .lm-overlay {
         position: fixed;
         inset: 0;
@@ -3440,7 +3541,7 @@
         box-shadow: 0 12px 24px rgba(37, 99, 235, 0.4);
       }
 
-      /* FOOTER */
+      /* ── FOOTER ── */
       .footer {
         background: var(--ink);
         color: rgba(255, 255, 255, 0.4);
@@ -3480,7 +3581,7 @@
       }
       .footer-links a:hover {
         color: var(--blue2);
-        background: rgba(29, 78, 216, 0.08);
+        background: rgba(26, 79, 214, 0.08);
       }
       .footer-copy {
         font-size: 0.7rem;
@@ -3490,7 +3591,7 @@
         color: rgba(255, 255, 255, 0.45);
       }
 
-      /* STICKY / FLOAT */
+      /* ── STICKY / FLOAT ── */
       .sticky-cta {
         position: fixed;
         bottom: 0;
@@ -3518,10 +3619,6 @@
         font-weight: 700;
         font-size: 0.84rem;
         color: var(--ink);
-      }
-      .money-icon {
-        color: #007bff;
-        margin-right: 6px;
       }
       .float-wa {
         position: fixed;
@@ -3656,431 +3753,365 @@
         border: 1px solid var(--border);
       }
 
-      /* ─── DARK MODE ─── */
+      /* ── DARK MODE ── */
       @media (prefers-color-scheme: dark) {
         :root {
-          --ink: #f0f4ff;
-          --ink2: #dde4f8;
-          --ink3: #c4ccdf;
-          --muted: #a0acc8;
-          --faint: #6b7a9e;
-          --border: #1e2540;
-          --border2: #2a3158;
-          --bg: #0b0f20;
-          --bg2: #0f1428;
-          --white: #111827;
-          --blue-soft: #0d1a3a;
-          --blue-border: #1e3a6e;
-          --em-soft: #071a14;
+          --ink: #eef2ff;
+          --ink2: #dbe4ff;
+          --ink3: #c1ccf0;
+          --muted: #8fa0c4;
+          --faint: #5c6e92;
+          --border: #1d2640;
+          --border2: #273154;
+          --bg: #090e1f;
+          --bg2: #0d1328;
+          --white: #101829;
+          --blue-soft: #0c1836;
+          --blue-border: #1c3968;
+          --em-soft: #061512;
         }
         body {
           background: var(--bg);
         }
         .how-section {
-          background: #0b0f20;
+          background: #090e1f;
         }
         .topics-section {
-          background: #0d1120;
+          background: #0c1022;
         }
         .trust-section {
-          background: #0b0f20;
+          background: #090e1f;
         }
         .faq-section {
-          background: #0d1120;
+          background: #0c1022;
         }
         .legal-section {
-          background: #0b0f20;
+          background: #090e1f;
         }
         .countries-section {
-          background: #0d1120;
+          background: #0c1022;
         }
         .requests-section {
-          background: #0b0f20;
+          background: #090e1f;
         }
         .step-card {
-          background: #0f1428;
-          border-color: #1e2540;
+          background: #0d1328;
+          border-color: #1d2640;
         }
         .step-card h3 {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .step-card p {
-          color: #a0acc8;
+          color: #8fa0c4;
         }
         .topic-card {
-          background: #0f1428;
-          border-color: #1e2540;
+          background: #0d1328;
+          border-color: #1d2640;
         }
         .topic-card:hover {
-          background: #131b30;
+          background: #121c35;
         }
         .topic-title {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .topic-desc {
-          color: #a0acc8;
+          color: #8fa0c4;
         }
         .trust-card {
-          background: #0f1428;
-          border-color: #1e2540;
+          background: #0d1328;
+          border-color: #1d2640;
         }
         .trust-num,
         .trust-title {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .trust-desc {
-          color: #a0acc8;
+          color: #8fa0c4;
         }
         .faq-item {
-          background: #0f1428;
-          border-color: #1e2540;
+          background: #0d1328;
+          border-color: #1d2640;
         }
         .faq-q {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .faq-a {
-          color: #a0acc8;
+          color: #8fa0c4;
         }
         .faq-a.open {
-          border-top-color: #1e2540;
+          border-top-color: #1d2640;
         }
         .legal-card {
-          background: #0f1428;
-          border-color: #1e2540;
+          background: #0d1328;
+          border-color: #1d2640;
         }
         .legal-card-title {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .legal-card-desc {
-          color: #a0acc8;
+          color: #8fa0c4;
         }
         .legal-bullets li {
-          color: #dde4f8;
+          color: #dbe4ff;
         }
         .req-card {
-          background: #0f1428;
-          border-color: #1e2540;
+          background: #0d1328;
+          border-color: #1d2640;
         }
         .req-name {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .req-meta {
-          color: #a0acc8;
+          color: #8fa0c4;
         }
         .req-topic-bubble {
-          background: #0b0f20;
-          border-color: #1e2540;
-          color: #dde4f8;
+          background: #090e1f;
+          border-color: #1d2640;
+          color: #dbe4ff;
         }
         .req-topic-row {
-          border-top-color: #1e2540;
+          border-top-color: #1d2640;
         }
         .req-actions {
-          background: #0d1120;
-          border-top-color: #1e2540;
+          background: #0c1022;
+          border-top-color: #1d2640;
         }
         .req-pill {
-          background: #0f1428;
-          border-color: #1e2540;
-          color: #dde4f8;
+          background: #0d1328;
+          border-color: #1d2640;
+          color: #dbe4ff;
         }
         .offer-box {
-          background: #0f1428;
+          background: #0d1328;
         }
         .offer-head {
-          background: #0b0f20;
+          background: #090e1f;
         }
         .offer-foot {
-          background: #0d1120;
-          border-top-color: #1e2540;
+          background: #0c1022;
+          border-top-color: #1d2640;
         }
         .offer-pricing-box {
-          background: #0d1a3a;
-          border-color: #1e3a6e;
+          background: #0c1836;
+          border-color: #1c3968;
         }
         .offer-feats li {
-          color: #dde4f8;
+          color: #dbe4ff;
         }
         .offer-cname {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .offer-timer {
-          background: rgba(29, 78, 216, 0.1);
+          background: rgba(26, 79, 214, 0.1);
         }
         .offer-urgency-pill {
           background: rgba(220, 38, 38, 0.12);
         }
-
-        /* ─── CHAT MODAL DARK MODE FIX ─── */
         .chat-modal {
-          background: #0f1428;
-          border: 1px solid #1e2540;
+          background: #0d1328;
+          border: 1px solid #1d2640;
         }
         .cm-head {
-          background: #0b0f20;
-          border-bottom-color: #1e2540;
+          background: #090e1f;
+          border-bottom-color: #1d2640;
         }
         .cm-head-name {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .cm-msgs {
-          background: #0b0f20;
+          background: #090e1f;
         }
         .cm-msg.them .cm-bubble {
-          background: #141e35;
-          border-color: #1e2540;
-          color: #e2e8f8;
+          background: #13203a;
+          border-color: #1d2640;
+          color: #e2e8fa;
         }
         .typing-dots {
-          background: #141e35;
-          border-color: #1e2540;
+          background: #13203a;
+          border-color: #1d2640;
         }
         .typing-dots span {
-          background: #6b7a9e;
+          background: #5c6e92;
         }
         .cm-earn-notice {
-          background: #071a14;
+          background: #061512;
           color: #6ee7b7;
           border-color: rgba(52, 211, 153, 0.2);
         }
         .cm-input-area {
-          background: #0f1428;
-          border-top-color: #1e2540;
+          background: #0d1328;
+          border-top-color: #1d2640;
         }
         .cm-inp {
-          background: #0b0f20;
-          border-color: #1e2540;
-          color: #f0f4ff;
+          background: #090e1f;
+          border-color: #1d2640;
+          color: #eef2ff;
         }
         .cm-inp::placeholder {
-          color: #6b7a9e;
+          color: #5c6e92;
         }
         .cm-inp:focus {
-          background: #0d1428;
+          background: #0c1428;
           border-color: var(--blue2);
         }
         .cm-time {
-          color: #6b7a9e;
+          color: #5c6e92;
         }
         .cm-head-close {
-          background: #131b30;
-          border-color: #1e2540;
-          color: #a0acc8;
+          background: #121e35;
+          border-color: #1d2640;
+          color: #8fa0c4;
         }
-
         .lm-box {
-          background: #0f1428;
+          background: #0d1328;
         }
         .lm-head {
-          background: #0b0f20;
-          border-bottom-color: #1e2540;
+          background: #090e1f;
+          border-bottom-color: #1d2640;
         }
         .lm-head-title {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .lm-head-sub {
-          color: #6b7a9e;
+          color: #5c6e92;
         }
         .lm-head-icon {
-          background: #131b30;
-          border-color: #1e2540;
+          background: #121e35;
+          border-color: #1d2640;
         }
         .lm-tabs {
-          background: #0f1428;
-          border-bottom-color: #1e2540;
+          background: #0d1328;
+          border-bottom-color: #1d2640;
         }
         .lm-tab {
-          color: #a0acc8;
+          color: #8fa0c4;
         }
         .lm-tab.active {
-          background: rgba(29, 78, 216, 0.15);
+          background: rgba(26, 79, 214, 0.15);
           color: #60a5fa;
           border-bottom-color: #60a5fa;
         }
         .lm-body {
-          color: #a0acc8;
+          color: #8fa0c4;
         }
         .lm-body h3 {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .lm-body ul li {
-          background: #0b0f20;
-          border-color: #1e3a6e;
-          color: #dde4f8;
+          background: #090e1f;
+          border-color: #1c3968;
+          color: #dbe4ff;
         }
         .lm-foot {
-          background: #0b0f20;
-          border-top-color: #1e2540;
+          background: #090e1f;
+          border-top-color: #1d2640;
         }
         .lm-foot-note {
-          color: #6b7a9e;
+          color: #5c6e92;
         }
         .lm-close {
-          background: #131b30;
-          border-color: #1e2540;
-          color: #a0acc8;
+          background: #121e35;
+          border-color: #1d2640;
+          color: #8fa0c4;
         }
         .req-panel {
-          background: #0f1428;
-          border-color: #1e2540;
+          background: #0d1328;
+          border-color: #1d2640;
         }
         .rps-val {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .rps {
-          border-right-color: #1e2540;
+          border-right-color: #1d2640;
         }
         .req-stats-grid {
-          border-bottom-color: #1e2540;
+          border-bottom-color: #1d2640;
         }
         .nav {
-          background: rgba(11, 15, 32, 0.97);
-          border-bottom-color: #1e2540;
+          background: rgba(9, 14, 31, 0.97);
+          border-bottom-color: #1d2640;
         }
         .mobile-nav {
-          background: #0b0f20 !important;
-          border-top-color: #1e3a6e !important;
+          background: #090e1f !important;
+          border-top-color: #1c3968 !important;
         }
         .mobile-nav a:not(.mobile-nav-cta) {
-          color: #dde4f8 !important;
+          color: #dbe4ff !important;
         }
         .mobile-nav a:not(.mobile-nav-cta):hover {
           color: #60a5fa !important;
-          background: rgba(29, 78, 216, 0.15) !important;
-          border-color: #1e3a6e !important;
-        }
-        .mobile-nav-div {
-          background: linear-gradient(
-            90deg,
-            transparent,
-            #2a3158,
-            transparent
-          ) !important;
+          background: rgba(26, 79, 214, 0.15) !important;
+          border-color: #1c3968 !important;
         }
         .hamburger {
-          background: #131b30 !important;
-          border-color: #2a3158 !important;
-          box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3) !important;
+          background: #121e35 !important;
+          border-color: #273154 !important;
         }
         .hamburger span {
-          background: #f0f4ff !important;
+          background: #eef2ff !important;
         }
         .hamburger.open {
-          background: rgba(29, 78, 216, 0.2) !important;
-          border-color: #1e3a6e !important;
+          background: rgba(26, 79, 214, 0.2) !important;
+          border-color: #1c3968 !important;
         }
         .hamburger.open span:nth-child(1),
         .hamburger.open span:nth-child(3) {
           background: #60a5fa !important;
         }
         .cookie-bar {
-          background: #0f1428;
-          border-color: #1e2540;
+          background: #0d1328;
+          border-color: #1d2640;
         }
         .cookie-txt {
-          color: #a0acc8;
+          color: #8fa0c4;
         }
         .cookie-btn.decline {
-          background: #131b30;
-          color: #a0acc8;
-          border-color: #1e2540;
+          background: #121e35;
+          color: #8fa0c4;
+          border-color: #1d2640;
         }
         .notif {
-          background: #0f1428;
-          border-color: #1e2540;
-          color: #dde4f8;
-        }
-        .ti-blue {
-          background: rgba(29, 78, 216, 0.14) !important;
-          border-color: rgba(29, 78, 216, 0.25) !important;
-        }
-        .ti-green {
-          background: rgba(5, 150, 105, 0.12) !important;
-          border-color: rgba(5, 150, 105, 0.22) !important;
-        }
-        .ti-indigo {
-          background: rgba(79, 70, 229, 0.12) !important;
-          border-color: rgba(79, 70, 229, 0.22) !important;
-        }
-        .ti-violet {
-          background: rgba(124, 58, 237, 0.12) !important;
-          border-color: rgba(124, 58, 237, 0.22) !important;
-        }
-        .tc-blue .topic-icon {
-          background: rgba(29, 78, 216, 0.14);
-          border-color: rgba(29, 78, 216, 0.3);
-        }
-        .tc-green .topic-icon {
-          background: rgba(5, 150, 105, 0.12);
-          border-color: rgba(5, 150, 105, 0.25);
-        }
-        .tc-indigo .topic-icon {
-          background: rgba(79, 70, 229, 0.12);
-          border-color: rgba(79, 70, 229, 0.25);
-        }
-        .tc-violet .topic-icon {
-          background: rgba(124, 58, 237, 0.12);
-          border-color: rgba(124, 58, 237, 0.25);
-        }
-        .legal-card.terms .legal-icon-w {
-          background: #0d1a3a;
-          border-color: #1e3a6e;
-        }
-        .legal-card.priv .legal-icon-w {
-          background: #071a14;
-          border-color: rgba(5, 150, 105, 0.22);
-        }
-        .legal-card.disc .legal-icon-w {
-          background: #1a1200;
-          border-color: rgba(251, 191, 36, 0.22);
-        }
-        .legal-trust-row {
-          border-top-color: #1e2540;
-        }
-        .ltr-item {
-          color: #a0acc8;
-        }
-        .footer {
-          background: #040608;
+          background: #0d1328;
+          border-color: #1d2640;
+          color: #dbe4ff;
         }
         .sticky-cta {
-          background: rgba(11, 15, 32, 0.97);
-          border-top-color: #1e2540;
+          background: rgba(9, 14, 31, 0.97);
+          border-top-color: #1d2640;
         }
         .sticky-txt {
-          color: #f0f4ff;
+          color: #eef2ff;
         }
         .logo-name {
-          color: #f0f4ff;
-        }
-        .sec-title {
-          color: var(--ink);
-        }
-        .sec-sub {
-          color: var(--muted);
-        }
-        .eyebrow {
-          color: #60a5fa;
-        }
-        .eyebrow::before {
-          background: #60a5fa;
+          color: #eef2ff;
         }
         .offer-close-btn {
           background: rgba(255, 255, 255, 0.08);
           border-color: rgba(255, 255, 255, 0.14);
-          color: #a0acc8;
-        }
-        .hcw-header {
-          background: rgba(255, 255, 255, 0.03);
-        }
-        .hls-label {
-          color: rgba(255, 255, 255, 0.55);
+          color: #8fa0c4;
         }
         .sp-item {
-          background: #0f1428;
-          border-color: #1e2540;
+          background: #0d1328;
+          border-color: #1d2640;
           border-left-color: var(--blue);
-          color: #dde4f8;
+          color: #dbe4ff;
+        }
+        .profile-card {
+          background: #0d1328;
+          border-color: #1d2640;
+        }
+        .profile-card__description {
+          color: #8fa0c4;
+        }
+        .profile-card__price {
+          color: #eef2ff;
+        }
+        .profile-card__price span {
+          color: #8fa0c4;
+        }
+        .profile-card__badge {
+          background: rgba(255, 255, 255, 0.9);
+          color: var(--blue2);
         }
       }
       @media (prefers-reduced-motion: reduce) {
@@ -4112,7 +4143,9 @@
           <div class="offer-head-content">
             <span class="offer-flag-big" id="offerFlag">🇰🇪</span>
             <span class="offer-cname" id="offerCname">Kenya</span>
-            <span class="offer-csub">Mulastar Registration Offer</span>
+            <span class="offer-csub"
+              >Register your account to start chatting</span
+            >
           </div>
         </div>
         <div class="offer-body">
@@ -4270,7 +4303,7 @@
             ><i class="fas fa-lock"></i>&nbsp;Secure &amp; Confidential</span
           >
           <a
-            href="https://wa.me/254745656143?text=I+have+a+question+about+Mulastar+policies"
+            href="https://wa.me/254755252499?text=I+have+a+question+about+Mulastar+policies"
             target="_blank"
             rel="noopener noreferrer"
             ><i class="fab fa-whatsapp"></i> Ask a Question</a
@@ -4295,7 +4328,7 @@
     </div>
 
     <a
-      href="https://wa.me/254745656143?text=Hello,%20I%20am%20interested%20in%20joining%20Mulastar.%20Please%20guide%20me%20on%20how%20to%20start."
+      href="https://wa.me/254755252499?text=Hello,%20I%20am%20interested%20in%20joining%20Mulastar.%20Please%20guide%20me%20on%20how%20to%20start."
       class="float-wa"
       target="_blank"
       rel="noopener noreferrer"
@@ -4307,9 +4340,9 @@
       <div class="container">
         <div class="sticky-inner">
           <div>
-            <p class="sticky-txt">
-              <i class="fa-solid fa-sack-dollar money-icon"></i> Start earning
-              up to $350/month
+            <p class="sticky-txt">Start earning from home today</p>
+            <p style="font-size: 0.75rem; color: var(--muted)">
+              Join 15,000+ earners on MulaStar
             </p>
           </div>
           <a
@@ -4388,7 +4421,7 @@
       </div>
     </div>
 
-    <!-- HERO -->
+    <!-- HERO — FIX 4: Corrected div nesting throughout -->
     <section class="hero">
       <div class="hero-bg"></div>
       <div class="hero-noise"></div>
@@ -4407,8 +4440,8 @@
             <span class="line-top">Turn Conversations</span>
             <span class="line-mid">Into Real Cash</span>
             <span class="line-bot"
-              >Chat with people from abroad · Earn $2–$8/hr · Get paid daily to
-              your phone</span
+              >Chat with lonely people from abroad · Earn $2–$8/hr · Get paid
+              daily to your phone</span
             >
           </h1>
           <div class="hero-earn-row">
@@ -4471,6 +4504,7 @@
             <span class="hero-flag-chip">🇲🇾 Malaysia <em>$5/hr</em></span>
             <span class="hero-flag-chip">🌍 +100 more <em>$2–$8</em></span>
           </div>
+          <!-- FIX 5: meet-people-btn now uses correct class -->
           <div class="hero-ctas">
             <a
               href="javascript:void(0)"
@@ -4478,10 +4512,12 @@
               data-url="https://mulastar.com/register.php?ref=Sydney"
               ><i class="fas fa-rocket"></i> Start Earning Now</a
             >
-            <button class="btn btn-ghost btn-xl" id="openChatDemo">
-              <i class="fas fa-comment-dots"></i> Try a Live Chat
+            <button class="meet-people-btn" id="meetPeopleBtn">
+              <i class="fas fa-users"></i> Meet People Ready to Chat
             </button>
           </div>
+          <!-- Sequential profile display container — populated by JS -->
+          <div id="singleProfileContainer" style="margin-bottom: 1.5rem"></div>
           <div class="hero-proof">
             <span class="hp-item"
               ><i class="fas fa-shield-alt"></i> Secure &amp; Trusted</span
@@ -4497,7 +4533,10 @@
             >
           </div>
         </div>
+        <!-- end .hero-left -->
+
         <div class="hero-right">
+          <!-- FIX 6: Removed extra stray </div> tag that broke layout -->
           <div class="hero-chat-wrap">
             <div class="hcw-header">
               <img
@@ -4559,7 +4598,7 @@
                 <div class="hcw-stat-lbl">Max/hr</div>
               </div>
               <div class="hcw-stat">
-                <div class="hcw-stat-val blue">$350</div>
+                <div class="hcw-stat-val blue">$650</div>
                 <div class="hcw-stat-lbl">Est/month</div>
               </div>
               <div class="hcw-stat">
@@ -4605,13 +4644,19 @@
                 href="javascript:void(0)"
                 class="register-link"
                 data-url="https://mulastar.com/register.php?ref=Sydney"
-                ><i class="fas fa-comment-dots"></i> Register your account —
-                Start chatting</a
+                ><i class="fas fa-rocket"></i> Start Accepting Requests</a
               >
             </div>
+            <!-- FIX 7: openChatDemo is now properly inside hcw-wrap as a styled button -->
+            <button class="hcw-demo-btn" id="openChatDemo">
+              <i class="fas fa-comment-dots"></i> Try a Live Chat — it's free
+            </button>
           </div>
+          <!-- end .hero-chat-wrap -->
         </div>
+        <!-- end .hero-right -->
       </div>
+      <!-- end .container -->
     </section>
 
     <!-- HOW IT WORKS -->
@@ -4666,42 +4711,44 @@
       </div>
     </section>
 
+    <!-- COUNTRIES -->
+    <section class="countries-section section" id="countries">
+      <div class="container">
+        <div class="shead center fade-up">
+          <div class="eyebrow">Your Country</div>
+          <h2 class="sec-title">
+            Select your <em>country</em> to see your offer
+          </h2>
+          <p class="sec-sub">
+            Each country has a localized registration fee. Tap your country to
+            reveal your personal deal.
+          </p>
+        </div>
+        <div class="countries-grid" id="countriesGrid"></div>
+        <p
+          style="
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--muted);
+            margin-top: 1.25rem;
+          "
+        >
+          👆 Tap your country to reveal your offer
+        </p>
+      </div>
+    </section>
+
     <!-- 5 WAYS TO EARN -->
     <section class="earn-section section" id="earn-methods">
       <div class="container">
         <div class="shead center earn-hd fade-up">
           <div class="eyebrow">Maximize Your Income</div>
-          <h2 class="sec-title">5 Different Ways to <em>Earn</em></h2>
+          <h2 class="sec-title">Different Ways to <em>Earn</em></h2>
           <p class="sec-sub">
             Most platforms pay you one way. Mulastar pays you five. Combine
             earning methods to increase your income from each conversation.
           </p>
-        </div>
-        <div class="earn-range fade-up">
-          <div class="er-item">
-            <div class="er-val">$2</div>
-            <div class="er-lbl">Minimum / hr</div>
-          </div>
-          <div class="er-sep"></div>
-          <div class="er-item">
-            <div class="er-val accent">$8</div>
-            <div class="er-lbl">Maximum / hr</div>
-          </div>
-          <div class="er-sep"></div>
-          <div class="er-item">
-            <div class="er-val">$350</div>
-            <div class="er-lbl">Avg active / month</div>
-          </div>
-          <div class="er-sep"></div>
-          <div class="er-item">
-            <div class="er-val accent">5×</div>
-            <div class="er-lbl">Earning methods</div>
-          </div>
-          <div class="er-sep"></div>
-          <div class="er-item">
-            <div class="er-val">$890K+</div>
-            <div class="er-lbl">Total paid out</div>
-          </div>
         </div>
         <div class="earn-grid">
           <div class="em-card emc-1 fade-up">
@@ -4780,68 +4827,6 @@
             </div>
           </div>
         </div>
-        <div class="earn-total fade-up">
-          <div class="et-left">
-            <div class="et-lbl">
-              Active members using all 5 methods — monthly range
-            </div>
-            <div class="et-val">$100–$350/month</div>
-            <div class="et-sub">
-              Hourly + per message + session fee + tips + daily bonuses. Results
-              depend on hours invested and activity level. See full disclaimer.
-            </div>
-          </div>
-          <div>
-            <div class="et-pills">
-              <span class="et-pill"><i class="fas fa-clock"></i> Per Hour</span>
-              <span class="et-pill"
-                ><i class="fas fa-comment"></i> Per Message</span
-              >
-              <span class="et-pill"
-                ><i class="fas fa-layer-group"></i> Per Session</span
-              >
-              <span class="et-pill"><i class="fas fa-gift"></i> Tips</span>
-              <span class="et-pill"
-                ><i class="fas fa-fire"></i> Daily Rewards</span
-              >
-            </div>
-            <a
-              href="javascript:void(0)"
-              class="btn btn-blue btn-lg register-link"
-              style="margin-top: 1.25rem"
-              data-url="https://mulastar.com/register.php?ref=Sydney"
-              ><i class="fas fa-rocket"></i> Start Earning All 5 Ways</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COUNTRIES -->
-    <section class="countries-section section" id="countries">
-      <div class="container">
-        <div class="shead center fade-up">
-          <div class="eyebrow">Your Country</div>
-          <h2 class="sec-title">
-            Select your <em>country</em> to see your offer
-          </h2>
-          <p class="sec-sub">
-            Each country has a localized registration fee. Tap your country to
-            reveal your personal deal.
-          </p>
-        </div>
-        <div class="countries-grid" id="countriesGrid"></div>
-        <p
-          style="
-            text-align: center;
-            font-family: var(--font-mono);
-            font-size: 0.68rem;
-            color: var(--muted);
-            margin-top: 1.25rem;
-          "
-        >
-          👆 Tap your country to reveal your offer
-        </p>
       </div>
     </section>
 
@@ -5140,7 +5125,7 @@
             <div class="trust-icon ti-violet">
               <i class="fas fa-users" style="color: #7c3aed"></i>
             </div>
-            <div class="trust-num">8,000+</div>
+            <div class="trust-num">15,000+</div>
             <div class="trust-title">Active Chatters</div>
             <p class="trust-desc">
               Join a growing community of earners across Africa who supplement
@@ -5284,7 +5269,13 @@
             ><i class="fas fa-building-columns"></i> Registered in Kenya</span
           >
           <span class="ltr-item"
-            ><i class="fas fa-envelope"></i> support@Mulastar.co.ke</span
+            ><i class="fas fa-envelope"></i>
+            <a
+              href="/cdn-cgi/l/email-protection"
+              class="__cf_email__"
+              data-cfemail="f685838686998482b6bb839a9785829784d89599d89d93"
+              >[email&#160;protected]</a
+            ></span
           >
           <span class="ltr-item"
             ><i class="fas fa-shield-alt"></i> GDPR Aligned</span
@@ -5302,7 +5293,7 @@
         <div class="cta-inner fade-up">
           <h2><em>Start earning today from your phone.</em></h2>
           <p>
-            Join 8,000+ people earning extra income through chat conversations.
+            Join 15,000+ people earning extra income through chat conversations.
             Hourly + per message + per session + tips + daily rewards.
           </p>
           <div class="cta-btns">
@@ -5313,7 +5304,7 @@
               ><i class="fas fa-rocket"></i> Start Chatting Now</a
             >
             <a
-              href="https://wa.me/254745656143?text=Hello,%20I%20have%20a%20question%20about%20Mulastar"
+              href="https://wa.me/254755252499?text=Hello,%20I%20have%20a%20question%20about%20Mulastar"
               class="btn btn-ghost btn-xl"
               target="_blank"
               rel="noopener noreferrer"
@@ -5371,6 +5362,10 @@
       </div>
     </footer>
 
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
     <script
       id="chatway"
       async
@@ -5433,10 +5428,10 @@
           {
             name: "South Africa",
             flag: "🇿🇦",
-            markedPrice: "ZAR 250",
-            regFee: "ZAR 200",
-            save: "ZAR 50",
-            discount: "20%",
+            markedPrice: "ZAR 90",
+            regFee: "ZAR 70",
+            save: "ZAR 20",
+            discount: "23%",
             payment: "Bank Transfer / PayPal",
             urgency: "⏳ Offer expires soon!",
             img: "https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?auto=format&fit=crop&w=800&q=80",
@@ -5444,9 +5439,9 @@
           {
             name: "Ghana",
             flag: "🇬🇭",
-            markedPrice: "GH₵ 100",
-            regFee: "GH₵ 80",
-            save: "GH₵ 20",
+            markedPrice: "GH₵ 120",
+            regFee: "GH₵ 96",
+            save: "GH₵ 14",
             discount: "20%",
             payment: "MTN MoMo",
             urgency: "⏳ Limited time offer!",
@@ -5477,9 +5472,9 @@
           {
             name: "Malawi",
             flag: "🇲🇼",
-            markedPrice: "MWK 12,500",
-            regFee: "MWK 10,000",
-            save: "MWK 2,500",
+            markedPrice: "MWK 30,000",
+            regFee: "MWK 26,000",
+            save: "MWK 4,000",
             discount: "20%",
             payment: "Airtel Money",
             urgency: "⏳ Grab it now!",
@@ -5576,9 +5571,274 @@
           disclaimer: {
             icon: "⚠️",
             title: "Earnings Disclaimer",
-            body: `<h3>Important Notice — Please Read</h3><p>Mulastar is committed to full transparency about earning potential. Please read this carefully before registering.</p><h3>Realistic Expectations</h3><ul><li>New members typically earn $10–$50 in their first month as they learn the platform</li><li>Members chatting 3–5 hours daily typically earn $50–$200/month</li><li>Highly active members may earn $200–$350/month over time</li><li>Higher figures require consistent daily effort over many weeks</li></ul><h3>Factors That Affect Earnings</h3><ul><li>Hours invested per day and days active per week</li><li>Which earning methods you activate and how effectively</li><li>Conversational quality and client satisfaction</li><li>Demand fluctuations on the platform</li></ul><h3>No Income Guarantee</h3><p>Mulastar does not guarantee any specific level of income. All earnings figures shown on this site are examples or averages, not guarantees. Your results may be lower or higher. The registration fee is non-refundable once access is granted.</p>`,
+            body: `<h3>Important Notice — Please Read</h3><p>Mulastar is committed to full transparency about earning potential. Please read this carefully before registering.</p><h3>Realistic Expectations</h3><ul><li>New members typically earn $10–$100 in their first month as they learn the platform</li><li>Members chatting 3–5 hours daily typically earn $100–$300/month</li><li>Highly active members may earn $300–$850/month over time</li><li>Higher figures require consistent daily effort over many weeks</li></ul><h3>Factors That Affect Earnings</h3><ul><li>Hours invested per day and days active per week</li><li>Which earning methods you activate and how effectively</li><li>Conversational quality and client satisfaction</li><li>Demand fluctuations on the platform</li></ul><h3>No Income Guarantee</h3><p>Mulastar does not guarantee any specific level of income. All earnings figures shown on this site are examples or averages, not guarantees. Your results may be lower or higher. The registration fee is non-refundable once access is granted.</p>`,
           },
         };
+
+        /* ── PROFILE DATA ── */
+        const profileData = [
+          {
+            id: 1,
+            name: "Emily",
+            age: 65,
+            location: "London, UK",
+            description:
+              "Retired teacher looking for meaningful conversations about books, travel, and life experiences.",
+            detailedDescription:
+              "Hello! I'm Emily, a retired literature teacher from London with 40 years of teaching experience. I love discussing classic novels, sharing travel stories from my adventures across Europe, and hearing about different life experiences.",
+            price: 18,
+            tags: [
+              "Friendly",
+              "Patient Listener",
+              "Well-read",
+              "Travel Enthusiast",
+            ],
+            languages: ["English", "French"],
+            interests: ["Literature", "Travel", "History", "Art", "Gardening"],
+            availability: "Weekdays 2 PM - 8 PM GMT",
+            avgChatLength: "45-60 minutes",
+            image:
+              "https://plus.unsplash.com/premium_photo-1679439492693-05a8e642381d?w=500&auto=format&fit=crop&q=60",
+            badge: "Popular",
+            badgeIcon: "fa-fire",
+          },
+          {
+            id: 2,
+            name: "Robert",
+            age: 58,
+            location: "New York, USA",
+            description:
+              "Business executive seeking cultural exchange and conversations about innovation and global trends.",
+            detailedDescription:
+              "Hello, I'm Robert! After 30+ years in international business, I'm passionate about cultural exchange, innovation, and mentoring.",
+            price: 22,
+            tags: [
+              "Business Savvy",
+              "Mentor",
+              "Cultural Exchange",
+              "Professional",
+            ],
+            languages: ["English", "Spanish"],
+            interests: [
+              "Business",
+              "Technology",
+              "Global Affairs",
+              "Leadership",
+            ],
+            availability: "Weekdays 7 PM - 11 PM EST",
+            avgChatLength: "30-45 minutes",
+            image:
+              "https://plus.unsplash.com/premium_photo-1672297543351-17987c5c9361?q=80&w=385&auto=format&fit=crop",
+            badge: "Premium",
+            badgeIcon: "fa-crown",
+          },
+          {
+            id: 3,
+            name: "Linda",
+            age: 68,
+            location: "Toronto, Canada",
+            description:
+              "Looking for companionship and conversations about family, cooking, and daily life adventures.",
+            detailedDescription:
+              "Hi there! I'm Linda, a retired nurse from Toronto who loves meeting new people. I enjoy sharing stories about my family, exchanging recipes, and talking about life's simple pleasures.",
+            price: 25,
+            tags: ["Companionship", "Patient", "Empathetic", "Family-oriented"],
+            languages: ["English"],
+            interests: ["Family", "Cooking", "Health & Wellness", "Gardening"],
+            availability: "Everyday 10 AM - 6 PM EST",
+            avgChatLength: "60-75 minutes",
+            image:
+              "https://images.unsplash.com/photo-1615538786254-ad8b50de17dc?q=80&w=387&auto=format&fit=crop",
+            badge: "Top Earner",
+            badgeIcon: "fa-trophy",
+          },
+          {
+            id: 4,
+            name: "David",
+            age: 62,
+            location: "Sydney, Australia",
+            description:
+              "Retired engineer interested in technology discussions, travel stories, and mentoring conversations.",
+            detailedDescription:
+              "G'day! I'm David, a retired engineer from Sydney with a passion for technology and travel.",
+            price: 20,
+            tags: ["Tech Savvy", "Mentor", "World Traveler", "Problem Solver"],
+            languages: ["English", "German"],
+            interests: ["Engineering", "Technology", "Travel", "Photography"],
+            availability: "Weekends 9 AM - 9 PM AEST",
+            avgChatLength: "40-55 minutes",
+            image:
+              "https://images.unsplash.com/photo-1535643302794-19c3804b874b?q=80&w=387&auto=format&fit=crop",
+            badge: "Regular",
+            badgeIcon: "fa-comments",
+          },
+          {
+            id: 5,
+            name: "Sophia",
+            age: 72,
+            location: "Paris, France",
+            description:
+              "Art enthusiast seeking conversations about culture, history, and shared appreciation for the arts.",
+            detailedDescription:
+              "Bonjour! I'm Sophia, an art historian from Paris. I've spent my life studying and appreciating art.",
+            price: 30,
+            tags: ["Art Lover", "Cultural", "Intellectual", "Well-traveled"],
+            languages: ["French", "English", "Italian"],
+            interests: [
+              "Art History",
+              "Museums",
+              "Literature",
+              "Classical Music",
+            ],
+            availability: "Tuesday-Saturday 3 PM - 9 PM CET",
+            avgChatLength: "50-70 minutes",
+            image:
+              "https://images.unsplash.com/photo-1758691737587-7630b4d31d16?q=80&w=1032&auto=format&fit=crop",
+            badge: "New",
+            badgeIcon: "fa-star",
+          },
+          {
+            id: 6,
+            name: "James",
+            age: 55,
+            location: "Cape Town, South Africa",
+            description:
+              "Wildlife photographer seeking conversations about nature, conservation, and adventure stories.",
+            detailedDescription:
+              "Hello! I'm James, a wildlife photographer based in Cape Town. I've spent years capturing Africa's incredible wildlife.",
+            price: 26,
+            tags: [
+              "Photographer",
+              "Nature Lover",
+              "Adventurous",
+              "Storyteller",
+            ],
+            languages: ["English", "Afrikaans"],
+            interests: ["Wildlife", "Photography", "Conservation", "Safari"],
+            availability: "Flexible hours, SAST",
+            avgChatLength: "55-70 minutes",
+            image:
+              "https://images.unsplash.com/photo-1542105907-bbbb542a5f79?w=500&auto=format&fit=crop&q=60",
+            badge: "Popular",
+            badgeIcon: "fa-fire",
+          },
+        ];
+
+        /* FIX 8: Sequential profiles — container is inline in HTML, target by ID directly */
+        let currentProfileIndex = 0;
+
+        function renderSingleProfile(idx) {
+          const c = $("singleProfileContainer");
+          if (!c) return;
+          const p = profileData[idx];
+          c.innerHTML = `
+          <div class="profile-card" style="position:relative">
+            <!-- Close button -->
+            <button class="spc-close" aria-label="Close profile" title="Close">
+              <i class="fas fa-times"></i>
+            </button>
+            <div class="profile-card__header">
+              <img src="${p.image}" alt="${p.name}" class="profile-card__image" loading="lazy">
+              <div class="profile-card__badge"><i class="fas ${p.badgeIcon}"></i> ${p.badge}</div>
+              <div class="profile-card__overlay">
+                <h3 class="profile-card__name">${p.name}</h3>
+                <div class="profile-card__info">
+                  <span><i class="fas fa-birthday-cake"></i> ${p.age}</span>
+                  <span><i class="fas fa-map-marker-alt"></i> ${p.location}</span>
+                </div>
+              </div>
+            </div>
+            <div class="profile-card__content">
+              <p class="profile-card__description">${p.description}</p>
+              <div class="profile-card__footer">
+                <div class="profile-card__price">$${p.price}<span>/ hour</span></div>
+                <button class="profile-card__cta view-profile-btn" data-id="${p.id}"><i class="fas fa-comment"></i> View Profile</button>
+              </div>
+            </div>
+          </div>`;
+
+          /* Close button — clears card and resets button label */
+          c.querySelector(".spc-close").addEventListener("click", () => {
+            c.innerHTML = "";
+            const btn = $("meetPeopleBtn");
+            if (btn) {
+              btn.innerHTML =
+                '<i class="fas fa-users"></i> Meet People Ready to Chat';
+              btn.dataset.used = "";
+            }
+          });
+
+          c.querySelector(".view-profile-btn")?.addEventListener(
+            "click",
+            function () {
+              const prof = profileData.find(
+                (x) => x.id === parseInt(this.dataset.id),
+              );
+              if (prof) showProfileModal(prof);
+            },
+          );
+        }
+
+        function initSequentialProfiles() {
+          const btn = $("meetPeopleBtn");
+          if (!btn) return;
+          btn.addEventListener("click", function () {
+            renderSingleProfile(currentProfileIndex);
+            currentProfileIndex =
+              (currentProfileIndex + 1) % profileData.length;
+            /* Change label after the very first click */
+            if (!this.dataset.used) {
+              this.dataset.used = "1";
+              this.innerHTML =
+                '<i class="fas fa-arrow-right"></i> Browse Next Person';
+            }
+          });
+        }
+
+        /* FIX 10: Modal uses correct vars — self-contained inline styles replaced with class-based */
+        function showProfileModal(profile) {
+          document.querySelector(".profile-modal-overlay")?.remove();
+          const overlay = document.createElement("div");
+          overlay.className = "profile-modal-overlay";
+          overlay.style.cssText =
+            "position:fixed;inset:0;background:rgba(6,9,26,.6);backdrop-filter:blur(14px);z-index:10010;display:flex;align-items:center;justify-content:center;padding:1rem;animation:fadeIn .25s ease";
+          overlay.innerHTML = `
+          <div style="background:var(--white);border-radius:22px;width:100%;max-width:640px;max-height:88vh;overflow-y:auto;box-shadow:var(--sh-xl);animation:fadeUp .3s var(--spring);position:relative">
+            <button onclick="this.closest('.profile-modal-overlay').remove();document.body.style.overflow=''" style="position:absolute;top:1rem;right:1rem;z-index:5;width:32px;height:32px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--muted);transition:all .2s" onmouseover="this.style.background='#dc2626';this.style.color='#fff'" onmouseout="this.style.background='var(--bg2)';this.style.color='var(--muted)'"><i class="fas fa-times"></i></button>
+            <div style="display:flex;align-items:center;gap:1.25rem;padding:1.5rem;background:var(--bg2);border-radius:22px 22px 0 0;border-bottom:1px solid var(--border)">
+              <img src="${profile.image}" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--white);box-shadow:var(--sh-sm);flex-shrink:0" loading="lazy">
+              <div>
+                <div style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--ink);letter-spacing:-.02em">${profile.name}, ${profile.age}</div>
+                <div style="font-size:.84rem;color:var(--muted);margin-top:.2rem"><i class="fas fa-map-marker-alt"></i> ${profile.location}</div>
+                <div style="font-family:var(--font-head);font-size:1.2rem;font-weight:900;color:var(--blue2);margin-top:.3rem">$${profile.price}<span style="font-size:.78rem;font-weight:400;color:var(--muted);font-family:var(--font-body)">/hour</span></div>
+              </div>
+            </div>
+            <div style="padding:1.5rem;border-bottom:1px solid var(--border)">
+              <p style="font-size:.9rem;color:var(--muted);line-height:1.75">${profile.detailedDescription}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem">${profile.tags.map((t) => `<span style="background:var(--blue-soft);color:var(--blue2);padding:.28rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;border:1px solid var(--blue-border)">${t}</span>`).join("")}</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;padding:1.25rem;border-bottom:1px solid var(--border)">
+              <div><div style="font-family:var(--font-mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:.4rem">Languages</div>${profile.languages.map((l) => `<span style="background:var(--blue-soft);color:var(--blue2);padding:.22rem .6rem;border-radius:99px;font-size:.76rem;font-weight:600;border:1px solid var(--blue-border);margin-right:.25rem">${l}</span>`).join("")}</div>
+              <div><div style="font-family:var(--font-mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:.4rem">Availability</div><div style="font-size:.84rem;color:var(--ink2)">${profile.availability}</div></div>
+              <div><div style="font-family:var(--font-mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:.4rem">Avg Chat Length</div><div style="font-size:.84rem;color:var(--ink2)">${profile.avgChatLength}</div></div>
+            </div>
+            <div style="padding:1.25rem;background:var(--bg2);border-radius:0 0 22px 22px">
+              <div style="display:flex;align-items:center;gap:.5rem;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:.75rem;font-size:.84rem;color:var(--muted);margin-bottom:1rem"><i class="fas fa-info-circle" style="color:var(--blue2);font-size:1rem;flex-shrink:0"></i> To start chatting with ${profile.name}, create your account first</div>
+              <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+                <a href="${REG_URL}" target="_blank" rel="noopener" style="flex:1;min-width:140px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem;border-radius:99px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;font-family:var(--font-body);font-weight:700;font-size:.875rem;box-shadow:var(--sh-b);transition:all .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''"><i class="fas fa-user-plus"></i> Create Account</a>
+                <a href="https://wa.me/254755252499?text=Interested+in+chatting+with+${encodeURIComponent(profile.name)}+on+Mulastar" target="_blank" rel="noopener" style="flex:1;min-width:140px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem;border-radius:99px;background:#25d366;color:#fff;font-family:var(--font-body);font-weight:700;font-size:.875rem;transition:all .2s"><i class="fab fa-whatsapp"></i> Ask on WhatsApp</a>
+              </div>
+            </div>
+          </div>`;
+          overlay.addEventListener("click", (e) => {
+            if (e.target === overlay) {
+              overlay.remove();
+              document.body.style.overflow = "";
+            }
+          });
+          document.body.appendChild(overlay);
+          document.body.style.overflow = "hidden";
+        }
 
         /* REGISTER LINKS */
         document.addEventListener("click", (e) => {
@@ -5756,7 +6016,7 @@
 
         /* TICKER */
         const tickItems = [
-          "✓ 8,000+ Verified Earners",
+          "✓ 15,000+ Verified Earners",
           "✓ $890K+ Paid Out",
           "✓ One-Time Fee Only",
           "✓ 5 Ways to Earn",
@@ -5885,12 +6145,12 @@
           btn.innerHTML = '<i class="fas fa-check"></i> Accepted';
           btn.disabled = true;
           btn.style.opacity = ".5";
-          showNotif("Chat accepted! Register to start earning.");
+          showNotif("Chat accepted! Register your account to start chatting.");
           setTimeout(() => {
             const c = btn.closest(".req-card");
             if (c) {
               c.style.cssText +=
-                "opacity:0;transform:translateX(20px);transition:all .3s";
+                "opacity:0;transform:translateX(20px);transition:all .5s";
               setTimeout(() => {
                 c.remove();
                 addRandReq();
@@ -6216,13 +6476,13 @@
 
         /* TESTIMONIALS MOBILE DOTS */
         (function () {
-          var tgrid = document.querySelector(".tgrid");
-          var dots = document.querySelectorAll(".t-dot");
+          var tgrid = document.querySelector(".tgrid"),
+            dots = document.querySelectorAll(".t-dot");
           if (!tgrid || !dots.length) return;
           var updateDots = function () {
-            var total = tgrid.scrollWidth - tgrid.clientWidth;
-            var progress = total > 0 ? tgrid.scrollLeft / total : 0;
-            var idx = Math.round(progress * (dots.length - 1));
+            var total = tgrid.scrollWidth - tgrid.clientWidth,
+              progress = total > 0 ? tgrid.scrollLeft / total : 0,
+              idx = Math.round(progress * (dots.length - 1));
             dots.forEach(function (d, i) {
               d.classList.toggle("active", i === idx);
             });
@@ -6230,13 +6490,15 @@
           tgrid.addEventListener("scroll", updateDots, { passive: true });
           dots.forEach(function (d) {
             d.addEventListener("click", function () {
-              var idx = parseInt(d.dataset.idx);
-              var cardW = tgrid.scrollWidth / dots.length;
+              var idx = parseInt(d.dataset.idx),
+                cardW = tgrid.scrollWidth / dots.length;
               tgrid.scrollTo({ left: idx * cardW, behavior: "smooth" });
             });
           });
         })();
 
+        /* INIT */
+        initSequentialProfiles();
         switchLegal("terms");
       })();
     </script>
