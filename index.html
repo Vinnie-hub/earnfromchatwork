@@ -34,22 +34,25 @@
         box-sizing: border-box;
       }
       :root {
-        --ink: #0d1117;
-        --ink2: #1c2333;
-        --ink3: #2d3748;
-        --muted: #64748b;
-        --faint: #94a3b8;
-        --border: #e2e8f0;
-        --border2: #cbd5e1;
-        --bg: #f8fafc;
-        --bg2: #f1f5f9;
+        --ink: #0a0f1e;
+        --ink2: #1a2540;
+        --ink3: #2d3a5c;
+        --muted: #5a6a8a;
+        --faint: #8898b8;
+        --border: #dce4f0;
+        --border2: #c2d0e8;
+        --bg: #f0f6ff;
+        --bg2: #e0ecff;
         --white: #ffffff;
-        --blue: #1d4ed8;
-        --blue2: #2563eb;
-        --blue3: #3b82f6;
-        --blue4: #1e3a8a;
-        --blue-soft: #eff6ff;
-        --blue-border: #bfdbfe;
+
+        /* ── VIBRANT ELECTRIC BLUE — clearly visible, bold ── */
+        --blue: #0047e1;
+        --blue2: #0055ff;
+        --blue3: #3d7fff;
+        --blue4: #002fa8;
+        --blue-soft: #eef3ff;
+        --blue-border: #b8ccff;
+
         --em: #059669;
         --em2: #10b981;
         --em-soft: #ecfdf5;
@@ -66,8 +69,8 @@
         --sh-md: 0 10px 32px rgba(0, 0, 0, 0.09);
         --sh-lg: 0 20px 48px rgba(0, 0, 0, 0.11);
         --sh-xl: 0 32px 72px rgba(0, 0, 0, 0.16);
-        --sh-b: 0 6px 24px rgba(37, 99, 235, 0.28);
-        --footer-bg: #060a14;
+        --sh-b: 0 6px 24px rgba(0, 85, 255, 0.3);
+        --footer-bg: #001a6e;
       }
       html {
         font-size: 16px;
@@ -101,7 +104,6 @@
         cursor: pointer;
       }
 
-      /* PROGRESS */
       #prog {
         position: fixed;
         top: 0;
@@ -112,7 +114,6 @@
         z-index: 9999;
       }
 
-      /* LOADING */
       .loading-ovl {
         position: fixed;
         inset: 0;
@@ -130,8 +131,8 @@
       .loading-spin {
         width: 40px;
         height: 40px;
-        border: 2.5px solid rgba(37, 99, 235, 0.15);
-        border-top-color: var(--blue);
+        border: 2.5px solid rgba(0, 85, 255, 0.15);
+        border-top-color: var(--blue2);
         border-radius: 50%;
         animation: spin 0.7s linear infinite;
       }
@@ -142,7 +143,7 @@
         letter-spacing: 0.1em;
       }
 
-      /* NAV */
+      /* ── NAV ── */
       .nav {
         position: fixed;
         top: 0;
@@ -154,11 +155,11 @@
         align-items: center;
         background: rgba(255, 255, 255, 0.96);
         backdrop-filter: blur(24px);
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1.5px solid var(--blue-border);
         transition: all 0.25s var(--ease);
       }
       .nav.scrolled {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 20px rgba(0, 85, 255, 0.12);
       }
       .nav-inner {
         display: flex;
@@ -177,12 +178,12 @@
         width: 36px;
         height: 36px;
         border-radius: 9px;
-        background: linear-gradient(135deg, var(--blue), var(--blue2));
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 4px 12px rgba(0, 85, 255, 0.35);
       }
       .logo-mark img {
         width: 100%;
@@ -239,15 +240,15 @@
         font-weight: 600;
         border: none;
         color: #fff;
-        background: var(--blue2);
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         transition: all 0.2s;
         white-space: nowrap;
         box-shadow: var(--sh-b);
       }
       .nav-cta:hover {
-        background: var(--blue);
+        background: linear-gradient(135deg, var(--blue), var(--blue4));
         transform: translateY(-1px);
-        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.4);
+        box-shadow: 0 10px 24px rgba(0, 85, 255, 0.42);
       }
       .hamburger {
         display: flex;
@@ -255,8 +256,8 @@
         gap: 5px;
         cursor: pointer;
         padding: 0.5rem 0.65rem;
-        background: var(--bg2);
-        border: 1.5px solid var(--border2);
+        background: var(--blue-soft);
+        border: 1.5px solid var(--blue-border);
         border-radius: 9px;
         align-items: center;
         justify-content: center;
@@ -265,8 +266,8 @@
         min-height: 38px;
       }
       .hamburger:hover {
-        background: var(--blue-soft);
-        border-color: var(--blue-border);
+        background: #dce9ff;
+        border-color: var(--blue2);
       }
       @media (min-width: 960px) {
         .hamburger {
@@ -277,14 +278,13 @@
         display: block;
         width: 20px;
         height: 2px;
-        background: var(--ink2);
+        background: var(--blue2);
         border-radius: 2px;
         transition: all 0.28s var(--ease);
         transform-origin: center;
       }
       .hamburger.open span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
-        background: var(--blue2);
       }
       .hamburger.open span:nth-child(2) {
         opacity: 0;
@@ -292,7 +292,6 @@
       }
       .hamburger.open span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
-        background: var(--blue2);
       }
       .mobile-nav {
         position: fixed;
@@ -308,7 +307,7 @@
         gap: 0.1rem;
         transform: translateX(100%);
         transition: transform 0.3s var(--ease);
-        border-top: 1px solid var(--border);
+        border-top: 1.5px solid var(--blue-border);
         overflow-y: auto;
       }
       .mobile-nav.open {
@@ -349,18 +348,16 @@
         border-radius: 12px;
         font-size: 0.95rem;
         font-weight: 600;
-        background: var(--blue2);
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         color: #fff;
         margin-top: auto;
         box-shadow: var(--sh-b);
         transition: all 0.2s;
       }
       .mobile-nav-cta:hover {
-        background: var(--blue);
         transform: translateY(-2px);
       }
 
-      /* CONTAINER */
       .container {
         width: 100%;
         max-width: 1200px;
@@ -373,7 +370,7 @@
         }
       }
 
-      /* BUTTONS */
+      /* ── BUTTONS ── */
       .btn {
         display: inline-flex;
         align-items: center;
@@ -389,24 +386,23 @@
         white-space: nowrap;
       }
       .btn-blue {
-        background: var(--blue2);
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         color: #fff;
         box-shadow: var(--sh-b);
       }
       .btn-blue:hover {
-        background: var(--blue);
+        background: linear-gradient(135deg, var(--blue), var(--blue4));
         transform: translateY(-2px);
-        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
+        box-shadow: 0 12px 28px rgba(0, 85, 255, 0.42);
       }
       .btn-ghost {
-        background: rgba(255, 255, 255, 0.08);
-        color: #fff;
-        border: 1.5px solid rgba(255, 255, 255, 0.18);
-        backdrop-filter: blur(8px);
+        background: #fff;
+        color: var(--blue2);
+        border: 1.5px solid var(--blue-border);
       }
       .btn-ghost:hover {
-        background: rgba(255, 255, 255, 0.14);
-        border-color: rgba(255, 255, 255, 0.3);
+        background: var(--blue-soft);
+        border-color: var(--blue2);
       }
       .btn-lg {
         padding: 0.875rem 2rem;
@@ -421,7 +417,7 @@
         animation: btn-pulse 2.5s infinite;
       }
 
-      /* SECTIONS */
+      /* ── SECTIONS ── */
       .section {
         padding: 5.5rem 0;
       }
@@ -459,7 +455,7 @@
         margin-bottom: 1rem;
       }
       .sec-title em {
-        background: linear-gradient(135deg, var(--blue2), var(--blue3));
+        background: linear-gradient(135deg, var(--blue), var(--blue2));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -482,7 +478,7 @@
         margin: 0 auto;
       }
 
-      /* ANIMATIONS */
+      /* ── ANIMATIONS ── */
       @keyframes spin {
         to {
           transform: rotate(360deg);
@@ -599,17 +595,17 @@
         0% {
           box-shadow:
             var(--sh-b),
-            0 0 0 0 rgba(37, 99, 235, 0.45);
+            0 0 0 0 rgba(0, 85, 255, 0.45);
         }
         70% {
           box-shadow:
             var(--sh-b),
-            0 0 0 12px rgba(37, 99, 235, 0);
+            0 0 0 12px rgba(0, 85, 255, 0);
         }
         100% {
           box-shadow:
             var(--sh-b),
-            0 0 0 0 rgba(37, 99, 235, 0);
+            0 0 0 0 rgba(0, 85, 255, 0);
         }
       }
       @keyframes wa-ring {
@@ -651,6 +647,14 @@
           transform: translateY(0);
         }
       }
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
 
       .fade-up {
         opacity: 0;
@@ -673,9 +677,14 @@
         flex-shrink: 0;
       }
 
-      /* TICKER */
+      /* ── TICKER ── */
       .ticker-bar {
-        background: var(--blue4);
+        background: linear-gradient(
+          90deg,
+          var(--blue4),
+          var(--blue2),
+          var(--blue4)
+        );
         overflow: hidden;
         padding: 0.5rem 0;
         margin-top: var(--nav-h);
@@ -703,7 +712,7 @@
         margin-left: 0.5rem;
       }
 
-      /* HERO */
+      /* ── HERO ── */
       .hero {
         min-height: calc(100vh - var(--nav-h) - 34px);
         display: flex;
@@ -712,7 +721,7 @@
         padding: 4rem 0 5rem;
         position: relative;
         overflow: hidden;
-        background: #07091f;
+        background: #dce9ff;
       }
       .hero-bg {
         position: absolute;
@@ -721,28 +730,28 @@
         background:
           radial-gradient(
             ellipse 65% 75% at 15% 55%,
-            rgba(29, 78, 216, 0.32) 0%,
+            rgba(0, 85, 255, 0.18) 0%,
             transparent 60%
           ),
           radial-gradient(
             ellipse 50% 55% at 88% 20%,
-            rgba(37, 99, 235, 0.18) 0%,
+            rgba(61, 127, 255, 0.14) 0%,
             transparent 55%
           ),
           radial-gradient(
             ellipse 55% 45% at 70% 85%,
-            rgba(5, 150, 105, 0.1) 0%,
+            rgba(5, 150, 105, 0.07) 0%,
             transparent 55%
           ),
-          #07091f;
+          #dce9ff;
       }
       .hero-grid {
         position: absolute;
         inset: 0;
         pointer-events: none;
         background-image:
-          linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+          linear-gradient(rgba(0, 85, 255, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 85, 255, 0.07) 1px, transparent 1px);
         background-size: 56px 56px;
       }
       .hero-orb {
@@ -757,7 +766,7 @@
         height: 580px;
         background: radial-gradient(
           circle,
-          rgba(29, 78, 216, 0.28),
+          rgba(0, 85, 255, 0.15),
           transparent 70%
         );
         top: -120px;
@@ -768,7 +777,7 @@
         height: 460px;
         background: radial-gradient(
           circle,
-          rgba(37, 99, 235, 0.18),
+          rgba(61, 127, 255, 0.12),
           transparent 70%
         );
         top: 50%;
@@ -780,7 +789,7 @@
         height: 380px;
         background: radial-gradient(
           circle,
-          rgba(5, 150, 105, 0.12),
+          rgba(5, 150, 105, 0.09),
           transparent 70%
         );
         bottom: -60px;
@@ -796,7 +805,7 @@
       .hero-particle {
         position: absolute;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.06);
+        background: rgba(0, 85, 255, 0.07);
         animation: drift var(--dur, 8s) ease-in-out infinite;
       }
       .hero .container {
@@ -824,7 +833,7 @@
         font-size: 0.65rem;
         letter-spacing: 0.06em;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.75);
+        color: var(--blue2);
         margin-bottom: 1.75rem;
       }
       .hero-h1 {
@@ -834,16 +843,16 @@
         line-height: 1.04;
         letter-spacing: -0.025em;
         margin-bottom: 1.5rem;
-        color: #fff;
+        color: var(--ink);
       }
       .hero-h1 .line-top {
         display: block;
-        color: rgba(255, 255, 255, 0.9);
+        color: var(--ink);
       }
       .hero-h1 .line-mid {
         display: block;
         font-style: italic;
-        background: linear-gradient(120deg, #60a5fa, #34d399);
+        background: linear-gradient(120deg, var(--blue2), var(--em));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -854,7 +863,7 @@
         font-size: 0.38em;
         font-style: normal;
         font-weight: 400;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--muted);
         letter-spacing: 0;
         margin-top: 0.35em;
         font-family: var(--font-body);
@@ -871,20 +880,20 @@
         font-family: var(--font-head);
         font-size: 2.4rem;
         font-weight: 900;
-        color: #fff;
+        color: var(--ink);
         letter-spacing: -0.04em;
         line-height: 1;
       }
       .her-sep {
         width: 1.5px;
         height: 2rem;
-        background: rgba(255, 255, 255, 0.18);
+        background: var(--blue-border);
         border-radius: 1px;
       }
       .her-label {
         font-size: 0.8rem;
         font-weight: 400;
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--muted);
       }
       .her-methods {
         display: flex;
@@ -896,23 +905,23 @@
         display: inline-flex;
         align-items: center;
         gap: 0.3rem;
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: var(--blue-soft);
+        border: 1px solid var(--blue-border);
         border-radius: 6px;
         padding: 0.2rem 0.65rem;
         font-family: var(--font-mono);
         font-size: 0.56rem;
         font-weight: 500;
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--blue2);
         letter-spacing: 0.04em;
       }
       .her-method i {
         font-size: 0.48rem;
-        color: #34d399;
+        color: var(--em2);
       }
       .hero-desc {
         font-size: 1rem;
-        color: rgba(255, 255, 255, 0.65);
+        color: var(--muted);
         line-height: 1.9;
         max-width: 480px;
         margin-bottom: 2rem;
@@ -920,7 +929,7 @@
         font-weight: 400;
       }
       .hero-desc strong {
-        color: #fff;
+        color: var(--ink);
         font-weight: 600;
       }
       .hero-live-strip {
@@ -930,10 +939,10 @@
         flex-wrap: wrap;
         margin-bottom: 2rem;
         animation: slideLeft 0.7s 0.33s var(--ease) both;
-        background: rgba(255, 255, 255, 0.04);
+        background: #fff;
         border-radius: 12px;
         padding: 0.875rem 1.25rem;
-        border: 1px solid rgba(255, 255, 255, 0.07);
+        border: 1.5px solid var(--blue-border);
       }
       .hls-item {
         display: flex;
@@ -944,27 +953,24 @@
         font-family: var(--font-head);
         font-size: 1.3rem;
         font-weight: 900;
-        color: #fff;
+        color: var(--ink);
         letter-spacing: -0.02em;
         line-height: 1;
       }
       .hls-val.green {
-        background: linear-gradient(120deg, #34d399, #6ee7b7);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: var(--em);
       }
       .hls-label {
         font-family: var(--font-mono);
         font-size: 0.56rem;
-        color: rgba(255, 255, 255, 0.45);
+        color: var(--faint);
         text-transform: uppercase;
         letter-spacing: 0.1em;
       }
       .hls-div {
         width: 1px;
         height: 32px;
-        background: rgba(255, 255, 255, 0.08);
+        background: var(--blue-border);
       }
       .hero-flags {
         display: flex;
@@ -977,27 +983,27 @@
         display: inline-flex;
         align-items: center;
         gap: 0.35rem;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.09);
+        background: #fff;
+        border: 1.5px solid var(--blue-border);
         border-radius: 7px;
         padding: 0.3rem 0.7rem;
         font-size: 0.73rem;
         font-weight: 500;
-        color: rgba(255, 255, 255, 0.82);
+        color: var(--ink2);
         transition: all 0.25s var(--spring);
         cursor: default;
       }
       .hero-flag-chip:hover {
-        background: rgba(255, 255, 255, 0.12);
-        color: #fff;
-        border-color: rgba(255, 255, 255, 0.2);
+        background: var(--blue-soft);
+        color: var(--blue2);
+        border-color: var(--blue2);
         transform: translateY(-3px);
       }
       .hero-flag-chip em {
         font-style: normal;
         font-family: var(--font-mono);
         font-size: 0.56rem;
-        color: #34d399;
+        color: var(--em2);
         margin-left: 0.1rem;
       }
       .hero-ctas {
@@ -1019,42 +1025,42 @@
         gap: 0.35rem;
         font-size: 0.73rem;
         font-weight: 500;
-        color: rgba(255, 255, 255, 0.45);
+        color: var(--muted);
       }
       .hp-item i {
-        color: rgba(255, 255, 255, 0.35);
+        color: var(--blue2);
         font-size: 0.62rem;
       }
       .hero-right {
         animation: slideRight 0.85s 0.15s var(--ease) both;
       }
       .hero-chat-wrap {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.09);
+        background: #fff;
+        border: 1.5px solid var(--blue-border);
         border-radius: 20px;
         overflow: hidden;
-        backdrop-filter: blur(14px);
+        box-shadow: var(--sh-md);
       }
       .hcw-header {
         padding: 0.875rem 1.25rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        border-bottom: 1.5px solid var(--blue-border);
         display: flex;
         align-items: center;
         gap: 0.75rem;
-        background: rgba(255, 255, 255, 0.03);
+        background: var(--bg);
       }
       .hcw-av {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
-        border: 2px solid rgba(255, 255, 255, 0.12);
+        border: 2px solid var(--blue-border);
         flex-shrink: 0;
       }
       .hcw-name {
         font-weight: 600;
         font-size: 0.875rem;
-        color: #fff;
+        color: var(--ink);
       }
       .hcw-status {
         font-size: 0.68rem;
@@ -1065,13 +1071,13 @@
       }
       .hcw-earn-badge {
         margin-left: auto;
-        background: rgba(52, 211, 153, 0.12);
-        border: 1px solid rgba(52, 211, 153, 0.22);
+        background: var(--em-soft);
+        border: 1px solid rgba(5, 150, 105, 0.22);
         border-radius: 6px;
         padding: 0.22rem 0.7rem;
         font-family: var(--font-mono);
         font-size: 0.58rem;
-        color: #34d399;
+        color: var(--em);
         font-weight: 500;
       }
       .hcw-msgs {
@@ -1080,6 +1086,7 @@
         flex-direction: column;
         gap: 0.875rem;
         min-height: 180px;
+        background: #fff;
       }
       .hcw-msg {
         display: flex;
@@ -1094,13 +1101,13 @@
         flex-shrink: 0;
       }
       .hcw-bubble {
-        background: rgba(255, 255, 255, 0.08);
+        background: var(--bg);
         border-radius: 5px 12px 12px 12px;
         padding: 0.55rem 0.875rem;
         font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.88);
+        color: var(--ink2);
         line-height: 1.55;
-        border: 1px solid rgba(255, 255, 255, 0.06);
+        border: 1.5px solid var(--blue-border);
       }
       .hcw-bubble.me {
         background: linear-gradient(135deg, var(--blue), var(--blue2));
@@ -1115,12 +1122,12 @@
       .hcw-stats {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-top: 1.5px solid var(--blue-border);
       }
       .hcw-stat {
         padding: 0.75rem;
         text-align: center;
-        border-right: 1px solid rgba(255, 255, 255, 0.06);
+        border-right: 1.5px solid var(--blue-border);
       }
       .hcw-stat:last-child {
         border-right: none;
@@ -1129,33 +1136,33 @@
         font-family: var(--font-head);
         font-size: 1.05rem;
         font-weight: 900;
-        color: #fff;
+        color: var(--ink);
         letter-spacing: -0.02em;
         line-height: 1;
       }
       .hcw-stat-val.green {
-        color: #34d399;
+        color: var(--em);
       }
       .hcw-stat-val.blue {
-        color: #60a5fa;
+        color: var(--blue2);
       }
       .hcw-stat-lbl {
         font-family: var(--font-mono);
         font-size: 0.5rem;
-        color: rgba(255, 255, 255, 0.4);
+        color: var(--faint);
         margin-top: 0.18rem;
         text-transform: uppercase;
         letter-spacing: 0.08em;
       }
       .hcw-calc {
         padding: 0.875rem 1.25rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        background: rgba(0, 0, 0, 0.12);
+        border-top: 1.5px solid var(--blue-border);
+        background: var(--bg);
       }
       .hcw-calc-label {
         font-family: var(--font-mono);
         font-size: 0.58rem;
-        color: rgba(255, 255, 255, 0.45);
+        color: var(--muted);
         text-transform: uppercase;
         letter-spacing: 0.1em;
         margin-bottom: 0.75rem;
@@ -1168,7 +1175,7 @@
       }
       .calc-lbl {
         font-size: 0.7rem;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--muted);
         width: 78px;
         flex-shrink: 0;
       }
@@ -1180,8 +1187,8 @@
         border-radius: 2px;
         background: linear-gradient(
           90deg,
-          #60a5fa var(--val, 33%),
-          rgba(255, 255, 255, 0.12) var(--val, 33%)
+          #3d7fff var(--val, 33%),
+          var(--blue-border) var(--val, 33%)
         );
         outline: none;
       }
@@ -1190,14 +1197,14 @@
         width: 13px;
         height: 13px;
         border-radius: 50%;
-        background: #60a5fa;
+        background: #3d7fff;
         cursor: pointer;
-        box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+        box-shadow: 0 0 8px rgba(61, 127, 255, 0.5);
       }
       .calc-val {
         font-family: var(--font-mono);
         font-size: 0.65rem;
-        color: #fff;
+        color: var(--ink);
         width: 30px;
         text-align: right;
       }
@@ -1207,22 +1214,22 @@
         justify-content: space-between;
         margin-top: 0.625rem;
         padding-top: 0.625rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        border-top: 1.5px solid var(--blue-border);
       }
       .calc-result-lbl {
         font-size: 0.7rem;
-        color: rgba(255, 255, 255, 0.45);
+        color: var(--muted);
       }
       .calc-result-amount {
         font-family: var(--font-head);
         font-size: 1.4rem;
         font-weight: 900;
-        color: #34d399;
+        color: var(--em);
         letter-spacing: -0.03em;
       }
       .hcw-cta {
         padding: 0.875rem 1.25rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-top: 1.5px solid var(--blue-border);
       }
       .hcw-cta a {
         display: flex;
@@ -1231,7 +1238,7 @@
         gap: 0.5rem;
         padding: 0.8rem;
         border-radius: 10px;
-        background: var(--blue2);
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         color: #fff;
         font-size: 0.84rem;
         font-weight: 600;
@@ -1239,9 +1246,9 @@
         box-shadow: var(--sh-b);
       }
       .hcw-cta a:hover {
-        background: var(--blue);
+        background: linear-gradient(135deg, var(--blue), var(--blue4));
         transform: translateY(-1px);
-        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.45);
+        box-shadow: 0 10px 24px rgba(0, 85, 255, 0.45);
       }
       .hcw-demo-btn {
         width: 100%;
@@ -1251,33 +1258,33 @@
         gap: 0.5rem;
         padding: 0.8rem;
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.06);
-        color: rgba(255, 255, 255, 0.8);
+        background: var(--blue-soft);
+        color: var(--blue2);
         font-size: 0.84rem;
         font-weight: 500;
-        border: 1.5px solid rgba(255, 255, 255, 0.12);
+        border: 1.5px solid var(--blue-border);
         transition: all 0.2s;
         cursor: pointer;
         margin-top: 0.625rem;
       }
       .hcw-demo-btn:hover {
-        background: rgba(255, 255, 255, 0.12);
-        border-color: rgba(255, 255, 255, 0.24);
+        background: #c8d9ff;
+        border-color: var(--blue2);
       }
 
-      /* PROFILE CARD */
+      /* ── PROFILE CARD ── */
       .profile-card {
         background: var(--white);
         border-radius: 16px;
         overflow: hidden;
         box-shadow: var(--sh);
         transition: all 0.3s;
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         animation: fadeIn 0.5s ease;
       }
       .profile-card:hover {
         transform: translateY(-4px);
-        box-shadow: var(--sh-md);
+        box-shadow: 0 12px 32px rgba(0, 85, 255, 0.15);
       }
       .profile-card__header {
         position: relative;
@@ -1357,7 +1364,7 @@
         margin-left: 0.2rem;
       }
       .profile-card__cta {
-        background: var(--blue2);
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         color: white;
         border: none;
         padding: 0.625rem 1.25rem;
@@ -1370,10 +1377,11 @@
         display: flex;
         align-items: center;
         gap: 0.4rem;
+        box-shadow: var(--sh-b);
       }
       .profile-card__cta:hover {
-        background: var(--blue);
         transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(0, 85, 255, 0.35);
       }
       .spc-close {
         position: absolute;
@@ -1400,7 +1408,7 @@
         color: #fff;
       }
 
-      /* HOW IT WORKS */
+      /* ── HOW IT WORKS ── */
       .how-section {
         background: var(--white);
         position: relative;
@@ -1411,11 +1419,11 @@
         top: 0;
         left: 10%;
         right: 10%;
-        height: 1px;
+        height: 2px;
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(37, 99, 235, 0.2),
+          var(--blue-border),
           transparent
         );
       }
@@ -1431,7 +1439,7 @@
       }
       .step-card {
         background: var(--bg);
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 16px;
         padding: 2rem 1.75rem;
         text-align: center;
@@ -1439,16 +1447,16 @@
         transition: all 0.3s var(--spring);
       }
       .step-card:hover {
-        border-color: var(--blue-border);
+        border-color: var(--blue2);
         transform: translateY(-6px);
-        box-shadow: var(--sh-md);
+        box-shadow: 0 16px 40px rgba(0, 85, 255, 0.14);
         background: var(--white);
       }
       .step-num {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background: var(--blue2);
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1491,13 +1499,251 @@
         margin-top: 0.875rem;
       }
 
-      /* EARN METHODS */
+      /* ── CLIENT SECTION (NEW) ── */
+      .client-section {
+        background: linear-gradient(
+          160deg,
+          #f0f5ff 0%,
+          #e0ecff 50%,
+          #f0f5ff 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .client-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(0, 85, 255, 0.06) 1px,
+          transparent 1px
+        );
+        background-size: 28px 28px;
+        pointer-events: none;
+      }
+      .client-tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2.5rem;
+        background: #fff;
+        padding: 0.4rem;
+        border-radius: 12px;
+        border: 1.5px solid var(--blue-border);
+        width: fit-content;
+      }
+      .client-tab {
+        padding: 0.55rem 1.25rem;
+        border-radius: 8px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        color: var(--muted);
+        border: none;
+        background: transparent;
+      }
+      .client-tab.active {
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
+        color: #fff;
+        box-shadow: var(--sh-b);
+      }
+      .client-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      @media (min-width: 640px) {
+        .client-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .client-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .client-card {
+        background: #fff;
+        border: 1.5px solid var(--blue-border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        transition: all 0.3s var(--ease);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      .client-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--blue2), var(--blue3));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s;
+      }
+      .client-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 36px rgba(0, 85, 255, 0.14);
+        border-color: var(--blue2);
+      }
+      .client-card:hover::after {
+        transform: scaleX(1);
+      }
+      .cc-av {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--blue-border);
+        margin-bottom: 0.875rem;
+      }
+      .cc-name {
+        font-family: var(--font-head);
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 0.18rem;
+      }
+      .cc-loc {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-bottom: 0.625rem;
+      }
+      .cc-quote {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.75;
+        font-style: italic;
+        margin-bottom: 0.875rem;
+      }
+      .cc-stars {
+        color: #fbbf24;
+        font-size: 0.75rem;
+        margin-bottom: 0.4rem;
+      }
+      .cc-topic-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+      }
+      .cc-tag {
+        background: var(--blue-soft);
+        color: var(--blue2);
+        border: 1px solid var(--blue-border);
+        padding: 0.18rem 0.55rem;
+        border-radius: 5px;
+        font-size: 0.64rem;
+        font-weight: 500;
+      }
+      .client-how-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      @media (min-width: 640px) {
+        .client-how-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .client-how-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .client-step {
+        background: #fff;
+        border: 1.5px solid var(--blue-border);
+        border-radius: 14px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.3s var(--spring);
+      }
+      .client-step:hover {
+        border-color: var(--blue2);
+        transform: translateY(-5px);
+        box-shadow: 0 12px 32px rgba(0, 85, 255, 0.14);
+      }
+      .client-step-num {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
+        color: #fff;
+        font-weight: 900;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0.875rem;
+        box-shadow: var(--sh-b);
+      }
+      .client-step h4 {
+        font-family: var(--font-head);
+        font-size: 0.95rem;
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 0.4rem;
+      }
+      .client-step p {
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+      .client-cta-box {
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
+        border-radius: 20px;
+        padding: 3rem 2.5rem;
+        text-align: center;
+        color: #fff;
+        margin-top: 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .client-cta-box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.08) 1px,
+          transparent 1px
+        );
+        background-size: 22px 22px;
+      }
+      .client-cta-box h3 {
+        font-family: var(--font-head);
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        font-weight: 900;
+        margin-bottom: 0.75rem;
+        position: relative;
+      }
+      .client-cta-box p {
+        font-size: 0.95rem;
+        opacity: 0.85;
+        max-width: 480px;
+        margin: 0 auto 2rem;
+        line-height: 1.8;
+        position: relative;
+      }
+      .client-cta-box .cta-btns {
+        position: relative;
+      }
+      .client-panel {
+        display: none;
+      }
+      .client-panel.active {
+        display: block;
+      }
+
+      /* ── EARN METHODS ── */
       .earn-section {
         background: linear-gradient(
           160deg,
-          #04071a 0%,
-          #07091f 60%,
-          #04071a 100%
+          #f0f5ff 0%,
+          #dce9ff 60%,
+          #f0f5ff 100%
         );
         position: relative;
         overflow: hidden;
@@ -1510,12 +1756,12 @@
         background:
           radial-gradient(
             ellipse 60% 65% at 10% 45%,
-            rgba(29, 78, 216, 0.14) 0%,
+            rgba(0, 85, 255, 0.1) 0%,
             transparent 55%
           ),
           radial-gradient(
             ellipse 50% 50% at 90% 55%,
-            rgba(5, 150, 105, 0.07) 0%,
+            rgba(5, 150, 105, 0.05) 0%,
             transparent 55%
           );
       }
@@ -1525,22 +1771,10 @@
         inset: 0;
         pointer-events: none;
         background-image: radial-gradient(
-          rgba(255, 255, 255, 0.02) 1px,
+          rgba(0, 85, 255, 0.07) 1px,
           transparent 1px
         );
         background-size: 26px 26px;
-      }
-      .earn-hd .eyebrow {
-        color: rgba(255, 255, 255, 0.5);
-      }
-      .earn-hd .eyebrow::before {
-        background: rgba(255, 255, 255, 0.3);
-      }
-      .earn-hd .sec-title {
-        color: #fff;
-      }
-      .earn-hd .sec-sub {
-        color: rgba(255, 255, 255, 0.6);
       }
       .earn-grid {
         display: grid;
@@ -1560,8 +1794,8 @@
         }
       }
       .em-card {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.09);
+        background: #fff;
+        border: 1.5px solid var(--blue-border);
         border-radius: 16px;
         padding: 1.625rem;
         position: relative;
@@ -1581,13 +1815,13 @@
       }
       .em-card:hover {
         transform: translateY(-5px);
-        border-color: rgba(255, 255, 255, 0.15);
+        border-color: var(--blue2);
       }
       .em-card:hover::before {
         opacity: 1;
       }
       .emc-1::before {
-        background: linear-gradient(90deg, #60a5fa, #3b82f6);
+        background: linear-gradient(90deg, #3d7fff, #0055ff);
       }
       .emc-2::before {
         background: linear-gradient(90deg, #34d399, #10b981);
@@ -1603,28 +1837,14 @@
       }
       .emc-1:hover {
         box-shadow:
-          0 20px 44px rgba(0, 0, 0, 0.35),
-          0 0 28px rgba(96, 165, 250, 0.1);
+          0 14px 40px rgba(0, 85, 255, 0.18),
+          0 0 28px rgba(61, 127, 255, 0.12);
       }
-      .emc-2:hover {
-        box-shadow:
-          0 20px 44px rgba(0, 0, 0, 0.35),
-          0 0 28px rgba(52, 211, 153, 0.08);
-      }
-      .emc-3:hover {
-        box-shadow:
-          0 20px 44px rgba(0, 0, 0, 0.35),
-          0 0 28px rgba(167, 139, 250, 0.08);
-      }
-      .emc-4:hover {
-        box-shadow:
-          0 20px 44px rgba(0, 0, 0, 0.35),
-          0 0 28px rgba(252, 211, 77, 0.06);
-      }
+      .emc-2:hover,
+      .emc-3:hover,
+      .emc-4:hover,
       .emc-5:hover {
-        box-shadow:
-          0 20px 44px rgba(0, 0, 0, 0.35),
-          0 0 28px rgba(248, 113, 113, 0.07);
+        box-shadow: 0 14px 40px rgba(0, 85, 255, 0.14);
       }
       @media (min-width: 640px) and (max-width: 1023px) {
         .emc-wide {
@@ -1645,29 +1865,29 @@
         margin-bottom: 0.875rem;
       }
       .emc-1 .em-badge {
-        background: rgba(96, 165, 250, 0.12);
-        color: #93c5fd;
-        border: 1px solid rgba(96, 165, 250, 0.2);
+        background: var(--blue-soft);
+        color: var(--blue2);
+        border: 1px solid var(--blue-border);
       }
       .emc-2 .em-badge {
-        background: rgba(52, 211, 153, 0.12);
-        color: #6ee7b7;
-        border: 1px solid rgba(52, 211, 153, 0.2);
+        background: var(--em-soft);
+        color: var(--em);
+        border: 1px solid rgba(5, 150, 105, 0.22);
       }
       .emc-3 .em-badge {
-        background: rgba(167, 139, 250, 0.12);
-        color: #c4b5fd;
-        border: 1px solid rgba(167, 139, 250, 0.2);
+        background: rgba(124, 58, 237, 0.06);
+        color: #7c3aed;
+        border: 1px solid rgba(124, 58, 237, 0.2);
       }
       .emc-4 .em-badge {
-        background: rgba(252, 211, 77, 0.12);
-        color: #fde68a;
-        border: 1px solid rgba(252, 211, 77, 0.2);
+        background: #fffbeb;
+        color: #b45309;
+        border: 1px solid #fcd34d;
       }
       .emc-5 .em-badge {
-        background: rgba(248, 113, 113, 0.12);
-        color: #fca5a5;
-        border: 1px solid rgba(248, 113, 113, 0.2);
+        background: rgba(220, 38, 38, 0.06);
+        color: #dc2626;
+        border: 1px solid rgba(220, 38, 38, 0.2);
       }
       .em-icon {
         font-size: 1.75rem;
@@ -1679,7 +1899,7 @@
         font-family: var(--font-head);
         font-size: 1.05rem;
         font-weight: 800;
-        color: #fff;
+        color: var(--ink);
         margin-bottom: 0.22rem;
         letter-spacing: -0.01em;
       }
@@ -1692,23 +1912,23 @@
         line-height: 1;
       }
       .emc-1 .em-earn {
-        color: #93c5fd;
+        color: var(--blue2);
       }
       .emc-2 .em-earn {
-        color: #6ee7b7;
+        color: var(--em);
       }
       .emc-3 .em-earn {
-        color: #c4b5fd;
+        color: #7c3aed;
       }
       .emc-4 .em-earn {
-        color: #fde68a;
+        color: #b45309;
       }
       .emc-5 .em-earn {
-        color: #fca5a5;
+        color: #dc2626;
       }
       .em-desc {
         font-size: 0.82rem;
-        color: rgba(255, 255, 255, 0.65);
+        color: var(--muted);
         line-height: 1.75;
       }
       .em-note {
@@ -1718,15 +1938,15 @@
         margin-top: 0.875rem;
         font-family: var(--font-mono);
         font-size: 0.56rem;
-        color: rgba(255, 255, 255, 0.35);
+        color: var(--faint);
       }
       .em-note i {
         font-size: 0.48rem;
       }
 
-      /* COUNTRIES */
+      /* ── COUNTRIES ── */
       .countries-section {
-        background: var(--bg2);
+        background: var(--blue-soft);
       }
       .countries-grid {
         display: grid;
@@ -1756,12 +1976,12 @@
         position: relative;
         height: 180px;
         border: 2px solid transparent;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 16px rgba(0, 85, 255, 0.08);
       }
       .country-card:hover,
       .country-card.active {
         transform: translateY(-7px);
-        box-shadow: 0 18px 36px rgba(37, 99, 235, 0.22);
+        box-shadow: 0 18px 36px rgba(0, 85, 255, 0.25);
         border-color: var(--blue2);
       }
       .cc-img {
@@ -1789,8 +2009,8 @@
       .country-card.active .cc-overlay {
         background: linear-gradient(
           to top,
-          rgba(29, 78, 216, 0.78) 0%,
-          rgba(29, 78, 216, 0.18) 60%,
+          rgba(0, 50, 200, 0.78) 0%,
+          rgba(0, 50, 200, 0.18) 60%,
           transparent 100%
         );
       }
@@ -1845,7 +2065,7 @@
         border-color: transparent;
       }
 
-      /* TOPICS */
+      /* ── TOPICS ── */
       .topics-section {
         background: var(--white);
         position: relative;
@@ -1856,11 +2076,11 @@
         top: 0;
         left: 10%;
         right: 10%;
-        height: 1px;
+        height: 2px;
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(37, 99, 235, 0.15),
+          var(--blue-border),
           transparent
         );
       }
@@ -1881,7 +2101,7 @@
       }
       .topic-card {
         background: var(--bg);
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 16px;
         padding: 1.625rem;
         position: relative;
@@ -1913,7 +2133,7 @@
       }
       .topic-card:hover {
         transform: translateY(-5px);
-        box-shadow: var(--sh-md);
+        box-shadow: 0 14px 36px rgba(0, 85, 255, 0.12);
         background: var(--white);
       }
       .topic-card:hover::after {
@@ -1931,7 +2151,7 @@
         border: 1px solid var(--border);
       }
       .tc-blue .topic-icon {
-        background: rgba(29, 78, 216, 0.06);
+        background: var(--blue-soft);
         border-color: var(--blue-border);
       }
       .tc-green .topic-icon {
@@ -1992,7 +2212,7 @@
         border: 1px solid;
       }
       .tc-blue .topic-earn {
-        background: rgba(29, 78, 216, 0.06);
+        background: var(--blue-soft);
         border-color: var(--blue-border);
         color: var(--blue2);
       }
@@ -2012,7 +2232,7 @@
         color: #7c3aed;
       }
 
-      /* LIVE REQUESTS */
+      /* ── LIVE REQUESTS ── */
       .requests-section {
         background: var(--bg);
       }
@@ -2038,7 +2258,7 @@
         align-items: center;
         gap: 0.35rem;
         background: #fff;
-        border: 1.5px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 7px;
         padding: 0.25rem 0.8rem;
         font-size: 0.7rem;
@@ -2047,15 +2267,15 @@
       }
       .req-card {
         background: #fff;
-        border: 1.5px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 14px;
         overflow: hidden;
         margin-bottom: 0.625rem;
         transition: all 0.2s;
       }
       .req-card:hover {
-        border-color: var(--blue-border);
-        box-shadow: 0 6px 20px rgba(29, 78, 216, 0.08);
+        border-color: var(--blue2);
+        box-shadow: 0 6px 20px rgba(0, 85, 255, 0.1);
       }
       .req-card-head {
         display: flex;
@@ -2072,7 +2292,7 @@
         height: 42px;
         border-radius: 50%;
         object-fit: cover;
-        border: 2px solid var(--border);
+        border: 2px solid var(--blue-border);
         background: var(--bg);
       }
       .req-flag {
@@ -2117,7 +2337,7 @@
       }
       .req-topic-bubble {
         background: var(--bg);
-        border: 1px solid var(--border);
+        border: 1px solid var(--blue-border);
         border-radius: 4px 10px 10px 10px;
         padding: 0.45rem 0.75rem;
         font-size: 0.8rem;
@@ -2129,7 +2349,7 @@
         padding: 0.625rem 1rem;
         display: flex;
         gap: 0.45rem;
-        border-top: 1.5px solid var(--border);
+        border-top: 1.5px solid var(--blue-border);
         align-items: center;
         background: var(--bg2);
       }
@@ -2166,7 +2386,7 @@
       }
       .req-panel {
         background: #fff;
-        border: 1.5px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 18px;
         overflow: hidden;
         box-shadow: var(--sh);
@@ -2179,12 +2399,12 @@
       .req-stats-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        border-bottom: 1.5px solid var(--border);
+        border-bottom: 1.5px solid var(--blue-border);
       }
       .rps {
         padding: 0.75rem;
         text-align: center;
-        border-right: 1.5px solid var(--border);
+        border-right: 1.5px solid var(--blue-border);
       }
       .rps:last-child {
         border-right: none;
@@ -2221,7 +2441,7 @@
         gap: 0.5rem;
         padding: 0.875rem;
         border-radius: 10px;
-        background: var(--blue2);
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         color: #fff;
         font-size: 0.855rem;
         font-weight: 600;
@@ -2229,14 +2449,13 @@
         box-shadow: var(--sh-b);
       }
       .req-panel-cta a:hover {
-        background: var(--blue);
         transform: translateY(-2px);
-        box-shadow: 0 12px 24px rgba(37, 99, 235, 0.4);
+        box-shadow: 0 12px 24px rgba(0, 85, 255, 0.4);
       }
 
-      /* TESTIMONIALS */
+      /* ── TESTIMONIALS ── */
       .proof-section {
-        background: #060818;
+        background: var(--blue-soft);
         position: relative;
         overflow: hidden;
       }
@@ -2247,12 +2466,12 @@
         background:
           radial-gradient(
             ellipse 55% 55% at 30% 50%,
-            rgba(29, 78, 216, 0.09) 0%,
+            rgba(0, 85, 255, 0.08) 0%,
             transparent 55%
           ),
           radial-gradient(
             ellipse 40% 40% at 80% 50%,
-            rgba(5, 150, 105, 0.05) 0%,
+            rgba(5, 150, 105, 0.04) 0%,
             transparent 55%
           );
         pointer-events: none;
@@ -2307,20 +2526,20 @@
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.18);
+        background: var(--blue-border);
         transition: all 0.35s var(--spring);
         cursor: pointer;
         border: none;
         padding: 0;
       }
       .t-dot.active {
-        background: #60a5fa;
+        background: var(--blue2);
         width: 20px;
         border-radius: 4px;
       }
       .tcard {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #fff;
+        border: 1.5px solid var(--blue-border);
         border-radius: 16px;
         padding: 1.5rem;
         transition: all 0.28s var(--ease);
@@ -2334,7 +2553,7 @@
         left: 0;
         right: 0;
         height: 2px;
-        background: linear-gradient(90deg, var(--blue), var(--blue2));
+        background: linear-gradient(90deg, var(--blue2), var(--blue3));
         border-radius: 16px 16px 0 0;
         transform: scaleX(0);
         transition: transform 0.35s;
@@ -2346,15 +2565,15 @@
         right: 16px;
         font-family: Georgia, serif;
         font-size: 6.5rem;
-        color: rgba(96, 165, 250, 0.07);
+        color: rgba(0, 85, 255, 0.07);
         pointer-events: none;
         line-height: 1;
         user-select: none;
       }
       .tcard:hover {
         transform: translateY(-5px);
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-        border-color: rgba(96, 165, 250, 0.25);
+        box-shadow: 0 14px 36px rgba(0, 85, 255, 0.14);
+        border-color: var(--blue2);
       }
       .tcard:hover::before {
         transform: scaleX(1);
@@ -2367,7 +2586,7 @@
       }
       .tcard-quote {
         font-size: 0.855rem;
-        color: rgba(255, 255, 255, 0.75);
+        color: var(--muted);
         line-height: 1.85;
         margin-bottom: 1.25rem;
         font-style: italic;
@@ -2382,29 +2601,29 @@
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
-        border: 2px solid rgba(255, 255, 255, 0.12);
+        border: 2px solid var(--blue-border);
         flex-shrink: 0;
       }
       .tcard-name {
         font-weight: 600;
         font-size: 0.82rem;
-        color: #fff;
+        color: var(--ink);
       }
       .tcard-loc {
         font-size: 0.68rem;
-        color: rgba(255, 255, 255, 0.45);
+        color: var(--muted);
       }
       .tcard-earn {
         font-family: var(--font-mono);
         font-size: 0.6rem;
-        color: #6ee7b7;
+        color: var(--em2);
         margin-top: 0.1rem;
         font-weight: 500;
       }
 
-      /* TRUST */
+      /* ── TRUST ── */
       .trust-section {
-        background: var(--bg2);
+        background: var(--blue-soft);
         position: relative;
       }
       .trust-section::before {
@@ -2413,11 +2632,11 @@
         top: 0;
         left: 10%;
         right: 10%;
-        height: 1px;
+        height: 2px;
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(37, 99, 235, 0.15),
+          var(--blue-border),
           transparent
         );
       }
@@ -2433,7 +2652,7 @@
       }
       .trust-card {
         background: var(--white);
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 16px;
         padding: 1.625rem;
         text-align: center;
@@ -2441,8 +2660,8 @@
       }
       .trust-card:hover {
         transform: translateY(-4px);
-        box-shadow: var(--sh-md);
-        border-color: var(--blue-border);
+        box-shadow: 0 14px 36px rgba(0, 85, 255, 0.14);
+        border-color: var(--blue2);
       }
       .trust-icon {
         width: 54px;
@@ -2453,10 +2672,10 @@
         justify-content: center;
         font-size: 1.25rem;
         margin: 0 auto 0.875rem;
-        border: 1px solid var(--border);
+        border: 1.5px solid;
       }
       .ti-blue {
-        background: rgba(29, 78, 216, 0.06);
+        background: var(--blue-soft);
         border-color: var(--blue-border);
       }
       .ti-green {
@@ -2475,7 +2694,7 @@
         font-family: var(--font-head);
         font-size: 1.45rem;
         font-weight: 900;
-        color: var(--ink);
+        color: var(--blue2);
         letter-spacing: -0.03em;
         margin-bottom: 0.18rem;
       }
@@ -2491,7 +2710,7 @@
         line-height: 1.75;
       }
 
-      /* FAQ */
+      /* ── FAQ ── */
       .faq-section {
         background: var(--white);
         position: relative;
@@ -2502,11 +2721,11 @@
         top: 0;
         left: 10%;
         right: 10%;
-        height: 1px;
+        height: 2px;
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(37, 99, 235, 0.15),
+          var(--blue-border),
           transparent
         );
       }
@@ -2515,7 +2734,7 @@
         margin: 0 auto;
       }
       .faq-item {
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 10px;
         overflow: hidden;
         margin-bottom: 0.5rem;
@@ -2523,7 +2742,8 @@
         background: var(--bg);
       }
       .faq-item:hover {
-        border-color: var(--blue-border);
+        border-color: var(--blue2);
+        box-shadow: 0 4px 16px rgba(0, 85, 255, 0.08);
       }
       .faq-q {
         padding: 1rem 1.25rem;
@@ -2566,12 +2786,12 @@
       .faq-a.open {
         max-height: 300px;
         padding: 1rem 1.25rem;
-        border-top: 1px solid var(--border);
+        border-top: 1.5px solid var(--blue-border);
       }
 
-      /* LEGAL */
+      /* ── LEGAL ── */
       .legal-section {
-        background: var(--bg2);
+        background: var(--blue-soft);
         position: relative;
       }
       .legal-section::before {
@@ -2580,11 +2800,11 @@
         top: 0;
         left: 10%;
         right: 10%;
-        height: 1px;
+        height: 2px;
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(37, 99, 235, 0.15),
+          var(--blue-border),
           transparent
         );
       }
@@ -2600,7 +2820,7 @@
       }
       .legal-card {
         background: #fff;
-        border: 1.5px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 16px;
         padding: 1.75rem 1.625rem 1.625rem;
         cursor: pointer;
@@ -2628,9 +2848,9 @@
         background: linear-gradient(90deg, #d97706, #fbbf24);
       }
       .legal-card:hover {
-        border-color: var(--blue-border);
+        border-color: var(--blue2);
         transform: translateY(-5px);
-        box-shadow: var(--sh-md);
+        box-shadow: 0 14px 36px rgba(0, 85, 255, 0.14);
       }
       .legal-icon-w {
         width: 50px;
@@ -2734,7 +2954,7 @@
         justify-content: center;
         margin-top: 2.5rem;
         padding-top: 2.5rem;
-        border-top: 1px solid var(--border);
+        border-top: 1.5px solid var(--blue-border);
       }
       .ltr-item {
         display: flex;
@@ -2749,13 +2969,13 @@
         font-size: 0.65rem;
       }
 
-      /* CTA */
+      /* ── CTA ── */
       .cta-section {
         background: linear-gradient(
           135deg,
-          #04071a 0%,
-          #07091f 50%,
-          #04071a 100%
+          #dce9ff 0%,
+          #b8ccff 50%,
+          #dce9ff 100%
         );
         position: relative;
         overflow: hidden;
@@ -2767,12 +2987,12 @@
         background:
           radial-gradient(
             ellipse 55% 75% at 80% 50%,
-            rgba(29, 78, 216, 0.1) 0%,
+            rgba(255, 255, 255, 0.5) 0%,
             transparent 55%
           ),
           radial-gradient(
             ellipse 40% 55% at 20% 50%,
-            rgba(29, 78, 216, 0.05) 0%,
+            rgba(255, 255, 255, 0.3) 0%,
             transparent 55%
           );
         pointer-events: none;
@@ -2787,21 +3007,21 @@
         font-family: var(--font-head);
         font-size: clamp(1.8rem, 4.5vw, 3rem);
         font-weight: 900;
-        color: #fff;
+        color: var(--ink);
         letter-spacing: -0.025em;
         line-height: 1.1;
         margin-bottom: 0.875rem;
       }
       .cta-inner h2 em {
         font-style: italic;
-        background: linear-gradient(120deg, #60a5fa, #34d399);
+        background: linear-gradient(120deg, var(--blue2), var(--em));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
       .cta-inner p {
         font-size: 0.95rem;
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--muted);
         max-width: 440px;
         margin: 0 auto 2.5rem;
         line-height: 1.85;
@@ -2813,13 +3033,13 @@
         justify-content: center;
       }
 
-      /* MODALS */
+      /* ── OFFER MODAL — z-index 10020 (above profile modal 10010) ── */
       .offer-overlay {
         position: fixed;
         inset: 0;
         background: rgba(4, 7, 26, 0.6);
         backdrop-filter: blur(16px);
-        z-index: 10002;
+        z-index: 10020;
         display: none;
         align-items: center;
         justify-content: center;
@@ -2840,7 +3060,7 @@
         animation: fadeUp 0.3s var(--spring);
       }
       .offer-head {
-        background: var(--bg2);
+        background: var(--bg);
         border-radius: 20px 20px 0 0;
         padding: 2rem 1.75rem 1.75rem;
         text-align: center;
@@ -2852,7 +3072,7 @@
         position: absolute;
         inset: 0;
         background-image: radial-gradient(
-          rgba(29, 78, 216, 0.05) 1.5px,
+          rgba(0, 85, 255, 0.05) 1.5px,
           transparent 1.5px
         );
         background-size: 22px 22px;
@@ -2872,7 +3092,7 @@
         position: absolute;
         top: 1.5rem;
         left: -3rem;
-        background: var(--blue2);
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         color: #fff;
         font-family: var(--font-body);
         font-size: 0.66rem;
@@ -2952,7 +3172,7 @@
         padding: 1.375rem;
         background: var(--blue-soft);
         border-radius: 12px;
-        border: 1px solid var(--blue-border);
+        border: 1.5px solid var(--blue-border);
         margin-bottom: 1.25rem;
         position: relative;
         overflow: hidden;
@@ -2964,7 +3184,7 @@
         left: 0;
         right: 0;
         height: 2px;
-        background: linear-gradient(90deg, var(--blue), var(--blue2));
+        background: linear-gradient(90deg, var(--blue2), var(--blue3));
       }
       .op-was {
         font-family: var(--font-mono);
@@ -3002,12 +3222,12 @@
       .op-save {
         font-size: 0.82rem;
         font-weight: 600;
-        color: var(--blue);
+        color: var(--blue2);
         margin-top: 0.22rem;
       }
       .offer-timer {
-        background: rgba(29, 78, 216, 0.05);
-        border: 1px solid rgba(29, 78, 216, 0.15);
+        background: var(--blue-soft);
+        border: 1px solid var(--blue-border);
         border-radius: 7px;
         padding: 0.625rem 1rem;
         text-align: center;
@@ -3060,7 +3280,7 @@
         color: var(--blue2);
       }
 
-      /* CHAT MODAL */
+      /* ── CHAT MODAL ── */
       .chat-overlay {
         position: fixed;
         inset: 0;
@@ -3103,7 +3323,7 @@
         align-items: center;
         gap: 0.875rem;
         padding: 0.875rem 1.25rem;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1.5px solid var(--blue-border);
         flex-shrink: 0;
         background: var(--bg);
       }
@@ -3133,7 +3353,7 @@
         height: 28px;
         border-radius: 50%;
         background: var(--bg2);
-        border: 1px solid var(--border);
+        border: 1px solid var(--blue-border);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -3175,7 +3395,7 @@
       }
       .cm-msg.them .cm-bubble {
         background: var(--bg);
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         color: var(--ink3);
         border-bottom-left-radius: 3px;
       }
@@ -3197,7 +3417,7 @@
         gap: 0.3rem;
         padding: 0.45rem 0.875rem;
         background: var(--bg);
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 10px;
         border-bottom-left-radius: 3px;
         width: fit-content;
@@ -3206,7 +3426,7 @@
         width: 5px;
         height: 5px;
         border-radius: 50%;
-        background: var(--faint);
+        background: var(--blue2);
         animation: typing 1.2s infinite;
       }
       .typing-dots span:nth-child(2) {
@@ -3229,7 +3449,7 @@
       }
       .cm-input-area {
         padding: 0.75rem 1rem;
-        border-top: 1px solid var(--border);
+        border-top: 1.5px solid var(--blue-border);
         display: flex;
         gap: 0.45rem;
         align-items: center;
@@ -3239,7 +3459,7 @@
       .cm-inp {
         flex: 1;
         padding: 0.55rem 1rem;
-        border: 1.5px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 8px;
         font-family: var(--font-body);
         font-size: 0.82rem;
@@ -3259,7 +3479,7 @@
         width: 38px;
         height: 38px;
         border-radius: 50%;
-        background: var(--blue2);
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         border: none;
         color: #fff;
         display: flex;
@@ -3271,11 +3491,11 @@
         flex-shrink: 0;
       }
       .cm-send:hover {
-        background: var(--blue);
         transform: scale(1.07);
+        box-shadow: 0 4px 12px rgba(0, 85, 255, 0.4);
       }
 
-      /* LEGAL MODAL */
+      /* ── LEGAL MODAL ── */
       .lm-overlay {
         position: fixed;
         inset: 0;
@@ -3292,7 +3512,7 @@
       }
       .lm-box {
         background: #fff;
-        border: 1.5px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 20px;
         width: 100%;
         max-width: 560px;
@@ -3305,7 +3525,7 @@
       }
       .lm-head {
         padding: 1.375rem 1.625rem;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1.5px solid var(--blue-border);
         display: flex;
         align-items: flex-start;
         gap: 0.875rem;
@@ -3321,8 +3541,8 @@
         justify-content: center;
         font-size: 1.2rem;
         flex-shrink: 0;
-        border: 1px solid var(--border);
-        background: var(--bg2);
+        border: 1.5px solid var(--blue-border);
+        background: var(--blue-soft);
       }
       .lm-head-title {
         font-family: var(--font-head);
@@ -3343,7 +3563,7 @@
         height: 30px;
         border-radius: 50%;
         background: var(--bg2);
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -3360,7 +3580,7 @@
       }
       .lm-tabs {
         display: flex;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1.5px solid var(--blue-border);
         flex-shrink: 0;
         background: #fff;
         overflow-x: auto;
@@ -3405,7 +3625,7 @@
         content: "";
         width: 3px;
         height: 12px;
-        background: linear-gradient(180deg, var(--blue), var(--blue2));
+        background: linear-gradient(180deg, var(--blue2), var(--blue3));
         border-radius: 2px;
         flex-shrink: 0;
       }
@@ -3441,7 +3661,7 @@
       }
       .lm-foot {
         padding: 0.875rem 1.5rem;
-        border-top: 1px solid var(--border);
+        border-top: 1.5px solid var(--blue-border);
         background: var(--bg);
         display: flex;
         align-items: center;
@@ -3461,7 +3681,7 @@
         gap: 0.4rem;
         padding: 0.45rem 1rem;
         border-radius: 8px;
-        background: var(--blue2);
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         color: #fff;
         font-size: 0.74rem;
         font-weight: 600;
@@ -3469,11 +3689,10 @@
         box-shadow: var(--sh-b);
       }
       .lm-foot a:hover {
-        background: var(--blue);
         transform: translateY(-1px);
       }
 
-      /* FOOTER — always dark, both light & dark modes */
+      /* ── FOOTER ── */
       .footer {
         background: var(--footer-bg);
         color: rgba(255, 255, 255, 0.35);
@@ -3494,7 +3713,7 @@
         letter-spacing: 0.01em;
       }
       .footer-logo-name em {
-        color: var(--blue3);
+        color: #7fb3ff;
         font-style: normal;
       }
       .footer-links {
@@ -3512,8 +3731,8 @@
         transition: all 0.2s;
       }
       .footer-links a:hover {
-        color: var(--blue3);
-        background: rgba(59, 130, 246, 0.1);
+        color: #7fb3ff;
+        background: rgba(127, 179, 255, 0.1);
       }
       .footer-copy {
         font-size: 0.68rem;
@@ -3523,10 +3742,10 @@
         color: rgba(255, 255, 255, 0.4);
       }
       .footer-copy a:hover {
-        color: var(--blue3);
+        color: #7fb3ff;
       }
 
-      /* STICKY & FLOAT */
+      /* ── STICKY / FLOAT ── */
       .sticky-cta {
         position: fixed;
         bottom: 0;
@@ -3535,11 +3754,11 @@
         z-index: 998;
         background: rgba(255, 255, 255, 0.97);
         backdrop-filter: blur(20px);
-        border-top: 1px solid var(--border);
+        border-top: 1.5px solid var(--blue-border);
         padding: 0.65rem 0;
         transform: translateY(100%);
         transition: transform 0.3s;
-        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 -4px 16px rgba(0, 85, 255, 0.08);
       }
       .sticky-cta.show {
         transform: translateY(0);
@@ -3585,7 +3804,7 @@
         top: 76px;
         right: 16px;
         background: #fff;
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 10px;
         padding: 0.625rem 0.875rem;
         z-index: 10000;
@@ -3617,7 +3836,7 @@
       }
       .sp-item {
         background: #fff;
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-left: 2.5px solid var(--blue2);
         border-radius: 7px;
         padding: 0.45rem 0.7rem;
@@ -3643,7 +3862,7 @@
         width: calc(100% - 2rem);
         max-width: 360px;
         background: #fff;
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
         border-radius: 16px;
         padding: 1.25rem;
         z-index: 1005;
@@ -3679,16 +3898,16 @@
         opacity: 0.85;
       }
       .cookie-btn.accept {
-        background: var(--blue2);
+        background: linear-gradient(135deg, var(--blue2), var(--blue));
         color: #fff;
       }
       .cookie-btn.decline {
         background: var(--bg2);
         color: var(--muted);
-        border: 1px solid var(--border);
+        border: 1.5px solid var(--blue-border);
       }
 
-      /* DARK MODE */
+      /* ── DARK MODE ── */
       @media (prefers-color-scheme: dark) {
         :root {
           --ink: #eef2ff;
@@ -3701,33 +3920,24 @@
           --bg: #090e1f;
           --bg2: #0d1328;
           --white: #101829;
-          --blue-soft: #0c1836;
-          --blue-border: #1c3968;
+          --blue-soft: #0a1230;
+          --blue-border: #1a3068;
           --em-soft: #061512;
         }
         body {
           background: var(--bg);
         }
-        .how-section {
-          background: #0c1022;
-        }
+        .how-section,
         .topics-section {
           background: #0c1022;
         }
-        .trust-section {
+        .trust-section,
+        .legal-section,
+        .requests-section {
           background: #090e1f;
         }
         .faq-section {
           background: #0c1022;
-        }
-        .legal-section {
-          background: #090e1f;
-        }
-        .countries-section {
-          background: #0c1022;
-        }
-        .requests-section {
-          background: #090e1f;
         }
         .step-card {
           background: #0d1328;
@@ -3752,19 +3962,19 @@
         .topic-title {
           color: #eef2ff;
         }
-        .topic-desc {
+        .topic-desc,
+        .trust-desc {
           color: #8fa0c4;
         }
         .trust-card {
           background: #0d1328;
           border-color: #1d2640;
         }
-        .trust-num,
+        .trust-num {
+          color: #7fb3ff;
+        }
         .trust-title {
           color: #eef2ff;
-        }
-        .trust-desc {
-          color: #8fa0c4;
         }
         .faq-item {
           background: #0d1328;
@@ -3857,7 +4067,8 @@
           color: #dbe4ff;
         }
         .offer-timer {
-          background: rgba(29, 78, 216, 0.1);
+          background: rgba(0, 85, 255, 0.1);
+          border-color: #1c3968;
         }
         .offer-urgency-pill {
           background: rgba(220, 38, 38, 0.1);
@@ -3891,7 +4102,7 @@
           border-color: #1d2640;
         }
         .typing-dots span {
-          background: #5c6e92;
+          background: #3d7fff;
         }
         .cm-earn-notice {
           background: #061512;
@@ -3947,9 +4158,9 @@
           color: #8fa0c4;
         }
         .lm-tab.active {
-          background: rgba(29, 78, 216, 0.14);
-          color: #60a5fa;
-          border-bottom-color: #60a5fa;
+          background: rgba(0, 85, 255, 0.14);
+          color: #7fb3ff;
+          border-bottom-color: #7fb3ff;
         }
         .lm-body {
           color: #8fa0c4;
@@ -3986,8 +4197,8 @@
           color: #dbe4ff !important;
         }
         .mobile-nav a:not(.mobile-nav-cta):hover {
-          color: #60a5fa !important;
-          background: rgba(29, 78, 216, 0.12) !important;
+          color: #7fb3ff !important;
+          background: rgba(0, 85, 255, 0.12) !important;
           border-color: #1c3968 !important;
         }
         .hamburger {
@@ -3995,15 +4206,7 @@
           border-color: #273154 !important;
         }
         .hamburger span {
-          background: #eef2ff !important;
-        }
-        .hamburger.open {
-          background: rgba(29, 78, 216, 0.18) !important;
-          border-color: #1c3968 !important;
-        }
-        .hamburger.open span:nth-child(1),
-        .hamburger.open span:nth-child(3) {
-          background: #60a5fa !important;
+          background: #7fb3ff !important;
         }
         .cookie-bar {
           background: #0d1328;
@@ -4060,7 +4263,331 @@
         .loading-ovl {
           background: rgba(9, 14, 31, 0.97);
         }
-        /* Footer always dark — no override needed, var(--footer-bg) is hardcoded */
+        .hero {
+          background: #07091f;
+        }
+        .hero-bg {
+          background:
+            radial-gradient(
+              ellipse 65% 75% at 15% 55%,
+              rgba(0, 85, 255, 0.18) 0%,
+              transparent 60%
+            ),
+            radial-gradient(
+              ellipse 50% 55% at 88% 20%,
+              rgba(61, 127, 255, 0.14) 0%,
+              transparent 55%
+            ),
+            radial-gradient(
+              ellipse 55% 45% at 70% 85%,
+              rgba(5, 150, 105, 0.07) 0%,
+              transparent 55%
+            ),
+            #07091f;
+        }
+        .hero-grid {
+          background-image:
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0.02) 1px,
+              transparent 1px
+            );
+        }
+        .hero-particle {
+          background: rgba(255, 255, 255, 0.06);
+        }
+        .hero-live-pill {
+          color: rgba(255, 255, 255, 0.75);
+        }
+        .hero-h1 {
+          color: #fff;
+        }
+        .hero-h1 .line-top {
+          color: rgba(255, 255, 255, 0.9);
+        }
+        .hero-h1 .line-bot {
+          color: rgba(255, 255, 255, 0.5);
+        }
+        .her-amount {
+          color: #fff;
+        }
+        .her-sep {
+          background: rgba(255, 255, 255, 0.18);
+        }
+        .her-label {
+          color: rgba(255, 255, 255, 0.6);
+        }
+        .her-method {
+          background: rgba(255, 255, 255, 0.07);
+          border-color: rgba(255, 255, 255, 0.1);
+          color: rgba(255, 255, 255, 0.7);
+        }
+        .her-method i {
+          color: #34d399;
+        }
+        .hero-desc {
+          color: rgba(255, 255, 255, 0.65);
+        }
+        .hero-desc strong {
+          color: #fff;
+        }
+        .hero-live-strip {
+          background: rgba(255, 255, 255, 0.04);
+          border-color: rgba(255, 255, 255, 0.07);
+        }
+        .hls-val {
+          color: #fff;
+        }
+        .hls-val.green {
+          color: #34d399;
+        }
+        .hls-label {
+          color: rgba(255, 255, 255, 0.45);
+        }
+        .hls-div {
+          background: rgba(255, 255, 255, 0.08);
+        }
+        .hero-flag-chip {
+          background: rgba(255, 255, 255, 0.06);
+          border-color: rgba(255, 255, 255, 0.09);
+          color: rgba(255, 255, 255, 0.82);
+        }
+        .hero-flag-chip:hover {
+          background: rgba(255, 255, 255, 0.12);
+          color: #fff;
+          border-color: rgba(255, 255, 255, 0.2);
+        }
+        .hero-flag-chip em {
+          color: #34d399;
+        }
+        .hp-item {
+          color: rgba(255, 255, 255, 0.45);
+        }
+        .hp-item i {
+          color: rgba(255, 255, 255, 0.35);
+        }
+        .hero-chat-wrap {
+          background: rgba(255, 255, 255, 0.05);
+          border-color: rgba(255, 255, 255, 0.09);
+          box-shadow: none;
+        }
+        .hcw-header {
+          background: rgba(255, 255, 255, 0.03);
+          border-bottom-color: rgba(255, 255, 255, 0.07);
+        }
+        .hcw-av {
+          border-color: rgba(255, 255, 255, 0.12);
+        }
+        .hcw-name {
+          color: #fff;
+        }
+        .hcw-earn-badge {
+          background: rgba(52, 211, 153, 0.12);
+          border-color: rgba(52, 211, 153, 0.22);
+          color: #34d399;
+        }
+        .hcw-msgs {
+          background: transparent;
+        }
+        .hcw-bubble {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 255, 255, 0.06);
+          color: rgba(255, 255, 255, 0.88);
+        }
+        .hcw-stats {
+          border-top-color: rgba(255, 255, 255, 0.06);
+        }
+        .hcw-stat {
+          border-right-color: rgba(255, 255, 255, 0.06);
+        }
+        .hcw-stat-val {
+          color: #fff;
+        }
+        .hcw-stat-val.green {
+          color: var(--em);
+        }
+        .hcw-stat-val.blue {
+          color: var(--blue2);
+        }
+        .hcw-stat-lbl {
+          color: rgba(255, 255, 255, 0.4);
+        }
+        .hcw-calc {
+          background: rgba(0, 0, 0, 0.12);
+          border-top-color: rgba(255, 255, 255, 0.06);
+        }
+        .hcw-calc-label {
+          color: rgba(255, 255, 255, 0.45);
+        }
+        .calc-lbl {
+          color: rgba(255, 255, 255, 0.5);
+        }
+        .calc-result-lbl {
+          color: rgba(255, 255, 255, 0.45);
+        }
+        .calc-val {
+          color: #fff;
+        }
+        .calc-result-amount {
+          color: #34d399;
+        }
+        .hcw-cta {
+          border-top-color: rgba(255, 255, 255, 0.06);
+        }
+        .hcw-demo-btn {
+          background: rgba(255, 255, 255, 0.06);
+          color: rgba(255, 255, 255, 0.8);
+          border-color: rgba(255, 255, 255, 0.12);
+        }
+        .btn-ghost {
+          background: rgba(255, 255, 255, 0.08);
+          color: #fff;
+          border-color: rgba(255, 255, 255, 0.18);
+        }
+        .btn-ghost:hover {
+          background: var(--blue-soft);
+          border-color: var(--blue2);
+        }
+        .earn-section {
+          background: linear-gradient(
+            160deg,
+            #04071a 0%,
+            #07091f 60%,
+            #04071a 100%
+          );
+        }
+        .earn-section::after {
+          background-image: radial-gradient(
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px
+          );
+        }
+        .em-card {
+          background: rgba(255, 255, 255, 0.06);
+          border-color: rgba(255, 255, 255, 0.09);
+        }
+        .em-card:hover {
+          border-color: rgba(255, 255, 255, 0.15);
+        }
+        .emc-1 .em-badge {
+          background: rgba(61, 127, 255, 0.12);
+          color: #7fb3ff;
+          border-color: rgba(61, 127, 255, 0.2);
+        }
+        .emc-2 .em-badge {
+          background: rgba(52, 211, 153, 0.12);
+          color: #6ee7b7;
+          border-color: rgba(52, 211, 153, 0.2);
+        }
+        .emc-3 .em-badge,
+        .emc-4 .em-badge,
+        .emc-5 .em-badge {
+          background: rgba(167, 139, 250, 0.12);
+          color: #c4b5fd;
+          border-color: rgba(167, 139, 250, 0.2);
+        }
+        .em-title {
+          color: #fff;
+        }
+        .em-desc {
+          color: rgba(255, 255, 255, 0.65);
+        }
+        .em-note {
+          color: rgba(255, 255, 255, 0.35);
+        }
+        .proof-section {
+          background: #060818;
+        }
+        .tcard {
+          background: rgba(255, 255, 255, 0.06);
+          border-color: rgba(255, 255, 255, 0.1);
+        }
+        .tcard:hover {
+          border-color: rgba(127, 179, 255, 0.25);
+        }
+        .tcard-av {
+          border-color: rgba(255, 255, 255, 0.12);
+        }
+        .tcard-quote {
+          color: rgba(255, 255, 255, 0.75);
+        }
+        .tcard-name {
+          color: #fff;
+        }
+        .tcard-loc {
+          color: rgba(255, 255, 255, 0.45);
+        }
+        .tcard-earn {
+          color: #6ee7b7;
+        }
+        .t-dot {
+          background: rgba(255, 255, 255, 0.18);
+        }
+        .t-dot.active {
+          background: #7fb3ff;
+        }
+        .cta-section {
+          background: linear-gradient(
+            135deg,
+            #04071a 0%,
+            #07091f 50%,
+            #04071a 100%
+          );
+        }
+        .cta-inner h2 {
+          color: #fff;
+        }
+        .cta-inner p {
+          color: rgba(255, 255, 255, 0.6);
+        }
+        .client-section {
+          background: linear-gradient(
+            160deg,
+            #04071a 0%,
+            #07091f 60%,
+            #04071a 100%
+          );
+        }
+        .client-card {
+          background: rgba(255, 255, 255, 0.06);
+          border-color: rgba(255, 255, 255, 0.09);
+        }
+        .client-card:hover {
+          border-color: rgba(127, 179, 255, 0.25);
+        }
+        .cc-name {
+          color: #eef2ff;
+        }
+        .cc-loc,
+        .cc-quote {
+          color: #8fa0c4;
+        }
+        .cc-tag {
+          background: rgba(0, 85, 255, 0.15);
+          color: #7fb3ff;
+          border-color: rgba(0, 85, 255, 0.2);
+        }
+        .client-step {
+          background: #0d1328;
+          border-color: #1d2640;
+        }
+        .client-step h4 {
+          color: #eef2ff;
+        }
+        .client-step p {
+          color: #8fa0c4;
+        }
+        .client-tabs {
+          background: #0d1328;
+          border-color: #1d2640;
+        }
+        .client-tab {
+          color: #8fa0c4;
+        }
+        .client-tab.active {
+          color: #fff;
+        }
       }
       @media (prefers-reduced-motion: reduce) {
         *,
@@ -4079,7 +4606,7 @@
       <p class="loading-txt" id="loadingTxt">Setting up your account…</p>
     </div>
 
-    <!-- OFFER MODAL -->
+    <!-- OFFER MODAL (z-index: 10020 — above profile modal at 10010) -->
     <div class="offer-overlay" id="offerOverlay">
       <div class="offer-box">
         <button class="offer-close-btn" id="offerClose">
@@ -4142,16 +4669,20 @@
               one
             </li>
           </ul>
-          <a
-            href="javascript:void(0)"
-            class="btn btn-blue btn-lg btn-pulse register-link"
-            style="width: 100%; justify-content: center"
-            data-url="https://mulastar.com/register.php?ref=Sydney"
+          <button
+            class="btn btn-blue btn-lg btn-pulse offer-final-cta"
             id="offerCta"
+            style="
+              width: 100%;
+              justify-content: center;
+              display: inline-flex;
+              align-items: center;
+              gap: 0.5rem;
+            "
           >
             <i class="fas fa-bolt"></i
             ><span id="offerCtaTxt">Register Now — KSH 500</span>
-          </a>
+          </button>
         </div>
         <div class="offer-foot">
           <span class="of-trust"><i class="fas fa-lock"></i> Secure</span>
@@ -4321,10 +4852,10 @@
           <nav class="nav-links">
             <a href="#how-it-works">How It Works</a>
             <a href="#earn-methods">Ways to Earn</a>
-            <a href="#topics">Chat Topics</a>
+            <a href="#for-clients">For Clients</a>
+            <a href="#topics">Topics</a>
             <a href="#countries">Countries</a>
             <a href="#faq">FAQ</a>
-            <a href="#contact">Support</a>
           </nav>
           <div class="nav-actions">
             <a
@@ -4349,10 +4880,10 @@
     <nav class="mobile-nav" id="mobileNav">
       <a href="#how-it-works">How It Works</a>
       <a href="#earn-methods">5 Ways to Earn</a>
+      <a href="#for-clients">For Clients</a>
       <a href="#topics">Chat Topics</a>
       <a href="#countries">Countries</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact">Support</a>
       <div class="mobile-nav-div"></div>
       <a
         href="javascript:void(0)"
@@ -4458,15 +4989,7 @@
               data-url="https://mulastar.com/register.php?ref=Sydney"
               ><i class="fas fa-rocket"></i> Start Earning Now</a
             >
-            <button
-              class="btn btn-ghost btn-xl"
-              id="meetPeopleBtn"
-              style="
-                background: rgba(255, 255, 255, 0.08);
-                color: #fff;
-                border: 1.5px solid rgba(255, 255, 255, 0.18);
-              "
-            >
+            <button class="btn btn-ghost btn-xl" id="meetPeopleBtn">
               <i class="fas fa-users"></i> Meet People Ready to Chat
             </button>
           </div>
@@ -4559,8 +5082,8 @@
             <div class="hcw-calc">
               <div class="hcw-calc-label">💰 Estimate your earnings</div>
               <div class="calc-row">
-                <span class="calc-lbl">Chats / day</span>
-                <input
+                <span class="calc-lbl">Chats / day</span
+                ><input
                   type="range"
                   class="calc-slider"
                   id="calcChats"
@@ -4568,12 +5091,11 @@
                   max="10"
                   value="4"
                   style="--val: 33%"
-                />
-                <span class="calc-val" id="calcChatsVal">4</span>
+                /><span class="calc-val" id="calcChatsVal">4</span>
               </div>
               <div class="calc-row">
-                <span class="calc-lbl">Rate / hr</span>
-                <input
+                <span class="calc-lbl">Rate / hr</span
+                ><input
                   type="range"
                   class="calc-slider"
                   id="calcRate"
@@ -4581,8 +5103,7 @@
                   max="8"
                   value="4"
                   style="--val: 33%"
-                />
-                <span class="calc-val" id="calcRateVal">$4</span>
+                /><span class="calc-val" id="calcRateVal">$4</span>
               </div>
               <div class="calc-result-row">
                 <div class="calc-result-lbl">Monthly estimate (30 days)</div>
@@ -4622,8 +5143,7 @@
             <h3>Register Your Account</h3>
             <p>
               Create your profile with a one-time small activation fee. Unlocks
-              access to people worldwide who want to chat. Most members recover
-              this in their first few completed sessions.
+              access to people worldwide who want to chat.
             </p>
             <div class="step-tag">
               <i class="fas fa-check"></i> One-time only
@@ -4635,7 +5155,7 @@
             <p>
               Clients from UK, USA, Canada &amp; more send you requests. Accept
               a request, have a genuine friendly conversation — earn per hour,
-              per message, or per completed session.
+              per message, or per session.
             </p>
             <div class="step-tag">
               <i class="fas fa-comment"></i> 5 ways to earn
@@ -4646,8 +5166,7 @@
             <h3>Earn &amp; Withdraw Daily</h3>
             <p>
               Earnings accumulate as you chat. Withdraw daily to M-Pesa, PayPal,
-              MTN Money, or Airtel Money — zero withdrawal fees. Minimum $5
-              threshold.
+              MTN Money, or Airtel Money — zero withdrawal fees.
             </p>
             <div class="step-tag">
               <i class="fas fa-dollar-sign"></i> Zero withdrawal fees
@@ -4685,6 +5204,271 @@
       </div>
     </section>
 
+    <!-- ══ FOR CLIENTS — NEW SECTION ══ -->
+    <section class="client-section section" id="for-clients">
+      <div class="container">
+        <div class="shead fade-up">
+          <div class="eyebrow">For People Seeking Connection</div>
+          <h2 class="sec-title">Real people, <em>genuine conversations</em></h2>
+          <p class="sec-sub">
+            Thousands of warm, friendly chatters across Africa are ready to talk
+            with you about anything — culture, life, travel, companionship, and
+            more.
+          </p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="client-tabs fade-up">
+          <button
+            class="client-tab active"
+            onclick="switchClientTab('stories')"
+          >
+            ✨ Client Stories
+          </button>
+          <button class="client-tab" onclick="switchClientTab('howto')">
+            🚀 How It Works for Clients
+          </button>
+        </div>
+
+        <!-- Client Stories Panel -->
+        <div class="client-panel active" id="panel-stories">
+          <div class="client-grid">
+            <div class="client-card fade-up">
+              <img
+                src="https://i.pravatar.cc/88?img=12"
+                class="cc-av"
+                loading="lazy"
+                alt="James"
+              />
+              <div class="cc-stars">★★★★★</div>
+              <div class="cc-name">James, 52</div>
+              <div class="cc-loc">
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="color: var(--blue2); font-size: 0.6rem"
+                ></i>
+                London, United Kingdom
+              </div>
+              <p class="cc-quote">
+                "I was going through a lonely period after retirement. Chatting
+                with people from Africa gave me a genuine sense of connection I
+                hadn't felt in years. The conversations are real and warm."
+              </p>
+              <div class="cc-topic-tags">
+                <span class="cc-tag">Culture</span
+                ><span class="cc-tag">Daily Life</span
+                ><span class="cc-tag">Companionship</span>
+              </div>
+            </div>
+            <div class="client-card fade-up" style="transition-delay: 0.08s">
+              <img
+                src="https://i.pravatar.cc/88?img=5"
+                class="cc-av"
+                loading="lazy"
+                alt="Emily"
+              />
+              <div class="cc-stars">★★★★★</div>
+              <div class="cc-name">Emily, 48</div>
+              <div class="cc-loc">
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="color: var(--blue2); font-size: 0.6rem"
+                ></i>
+                Chicago, USA
+              </div>
+              <p class="cc-quote">
+                "I travel a lot but rarely get to understand local cultures
+                deeply. The conversations here changed that — I learned things
+                about East Africa no tour guide would ever tell me."
+              </p>
+              <div class="cc-topic-tags">
+                <span class="cc-tag">Travel</span
+                ><span class="cc-tag">Culture</span
+                ><span class="cc-tag">Food</span>
+              </div>
+            </div>
+            <div class="client-card fade-up" style="transition-delay: 0.16s">
+              <img
+                src="https://i.pravatar.cc/88?img=32"
+                class="cc-av"
+                loading="lazy"
+                alt="Robert"
+              />
+              <div class="cc-stars">★★★★★</div>
+              <div class="cc-name">Robert, 61</div>
+              <div class="cc-loc">
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="color: var(--blue2); font-size: 0.6rem"
+                ></i>
+                Toronto, Canada
+              </div>
+              <p class="cc-quote">
+                "My wife passed two years ago and the silence at home was
+                unbearable. These chats are the highlight of my day. I've made
+                what feel like real friends halfway around the world."
+              </p>
+              <div class="cc-topic-tags">
+                <span class="cc-tag">Companionship</span
+                ><span class="cc-tag">Life Stories</span
+                ><span class="cc-tag">Advice</span>
+              </div>
+            </div>
+            <div class="client-card fade-up" style="transition-delay: 0.24s">
+              <img
+                src="https://i.pravatar.cc/88?img=47"
+                class="cc-av"
+                loading="lazy"
+                alt="Maria"
+              />
+              <div class="cc-stars">★★★★☆</div>
+              <div class="cc-name">Maria, 45</div>
+              <div class="cc-loc">
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="color: var(--blue2); font-size: 0.6rem"
+                ></i>
+                Barcelona, Spain
+              </div>
+              <p class="cc-quote">
+                "Planning a trip to Kenya and Tanzania. The insider tips I got
+                were absolutely invaluable — hidden gems, local prices, what to
+                avoid. Better than any travel blog."
+              </p>
+              <div class="cc-topic-tags">
+                <span class="cc-tag">Travel Tips</span
+                ><span class="cc-tag">Local Advice</span>
+              </div>
+            </div>
+            <div class="client-card fade-up" style="transition-delay: 0.32s">
+              <img
+                src="https://i.pravatar.cc/88?img=60"
+                class="cc-av"
+                loading="lazy"
+                alt="David"
+              />
+              <div class="cc-stars">★★★★★</div>
+              <div class="cc-name">David, 58</div>
+              <div class="cc-loc">
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="color: var(--blue2); font-size: 0.6rem"
+                ></i>
+                Sydney, Australia
+              </div>
+              <p class="cc-quote">
+                "What started as curiosity turned into a genuine cultural
+                education. I now understand more about African business culture,
+                family values and traditions than I ever expected to."
+              </p>
+              <div class="cc-topic-tags">
+                <span class="cc-tag">Business</span
+                ><span class="cc-tag">Culture</span
+                ><span class="cc-tag">Family</span>
+              </div>
+            </div>
+            <div class="client-card fade-up" style="transition-delay: 0.4s">
+              <img
+                src="https://i.pravatar.cc/88?img=20"
+                class="cc-av"
+                loading="lazy"
+                alt="Priya"
+              />
+              <div class="cc-stars">★★★★★</div>
+              <div class="cc-name">Priya, 39</div>
+              <div class="cc-loc">
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="color: var(--blue2); font-size: 0.6rem"
+                ></i>
+                Dubai, UAE
+              </div>
+              <p class="cc-quote">
+                "I work long hours and rarely have time to socialize. A
+                30-minute chat during lunch with someone genuinely warm and
+                interested in talking is honestly therapeutic."
+              </p>
+              <div class="cc-topic-tags">
+                <span class="cc-tag">Companionship</span
+                ><span class="cc-tag">Wellness</span
+                ><span class="cc-tag">Daily Life</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- How It Works for Clients Panel -->
+        <div class="client-panel" id="panel-howto">
+          <div class="client-how-grid">
+            <div class="client-step fade-up">
+              <div class="client-step-num">1</div>
+              <h4>Browse Chatters</h4>
+              <p>
+                Explore profiles of warm, verified chatters from across Africa.
+                Filter by language, topic interest, and availability.
+              </p>
+            </div>
+            <div class="client-step fade-up" style="transition-delay: 0.08s">
+              <div class="client-step-num">2</div>
+              <h4>Send a Request</h4>
+              <p>
+                Choose a topic you'd like to explore — culture, travel,
+                companionship, or advice — and send a chat request.
+              </p>
+            </div>
+            <div class="client-step fade-up" style="transition-delay: 0.16s">
+              <div class="client-step-num">3</div>
+              <h4>Have a Real Conversation</h4>
+              <p>
+                Enjoy genuine, warm, text-based conversations. No scripts, no
+                pretending — just real human connection.
+              </p>
+            </div>
+            <div class="client-step fade-up" style="transition-delay: 0.24s">
+              <div class="client-step-num">4</div>
+              <h4>Rate &amp; Return</h4>
+              <p>
+                Leave a rating after each chat. Book your favourite chatters
+                again anytime — many clients become regulars.
+              </p>
+            </div>
+          </div>
+          <div class="client-cta-box fade-up">
+            <h3>Find Your Perfect Conversation Partner</h3>
+            <p>
+              Over 8,400 warm, verified chatters ready to talk. Topics include
+              culture, travel, daily life, companionship, and more.
+            </p>
+            <div class="cta-btns">
+              <a
+                href="https://wa.me/254755252499?text=Hi,%20I%20am%20a%20client%20looking%20to%20chat%20with%20someone%20from%20Africa.%20Please%20help%20me%20get%20started."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                style="
+                  background: #25d366;
+                  color: #fff;
+                  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+                "
+                ><i class="fab fa-whatsapp"></i> Start as a Client</a
+              >
+              <a
+                href="javascript:void(0)"
+                class="btn btn-ghost btn-lg"
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  color: #fff;
+                  border-color: rgba(255, 255, 255, 0.3);
+                "
+                onclick="switchClientTab('stories')"
+                ><i class="fas fa-star"></i> Read Client Stories</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 5 WAYS TO EARN -->
     <section class="earn-section section" id="earn-methods">
       <div class="container">
@@ -4703,9 +5487,8 @@
             <h3 class="em-title">Chat Per Hour</h3>
             <div class="em-earn">$2–$8 / hr</div>
             <p class="em-desc">
-              Earn $2–$8 for every hour of conversation. Your time is
-              automatically tracked — the more you chat, the more you earn.
-              Rates vary by client country and demand.
+              Earn $2–$8 for every hour of conversation. Auto-tracked — the more
+              you chat, the more you earn. Rates vary by client country.
             </p>
             <div class="em-note">
               <i class="fas fa-bolt"></i> Auto-tracked · No manual logging
@@ -4718,8 +5501,7 @@
             <div class="em-earn">Every reply pays</div>
             <p class="em-desc">
               Get paid for each message you send. Great for quick exchanges.
-              Every reply adds to your balance — useful for high-activity
-              conversations.
+              Every reply adds to your balance.
             </p>
             <div class="em-note">
               <i class="fas fa-bolt"></i> Instant balance update
@@ -4747,8 +5529,7 @@
             <div class="em-earn">Extra on top</div>
             <p class="em-desc">
               Some satisfied clients leave voluntary tips for good
-              conversations. Tips are added on top of your base earnings. Not
-              guaranteed, but a welcome addition.
+              conversations. Tips are added on top of your base earnings.
             </p>
             <div class="em-note">
               <i class="fas fa-bolt"></i> Added on top of base earnings
@@ -4764,8 +5545,7 @@
             <div class="em-earn">Consistency pays extra</div>
             <p class="em-desc">
               Stay active consistently and earn small daily bonuses. The longer
-              your activity streak, the higher the reward. These accumulate
-              gradually over weeks and months of regular use.
+              your activity streak, the higher the reward.
             </p>
             <div class="em-note">
               <i class="fas fa-bolt"></i> Streak bonuses · Activity rewards
@@ -4795,8 +5575,7 @@
             <h3 class="topic-title">Culture &amp; Daily Life</h3>
             <p class="topic-desc">
               Share your local traditions, food, festivals, and how everyday
-              life looks where you live. Foreigners enjoy authentic, personal
-              perspectives.
+              life looks where you live.
             </p>
             <span class="topic-earn"
               ><i class="fas fa-coins"></i> $2/hr base + tips</span
@@ -4813,8 +5592,7 @@
             <h3 class="topic-title">Friendly Companionship</h3>
             <p class="topic-desc">
               Many clients want someone to have a genuine conversation with.
-              Listen, be kind, share a laugh — this is the most in-demand chat
-              type and can attract the highest tips.
+              Listen, be kind, share a laugh.
             </p>
             <span class="topic-earn"
               ><i class="fas fa-coins"></i> up to $8/hr + tips</span
@@ -4831,7 +5609,7 @@
             <h3 class="topic-title">Travel &amp; Places</h3>
             <p class="topic-desc">
               Discuss local hidden gems, travel tips, and recommendations. Great
-              for people planning visits or dreaming of adventure.
+              for people planning visits.
             </p>
             <span class="topic-earn"
               ><i class="fas fa-coins"></i> $3–$6/hr</span
@@ -4848,8 +5626,7 @@
             <h3 class="topic-title">Life Advice &amp; Stories</h3>
             <p class="topic-desc">
               People from around the world want your perspective on
-              relationships, work, and life. Share honestly and earn for your
-              time and insight.
+              relationships, work, and life.
             </p>
             <span class="topic-earn"
               ><i class="fas fa-coins"></i> up to $8/hr</span
@@ -4867,8 +5644,7 @@
           <h2 class="sec-title">Real people, <em>ready to chat</em></h2>
           <p class="sec-sub">
             New requests arrive regularly. Every accepted and completed
-            conversation adds to your balance — hourly, per message, and per
-            session.
+            conversation adds to your balance.
           </p>
         </div>
         <div class="requests-wrap">
@@ -4934,13 +5710,9 @@
     <section class="proof-section section" id="testimonials">
       <div class="container">
         <div class="shead center fade-up">
-          <div class="eyebrow" style="color: rgba(255, 255, 255, 0.45)">
-            Real Results
-          </div>
-          <h2 class="sec-title" style="color: #fff">
-            Real chatters, <em>real earnings</em>
-          </h2>
-          <p class="sec-sub" style="color: rgba(255, 255, 255, 0.6)">
+          <div class="eyebrow">Real Results</div>
+          <h2 class="sec-title">Real chatters, <em>real earnings</em></h2>
+          <p class="sec-sub">
             Thousands of people across Africa are earning extra income from
             their phones through Mulastar.
           </p>
@@ -4951,8 +5723,7 @@
             <p class="tcard-quote">
               "I was unsure at first, but after my first few chats I started
               earning steadily. Now I do 3–5 chats a day around my regular job
-              and the extra money helps me cover monthly expenses. The
-              per-message system means even short chats count."
+              and the extra money helps me cover monthly expenses."
             </p>
             <div class="tcard-footer">
               <img
@@ -4973,8 +5744,7 @@
             <p class="tcard-quote">
               "The daily rewards streak bonus is a nice extra. I've been active
               for 2 months consistently and the bonuses have grown week by week.
-              Combined with hourly pay and occasional tips it adds up to a
-              meaningful side income."
+              Combined with hourly pay and occasional tips it adds up."
             </p>
             <div class="tcard-footer">
               <img
@@ -4995,8 +5765,7 @@
             <p class="tcard-quote">
               "As a stay-at-home mum I needed flexibility. Getting paid per
               message means even 10-minute chats during nap time add to my
-              balance. Customer support is responsive and the withdrawal process
-              is straightforward."
+              balance. Withdrawal process is straightforward."
             </p>
             <div class="tcard-footer">
               <img
@@ -5040,8 +5809,7 @@
             <div class="trust-num">256-bit</div>
             <div class="trust-title">Secure Platform</div>
             <p class="trust-desc">
-              SSL encryption protects all your data and transactions. Your
-              privacy and payment details are always protected.
+              SSL encryption protects all your data and transactions.
             </p>
           </div>
           <div class="trust-card fade-up" style="transition-delay: 0.07s">
@@ -5051,8 +5819,8 @@
             <div class="trust-num">$890K+</div>
             <div class="trust-title">Verified Payments</div>
             <p class="trust-desc">
-              Every payout is processed and verified. Over $890K paid to
-              chatters with a consistent track record of timely payments.
+              Over $890K paid to chatters with a consistent track record of
+              timely payments.
             </p>
           </div>
           <div class="trust-card fade-up" style="transition-delay: 0.14s">
@@ -5062,8 +5830,7 @@
             <div class="trust-num">24/7</div>
             <div class="trust-title">Live Support</div>
             <p class="trust-desc">
-              Our team is available around the clock via WhatsApp and email. We
-              aim to respond to every message within 15 minutes.
+              Our team is available around the clock via WhatsApp and email.
             </p>
           </div>
           <div class="trust-card fade-up" style="transition-delay: 0.21s">
@@ -5073,8 +5840,7 @@
             <div class="trust-num">15,000+</div>
             <div class="trust-title">Active Chatters</div>
             <p class="trust-desc">
-              Join a growing community of earners across Africa who supplement
-              their income through daily chat activity.
+              Join a growing community of earners across Africa.
             </p>
           </div>
         </div>
@@ -5117,7 +5883,7 @@
             <div class="legal-card-title">Terms of Service</div>
             <p class="legal-card-desc">
               How the platform works, your rights as an earner, and our mutual
-              obligations as a Mulastar member.
+              obligations.
             </p>
             <ul class="legal-bullets">
               <li>
@@ -5151,8 +5917,7 @@
             <div class="legal-icon-w">🔐</div>
             <div class="legal-card-title">Privacy Policy</div>
             <p class="legal-card-desc">
-              What data we collect, how we protect it, and your full rights to
-              access, edit, or delete your information.
+              What data we collect, how we protect it, and your full rights.
             </p>
             <ul class="legal-bullets">
               <li><i class="fas fa-circle"></i> Data we collect &amp; why</li>
@@ -5182,8 +5947,8 @@
             <div class="legal-icon-w">⚠️</div>
             <div class="legal-card-title">Earnings Disclaimer</div>
             <p class="legal-card-desc">
-              Honest, realistic earning expectations, factors that influence
-              results, and full disclosure before you register.
+              Honest, realistic earning expectations and full disclosure before
+              you register.
             </p>
             <ul class="legal-bullets">
               <li>
@@ -5214,13 +5979,7 @@
             ><i class="fas fa-building-columns"></i> Registered in Kenya</span
           >
           <span class="ltr-item"
-            ><i class="fas fa-envelope"></i>
-            <a
-              href="/cdn-cgi/l/email-protection"
-              class="__cf_email__"
-              data-cfemail="25565055554a57516548504944565144570b464a48"
-              >[email&#160;protected]</a
-            ></span
+            ><i class="fas fa-envelope"></i> support@mulastar.com</span
           >
           <span class="ltr-item"
             ><i class="fas fa-shield-alt"></i> GDPR Aligned</span
@@ -5260,7 +6019,7 @@
       </div>
     </section>
 
-    <!-- FOOTER — always dark background -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
         <div class="footer-inner">
@@ -5277,12 +6036,11 @@
             <span class="footer-logo-name">MULA<em>STAR</em></span>
           </a>
           <div class="footer-links">
-            <a href="#how-it-works">How It Works</a>
-            <a href="#earn-methods">5 Ways to Earn</a>
-            <a href="#topics">Topics</a>
-            <a href="#countries">Countries</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
+            <a href="#how-it-works">How It Works</a
+            ><a href="#earn-methods">5 Ways to Earn</a
+            ><a href="#for-clients">For Clients</a><a href="#topics">Topics</a
+            ><a href="#countries">Countries</a><a href="#faq">FAQ</a
+            ><a href="#contact">Contact</a>
             <a
               href="javascript:void(0)"
               class="register-link"
@@ -5290,10 +6048,7 @@
               >Register</a
             >
           </div>
-          <p class="footer-copy">
-            © 2025 Mulastar. All rights reserved. Earn extra income through
-            conversations worldwide.
-          </p>
+          <p class="footer-copy">© 2025 Mulastar. All rights reserved.</p>
           <p class="footer-copy">
             Built with ❤️ by
             <a
@@ -5307,10 +6062,6 @@
       </div>
     </footer>
 
-    <script
-      data-cfasync="false"
-      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-    ></script>
     <script
       id="chatway"
       async
@@ -5478,27 +6229,27 @@
           },
           {
             q: "What are the 5 ways to earn?",
-            a: "You earn per hour (auto-tracked), per message (every reply adds to your balance), per completed session (flat fee), through voluntary tips from satisfied clients, and daily rewards for consistent activity. Using all 5 together increases your total income.",
+            a: "You earn per hour (auto-tracked), per message (every reply adds to your balance), per completed session (flat fee), through voluntary tips from satisfied clients, and daily rewards for consistent activity.",
           },
           {
             q: "How much can I realistically earn per month?",
-            a: "Results vary based on how many hours you put in. Members who complete 3–5 chats daily and use all earning methods typically earn $50–$200/month. Highly active members who treat this as a serious part-time commitment can earn $200–$350/month. The figures depend entirely on your activity level.",
+            a: "Results vary based on how many hours you put in. Members who complete 3–5 chats daily typically earn $50–$200/month. Highly active members can earn $200–$350/month. Figures depend entirely on your activity level.",
           },
           {
             q: "What kinds of chats will I have?",
-            a: "You'll chat with clients from UK, USA, Canada, Qatar, Malaysia and more about culture, travel, daily life, companionship, and advice. All chats are friendly, safe, and appropriate — no adult content of any kind.",
+            a: "You'll chat with clients from UK, USA, Canada, Qatar, Malaysia and more about culture, travel, daily life, companionship, and advice. All chats are friendly, safe, and appropriate — no adult content.",
           },
           {
             q: "How much time do I need to commit?",
-            a: "There's no minimum requirement. You can do a single 30-minute chat to earn something small, or put in several hours daily for more income. Most clients are active in evenings and weekends. You set your own schedule.",
+            a: "There's no minimum requirement. You can do a single 30-minute chat or put in several hours daily. Most clients are active in evenings and weekends. You set your own schedule.",
           },
           {
             q: "Why is there a registration fee?",
-            a: "The small one-time fee covers your account verification, platform setup, and access costs. It also helps maintain platform quality. Most active members recover this fee within their first week of regular chatting.",
+            a: "The small one-time fee covers your account verification, platform setup, and access costs. It also helps maintain platform quality. Most active members recover this fee within their first week.",
           },
           {
             q: "Is this legitimate?",
-            a: "Yes. Mulastar is registered in Kenya and operates across multiple African countries. We have paid out over $890K to verified earners. We publish our earnings disclaimer openly and do not guarantee any specific income level — results depend on individual effort.",
+            a: "Yes. Mulastar is registered in Kenya and operates across multiple African countries. We have paid out over $890K to verified earners. We publish our earnings disclaimer openly and do not guarantee any specific income level.",
           },
         ];
 
@@ -5506,7 +6257,7 @@
           terms: {
             icon: "📄",
             title: "Terms of Service",
-            body: "<h3>1. Acceptance of Terms</h3><p>By registering with Mulastar, you agree to these Terms of Service. Please read them carefully before completing your registration.</p><h3>2. Eligibility</h3><ul><li>You must be at least 18 years old</li><li>You must have a valid identity document</li><li>You must have a working internet connection</li><li>You agree to provide truthful information during registration</li></ul><h3>3. Registration Fee</h3><p>The one-time registration fee (in local currency equivalent) is non-refundable once account access is granted. It covers account verification, platform access, and setup costs. No additional recurring fees are charged by Mulastar.</p><h3>4. Earner Conduct</h3><ul><li>All conversations must remain respectful and appropriate</li><li>You may not solicit personal information from clients</li><li>Harassment or inappropriate content will result in immediate account termination</li></ul><h3>5. Payments</h3><p>Earnings are paid upon reaching the $5 minimum threshold. Payment is typically processed within 24 hours. Mulastar does not charge withdrawal fees.</p>",
+            body: "<h3>1. Acceptance of Terms</h3><p>By registering with Mulastar, you agree to these Terms of Service.</p><h3>2. Eligibility</h3><ul><li>You must be at least 18 years old</li><li>You must have a valid identity document</li><li>You agree to provide truthful information during registration</li></ul><h3>3. Registration Fee</h3><p>The one-time registration fee is non-refundable once account access is granted. It covers account verification, platform access, and setup costs. No additional recurring fees are charged by Mulastar.</p><h3>4. Earner Conduct</h3><ul><li>All conversations must remain respectful and appropriate</li><li>You may not solicit personal information from clients</li><li>Harassment or inappropriate content will result in immediate account termination</li></ul><h3>5. Payments</h3><p>Earnings are paid upon reaching the $5 minimum threshold. Payment is typically processed within 24 hours. Mulastar does not charge withdrawal fees.</p>",
           },
           privacy: {
             icon: "🔐",
@@ -5516,7 +6267,7 @@
           disclaimer: {
             icon: "⚠️",
             title: "Earnings Disclaimer",
-            body: "<h3>Important Notice — Please Read</h3><p>Mulastar is committed to full transparency about earning potential. Please read this carefully before registering.</p><h3>Realistic Expectations</h3><ul><li>New members typically earn $10–$100 in their first month as they learn the platform</li><li>Members chatting 3–5 hours daily typically earn $100–$300/month</li><li>Highly active members may earn $300–$850/month over time</li><li>Higher figures require consistent daily effort over many weeks</li></ul><h3>Factors That Affect Earnings</h3><ul><li>Hours invested per day and days active per week</li><li>Which earning methods you activate and how effectively</li><li>Conversational quality and client satisfaction</li><li>Demand fluctuations on the platform</li></ul><h3>No Income Guarantee</h3><p>Mulastar does not guarantee any specific level of income. All earnings figures shown on this site are examples or averages, not guarantees. Your results may be lower or higher. The registration fee is non-refundable once access is granted.</p>",
+            body: "<h3>Important Notice — Please Read</h3><p>Mulastar is committed to full transparency about earning potential.</p><h3>Realistic Expectations</h3><ul><li>New members typically earn $10–$100 in their first month</li><li>Members chatting 3–5 hours daily typically earn $100–$300/month</li><li>Highly active members may earn $300–$850/month over time</li><li>Higher figures require consistent daily effort over many weeks</li></ul><h3>Factors That Affect Earnings</h3><ul><li>Hours invested per day and days active per week</li><li>Which earning methods you activate and how effectively</li><li>Conversational quality and client satisfaction</li></ul><h3>No Income Guarantee</h3><p>Mulastar does not guarantee any specific level of income. All earnings figures shown are examples or averages, not guarantees. Your results may be lower or higher. The registration fee is non-refundable once access is granted.</p>",
           },
         };
 
@@ -5527,9 +6278,9 @@
             age: 65,
             location: "London, UK",
             description:
-              "Retired teacher looking for meaningful conversations about books, travel, and life experiences.",
+              "Retired teacher looking for meaningful conversations about books, travel, and life.",
             detailedDescription:
-              "Hello! I'm Emily, a retired literature teacher from London with 40 years of teaching experience. I love discussing classic novels, sharing travel stories from my adventures across Europe, and hearing about different life experiences.",
+              "Hello! I'm Emily, a retired literature teacher from London with 40 years of teaching experience.",
             price: 18,
             tags: [
               "Friendly",
@@ -5552,9 +6303,9 @@
             age: 58,
             location: "New York, USA",
             description:
-              "Business executive seeking cultural exchange and conversations about innovation and global trends.",
+              "Business executive seeking cultural exchange and conversations about innovation.",
             detailedDescription:
-              "Hello, I'm Robert! After 30+ years in international business, I'm passionate about cultural exchange, innovation, and mentoring.",
+              "Hello, I'm Robert! After 30+ years in international business, I'm passionate about cultural exchange.",
             price: 22,
             tags: [
               "Business Savvy",
@@ -5582,9 +6333,9 @@
             age: 68,
             location: "Toronto, Canada",
             description:
-              "Looking for companionship and conversations about family, cooking, and daily life adventures.",
+              "Looking for companionship and conversations about family, cooking, and daily life.",
             detailedDescription:
-              "Hi there! I'm Linda, a retired nurse from Toronto who loves meeting new people. I enjoy sharing stories about my family, exchanging recipes, and talking about life's simple pleasures.",
+              "Hi there! I'm Linda, a retired nurse from Toronto who loves meeting new people.",
             price: 25,
             tags: ["Companionship", "Patient", "Empathetic", "Family-oriented"],
             languages: ["English"],
@@ -5602,7 +6353,7 @@
             age: 62,
             location: "Sydney, Australia",
             description:
-              "Retired engineer interested in technology discussions, travel stories, and mentoring conversations.",
+              "Retired engineer interested in technology discussions and travel stories.",
             detailedDescription:
               "G'day! I'm David, a retired engineer from Sydney with a passion for technology and travel.",
             price: 20,
@@ -5622,9 +6373,9 @@
             age: 72,
             location: "Paris, France",
             description:
-              "Art enthusiast seeking conversations about culture, history, and shared appreciation for the arts.",
+              "Art enthusiast seeking conversations about culture, history, and the arts.",
             detailedDescription:
-              "Bonjour! I'm Sophia, an art historian from Paris. I've spent my life studying and appreciating art.",
+              "Bonjour! I'm Sophia, an art historian from Paris.",
             price: 30,
             tags: ["Art Lover", "Cultural", "Intellectual", "Well-traveled"],
             languages: ["French", "English", "Italian"],
@@ -5647,9 +6398,9 @@
             age: 55,
             location: "Cape Town, South Africa",
             description:
-              "Wildlife photographer seeking conversations about nature, conservation, and adventure stories.",
+              "Wildlife photographer seeking conversations about nature and conservation.",
             detailedDescription:
-              "Hello! I'm James, a wildlife photographer based in Cape Town. I've spent years capturing Africa's incredible wildlife.",
+              "Hello! I'm James, a wildlife photographer based in Cape Town.",
             price: 26,
             tags: [
               "Photographer",
@@ -5668,20 +6419,87 @@
           },
         ];
 
-        // REGISTER LINKS
+        // ══ CLIENT TABS ══
+        window.switchClientTab = function (tab) {
+          document.querySelectorAll(".client-tab").forEach((t, i) => {
+            t.classList.toggle("active", ["stories", "howto"][i] === tab);
+          });
+          document.querySelectorAll(".client-panel").forEach((p) => {
+            p.classList.toggle("active", p.id === "panel-" + tab);
+          });
+        };
+
+        // ══ OFFER MODAL ══
+        let selCountry = COUNTRIES[0];
+        const offerOverlay = $("offerOverlay");
+
+        function openOffer(c) {
+          selCountry = c;
+          $("offerFlag").textContent = c.flag;
+          $("offerCname").textContent = c.name;
+          $("opOld").textContent = c.markedPrice;
+          $("opNew").textContent = c.regFee;
+          $("opDiscount").textContent = "Save " + c.discount + " Today";
+          $("offerBadge").textContent = c.discount + " OFF — LIMITED TIME";
+          $("offerRibbon").textContent = c.discount + " OFF";
+          $("opSave").textContent =
+            "✅ You save " + c.save + " — limited time!";
+          $("offerUrgency").textContent = c.urgency;
+          $("offerPayment").textContent = c.payment;
+          $("offerCtaTxt").textContent = "Register Now — " + c.regFee;
+          $("offerHeadBg").style.backgroundImage = "url('" + c.img + "')";
+          offerOverlay.classList.add("show");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeOffer() {
+          offerOverlay?.classList.remove("show");
+          if (
+            !$("chatOverlay")?.classList.contains("show") &&
+            !$("lmOverlay")?.classList.contains("show")
+          )
+            document.body.style.overflow = "";
+        }
+
+        $("offerClose")?.addEventListener("click", closeOffer);
+        offerOverlay?.addEventListener("click", (e) => {
+          if (e.target === offerOverlay) closeOffer();
+        });
+
+        $("offerCta")?.addEventListener("click", () => {
+          const o = $("loadingOvl");
+          if (o) {
+            $("loadingTxt").textContent = "Setting up your account…";
+            o.classList.add("show");
+          }
+          closeOffer();
+          setTimeout(() => {
+            window.location.href = REG_URL;
+          }, 1200);
+        });
+
+        // ══ ALL REGISTER LINKS → close profile modal first, THEN open offer ══
         document.addEventListener("click", (e) => {
           const el = e.target.closest(".register-link");
           if (el) {
             e.preventDefault();
-            const o = $("loadingOvl");
-            if (o) {
-              $("loadingTxt").textContent = "Setting up your account…";
-              o.classList.add("show");
-            }
-            setTimeout(
-              () => (window.location.href = el.dataset.url || REG_URL),
-              1200,
+            // Close profile modal if open (fix: offer appears on top)
+            const existingProfileModal = document.querySelector(
+              ".profile-modal-overlay",
             );
+            if (existingProfileModal) {
+              existingProfileModal.remove();
+            }
+            const lang = (navigator.language || "en").toLowerCase();
+            let detected = null;
+            if (lang.includes("sw") || lang.includes("ke"))
+              detected = COUNTRIES[0];
+            else if (lang.includes("ug")) detected = COUNTRIES[1];
+            else if (lang.includes("ng")) detected = COUNTRIES[2];
+            else if (lang.includes("tz")) detected = COUNTRIES[3];
+            else if (lang.includes("za")) detected = COUNTRIES[4];
+            else if (lang.includes("gh")) detected = COUNTRIES[5];
+            openOffer(detected || selCountry || COUNTRIES[0]);
           }
         });
 
@@ -5715,7 +6533,6 @@
         calcR?.addEventListener("input", updateCalc);
         updateCalc();
 
-        // LIVE EARNED
         let todayBase = 3240;
         setInterval(() => {
           if (document.hidden) return;
@@ -5724,7 +6541,6 @@
           if (el) el.textContent = "$" + fmt(todayBase);
         }, 12000);
 
-        // LIVE COUNT
         let lc = 847;
         const lcEl = $("liveCount");
         setInterval(() => {
@@ -5733,7 +6549,6 @@
           if (lcEl) lcEl.textContent = fmt(lc);
         }, 10000);
 
-        // REQUEST COUNT
         let rc = 312;
         setInterval(() => {
           if (document.hidden) return;
@@ -5865,40 +6680,6 @@
             tt.appendChild(s);
           });
         }
-
-        // OFFER MODAL
-        let selCountry = COUNTRIES[0];
-        const offerOverlay = $("offerOverlay");
-        function openOffer(c) {
-          selCountry = c;
-          $("offerFlag").textContent = c.flag;
-          $("offerCname").textContent = c.name;
-          $("opOld").textContent = c.markedPrice;
-          $("opNew").textContent = c.regFee;
-          $("opDiscount").textContent = "Save " + c.discount + " Today";
-          $("offerBadge").textContent = c.discount + " OFF — LIMITED TIME";
-          $("offerRibbon").textContent = c.discount + " OFF";
-          $("opSave").textContent =
-            "✅ You save " + c.save + " — limited time!";
-          $("offerUrgency").textContent = c.urgency;
-          $("offerPayment").textContent = c.payment;
-          $("offerCtaTxt").textContent = "Register Now — " + c.regFee;
-          $("offerHeadBg").style.backgroundImage = "url('" + c.img + "')";
-          offerOverlay.classList.add("show");
-          document.body.style.overflow = "hidden";
-        }
-        function closeOffer() {
-          offerOverlay?.classList.remove("show");
-          if (
-            !$("chatOverlay")?.classList.contains("show") &&
-            !$("lmOverlay")?.classList.contains("show")
-          )
-            document.body.style.overflow = "";
-        }
-        $("offerClose")?.addEventListener("click", closeOffer);
-        offerOverlay?.addEventListener("click", (e) => {
-          if (e.target === offerOverlay) closeOffer();
-        });
 
         // COUNTRIES GRID
         const cg = $("countriesGrid");
@@ -6195,9 +6976,10 @@
           document.querySelector(".profile-modal-overlay")?.remove();
           const overlay = document.createElement("div");
           overlay.className = "profile-modal-overlay";
+          // z-index: 10010 — below offer modal at 10020
           overlay.style.cssText =
             "position:fixed;inset:0;background:rgba(4,7,26,.65);backdrop-filter:blur(14px);z-index:10010;display:flex;align-items:center;justify-content:center;padding:1rem;animation:fadeIn .25s ease";
-          overlay.innerHTML = `<div style="background:var(--white);border-radius:18px;width:100%;max-width:620px;max-height:88vh;overflow-y:auto;box-shadow:var(--sh-xl);animation:fadeUp .3s var(--spring);position:relative"><button onclick="this.closest('.profile-modal-overlay').remove();document.body.style.overflow=''" style="position:absolute;top:.875rem;right:.875rem;z-index:5;width:30px;height:30px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.76rem;color:var(--muted);transition:all .2s" onmouseover="this.style.background='#dc2626';this.style.color='#fff'" onmouseout="this.style.background='var(--bg2)';this.style.color='var(--muted)'"><i class="fas fa-times"></i></button><div style="display:flex;align-items:center;gap:1.25rem;padding:1.5rem;background:var(--bg2);border-radius:18px 18px 0 0;border-bottom:1px solid var(--border)"><img src="${profile.image}" style="width:68px;height:68px;border-radius:50%;object-fit:cover;border:3px solid var(--white);box-shadow:var(--sh-sm);flex-shrink:0" loading="lazy"><div><div style="font-family:var(--font-head);font-size:1.35rem;font-weight:800;color:var(--ink);letter-spacing:-.02em">${profile.name}, ${profile.age}</div><div style="font-size:.82rem;color:var(--muted);margin-top:.18rem"><i class="fas fa-map-marker-alt"></i> ${profile.location}</div><div style="font-family:var(--font-head);font-size:1.15rem;font-weight:900;color:var(--blue2);margin-top:.28rem">$${profile.price}<span style="font-size:.75rem;font-weight:400;color:var(--muted);font-family:var(--font-body)">/hour</span></div></div></div><div style="padding:1.5rem;border-bottom:1px solid var(--border)"><p style="font-size:.875rem;color:var(--muted);line-height:1.75">${profile.detailedDescription}</p><div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.875rem">${profile.tags.map((t) => `<span style="background:var(--blue-soft);color:var(--blue2);padding:.22rem .65rem;border-radius:6px;font-size:.76rem;font-weight:600;border:1px solid var(--blue-border)">${t}</span>`).join("")}</div></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:.875rem;padding:1.25rem;border-bottom:1px solid var(--border)"><div><div style="font-family:var(--font-mono);font-size:.56rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:.35rem">Languages</div>${profile.languages.map((l) => `<span style="background:var(--blue-soft);color:var(--blue2);padding:.2rem .58rem;border-radius:6px;font-size:.74rem;font-weight:600;border:1px solid var(--blue-border);margin-right:.22rem">${l}</span>`).join("")}</div><div><div style="font-family:var(--font-mono);font-size:.56rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:.35rem">Availability</div><div style="font-size:.82rem;color:var(--ink2)">${profile.availability}</div></div><div><div style="font-family:var(--font-mono);font-size:.56rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:.35rem">Avg Chat Length</div><div style="font-size:.82rem;color:var(--ink2)">${profile.avgChatLength}</div></div></div><div style="padding:1.25rem;background:var(--bg2);border-radius:0 0 18px 18px"><div style="display:flex;align-items:center;gap:.5rem;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:.75rem;font-size:.82rem;color:var(--muted);margin-bottom:.875rem"><i class="fas fa-info-circle" style="color:var(--blue2);font-size:.95rem;flex-shrink:0"></i> To start chatting with ${profile.name}, create your account first</div><div style="display:flex;gap:.75rem;flex-wrap:wrap"><a href="${REG_URL}" target="_blank" rel="noopener" style="flex:1;min-width:135px;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.875rem;border-radius:10px;background:var(--blue2);color:#fff;font-family:var(--font-body);font-weight:600;font-size:.855rem;box-shadow:var(--sh-b);transition:all .2s"><i class="fas fa-user-plus"></i> Create Account</a><a href="https://wa.me/254755252499?text=Interested+in+chatting+with+${encodeURIComponent(profile.name)}+on+Mulastar" target="_blank" rel="noopener" style="flex:1;min-width:135px;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.875rem;border-radius:10px;background:#25d366;color:#fff;font-family:var(--font-body);font-weight:600;font-size:.855rem;transition:all .2s"><i class="fab fa-whatsapp"></i> Ask on WhatsApp</a></div></div></div>`;
+          overlay.innerHTML = `<div style="background:var(--white);border-radius:18px;width:100%;max-width:620px;max-height:88vh;overflow-y:auto;box-shadow:var(--sh-xl);animation:fadeUp .3s var(--spring);position:relative"><button onclick="this.closest('.profile-modal-overlay').remove();document.body.style.overflow=''" style="position:absolute;top:.875rem;right:.875rem;z-index:5;width:30px;height:30px;border-radius:50%;background:var(--bg2);border:1.5px solid var(--blue-border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.76rem;color:var(--muted);transition:all .2s" onmouseover="this.style.background='#dc2626';this.style.color='#fff'" onmouseout="this.style.background='var(--bg2)';this.style.color='var(--muted)'"><i class="fas fa-times"></i></button><div style="display:flex;align-items:center;gap:1.25rem;padding:1.5rem;background:var(--bg2);border-radius:18px 18px 0 0;border-bottom:1.5px solid var(--blue-border)"><img src="${profile.image}" style="width:68px;height:68px;border-radius:50%;object-fit:cover;border:3px solid var(--white);box-shadow:var(--sh-sm);flex-shrink:0" loading="lazy"><div><div style="font-family:var(--font-head);font-size:1.35rem;font-weight:800;color:var(--ink);letter-spacing:-.02em">${profile.name}, ${profile.age}</div><div style="font-size:.82rem;color:var(--muted);margin-top:.18rem"><i class="fas fa-map-marker-alt"></i> ${profile.location}</div><div style="font-family:var(--font-head);font-size:1.15rem;font-weight:900;color:var(--blue2);margin-top:.28rem">$${profile.price}<span style="font-size:.75rem;font-weight:400;color:var(--muted);font-family:var(--font-body)">/hour</span></div></div></div><div style="padding:1.5rem;border-bottom:1.5px solid var(--blue-border)"><p style="font-size:.875rem;color:var(--muted);line-height:1.75">${profile.detailedDescription}</p><div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.875rem">${profile.tags.map((t) => `<span style="background:var(--blue-soft);color:var(--blue2);padding:.22rem .65rem;border-radius:6px;font-size:.76rem;font-weight:600;border:1.5px solid var(--blue-border)">${t}</span>`).join("")}</div></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:.875rem;padding:1.25rem;border-bottom:1.5px solid var(--blue-border)"><div><div style="font-family:var(--font-mono);font-size:.56rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:.35rem">Languages</div>${profile.languages.map((l) => `<span style="background:var(--blue-soft);color:var(--blue2);padding:.2rem .58rem;border-radius:6px;font-size:.74rem;font-weight:600;border:1.5px solid var(--blue-border);margin-right:.22rem">${l}</span>`).join("")}</div><div><div style="font-family:var(--font-mono);font-size:.56rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:.35rem">Availability</div><div style="font-size:.82rem;color:var(--ink2)">${profile.availability}</div></div><div><div style="font-family:var(--font-mono);font-size:.56rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:.35rem">Avg Chat Length</div><div style="font-size:.82rem;color:var(--ink2)">${profile.avgChatLength}</div></div></div><div style="padding:1.25rem;background:var(--bg2);border-radius:0 0 18px 18px"><div style="display:flex;align-items:center;gap:.5rem;background:var(--white);border:1.5px solid var(--blue-border);border-radius:8px;padding:.75rem;font-size:.82rem;color:var(--muted);margin-bottom:.875rem"><i class="fas fa-info-circle" style="color:var(--blue2);font-size:.95rem;flex-shrink:0"></i> To start chatting with ${profile.name}, create your account first</div><div style="display:flex;gap:.75rem;flex-wrap:wrap"><a href="javascript:void(0)" class="register-link" data-url="${REG_URL}" style="flex:1;min-width:135px;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.875rem;border-radius:10px;background:linear-gradient(135deg,var(--blue2),var(--blue));color:#fff;font-family:var(--font-body);font-weight:600;font-size:.855rem;box-shadow:var(--sh-b);transition:all .2s"><i class="fas fa-user-plus"></i> Create Account</a><a href="https://wa.me/254755252499?text=Hi,+I+saw+${encodeURIComponent(profile.name)}+on+Mulastar,+How+do+I+start+chatting+such+people?&" target="_blank" rel="noopener" style="flex:1;min-width:135px;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.875rem;border-radius:10px;background:#25d366;color:#fff;font-family:var(--font-body);font-weight:600;font-size:.855rem;transition:all .2s"><i class="fab fa-whatsapp"></i> Ask on WhatsApp</a></div></div></div>`;
           overlay.addEventListener("click", (e) => {
             if (e.target === overlay) {
               overlay.remove();
